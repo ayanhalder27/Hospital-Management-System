@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91f81253c565466aad7b75e9a024b226" Name="Diagram1">
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Appointment" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Billing" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.MedicalTest" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Medicine" Width="1.5" PointX="7.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Prescribed_Medicines" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Prescribed_Tests" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Prescription" Width="1.5" PointX="7.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Role" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.User" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK__Appointme__Docto__123EB7A3" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK__Appointme__Patie__114A936A" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Billin_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Prescriptions_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Billin_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Prescribed_Tests_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Prescribed_Medicines_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Prescribed_Medicines_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Prescribed_Tests_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK__Users__RoleID__0B91BA14" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
