@@ -24,11 +24,11 @@ namespace Hospital_Management_System
 
         private void Prescribe_Load(object sender, EventArgs e)
         {
-            //HospitalModel db = new HospitalModel();
-            //AutoCompleteStringCollection medicines = new AutoCompleteStringCollection();
-            //medicines.AddRange(db.Medicines.Select(m => m.Medicine_Name).ToArray());
+            HospitalContext db = new HospitalContext();
+            AutoCompleteStringCollection medicines = new AutoCompleteStringCollection();
+            medicines.AddRange(db.Medicines.Select(m => m.Medicine_Name).ToArray());
 
-            //guna2TextBox1.AutoCompleteCustomSource = medicines;
+            guna2TextBox1.AutoCompleteCustomSource = medicines;
         }
     }
 }
