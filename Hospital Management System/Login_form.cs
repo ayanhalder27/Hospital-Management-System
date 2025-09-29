@@ -73,20 +73,23 @@ namespace Hospital_Management_System
         }
 
         private bool passwordVisible = false;
-        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        private void guna2CirclePictureBox1_Click_1(object sender, EventArgs e)
         {
+
             if (passwordVisible)
             {
                 txt_user_password.UseSystemPasswordChar = true;
-                //guna2CirclePictureBox1.Image = Properties.Resources
+                guna2CirclePictureBox1.Image = Properties.Resources.invisible1;
                 passwordVisible = false;
+
             }
             else
             {
                 txt_user_password.UseSystemPasswordChar = false;
-                //guna2CirclePictureBox1.Image = Properties.Resource
+                guna2CirclePictureBox1.Image = Properties.Resources.visible;
                 passwordVisible = true;
             }
+
         }
     }
 }

@@ -49,7 +49,6 @@
             this.datetimeDOB = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btn_edit_user_info = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_save_updates = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.picProfileBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnChangePic = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtVisitFee = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSpecialization = new Guna.UI2.WinForms.Guna2TextBox();
@@ -58,8 +57,9 @@
             this.pnlDoctorFields = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.btn_back = new Guna.UI2.WinForms.Guna2GradientButton();
-            ((System.ComponentModel.ISupportInitialize)(this.picProfileBox)).BeginInit();
+            this.picProfileBox = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlDoctorFields.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfileBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -405,18 +405,6 @@
             this.btn_save_updates.UseTransparentBackground = true;
             this.btn_save_updates.Click += new System.EventHandler(this.btn_save_updates_Click);
             // 
-            // picProfileBox
-            // 
-            this.picProfileBox.BackColor = System.Drawing.Color.Transparent;
-            this.picProfileBox.ImageRotate = 0F;
-            this.picProfileBox.Location = new System.Drawing.Point(586, 78);
-            this.picProfileBox.Name = "picProfileBox";
-            this.picProfileBox.Size = new System.Drawing.Size(325, 325);
-            this.picProfileBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProfileBox.TabIndex = 22;
-            this.picProfileBox.TabStop = false;
-            this.picProfileBox.UseTransparentBackground = true;
-            // 
             // btnChangePic
             // 
             this.btnChangePic.Animated = true;
@@ -548,6 +536,18 @@
             this.btn_back.UseTransparentBackground = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
+            // picProfileBox
+            // 
+            this.picProfileBox.BackColor = System.Drawing.Color.Transparent;
+            this.picProfileBox.ImageRotate = 0F;
+            this.picProfileBox.Location = new System.Drawing.Point(586, 78);
+            this.picProfileBox.Name = "picProfileBox";
+            this.picProfileBox.Size = new System.Drawing.Size(325, 325);
+            this.picProfileBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfileBox.TabIndex = 22;
+            this.picProfileBox.TabStop = false;
+            this.picProfileBox.UseTransparentBackground = true;
+            // 
             // UserProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -585,9 +585,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserProfileForm";
             this.Load += new System.EventHandler(this.UserProfileForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picProfileBox)).EndInit();
             this.pnlDoctorFields.ResumeLayout(false);
             this.pnlDoctorFields.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfileBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

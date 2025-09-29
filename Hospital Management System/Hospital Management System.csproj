@@ -297,6 +297,10 @@
       <LastGenOutput>HospitalContext.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\hide.png" />
+    <None Include="Resources\Niloy profile.jpg" />
+    <None Include="Resources\visible.png" />
+    <None Include="Resources\invisible2.png" />
+    <None Include="Resources\invisible1.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
