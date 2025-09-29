@@ -35,12 +35,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_user_ID = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.lbl_clean = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.Transparent;
             this.btn_login.BorderRadius = 20;
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_login.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -48,7 +50,7 @@
             this.btn_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(386, 324);
+            this.btn_login.Location = new System.Drawing.Point(407, 338);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(180, 56);
             this.btn_login.TabIndex = 15;
@@ -131,6 +133,19 @@
             this.txt_user_ID.Size = new System.Drawing.Size(390, 36);
             this.txt_user_ID.TabIndex = 11;
             // 
+            // lbl_clean
+            // 
+            this.lbl_clean.AutoSize = true;
+            this.lbl_clean.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_clean.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_clean.ForeColor = System.Drawing.Color.Red;
+            this.lbl_clean.Location = new System.Drawing.Point(435, 464);
+            this.lbl_clean.Name = "lbl_clean";
+            this.lbl_clean.Size = new System.Drawing.Size(89, 28);
+            this.lbl_clean.TabIndex = 16;
+            this.lbl_clean.Text = "Clear all";
+            this.lbl_clean.Click += new System.EventHandler(this.lbl_clean_Click);
+            // 
             // Login_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -138,6 +153,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(939, 595);
+            this.Controls.Add(this.lbl_clean);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_user_password);
             this.Controls.Add(this.label2);
@@ -160,5 +176,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txt_user_ID;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private System.Windows.Forms.Label lbl_clean;
     }
 }

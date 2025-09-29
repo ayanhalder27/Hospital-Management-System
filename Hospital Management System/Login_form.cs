@@ -27,7 +27,6 @@ namespace Hospital_Management_System
                 User user = checkLoginAuthorization.Login(userInput, password);
                 if (user != null)
                 {
-                    MessageBox.Show($"Login Successful! Welcome {user.FullName}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     switch (user.RoleID)
                     {
                         case 1:
@@ -65,6 +64,29 @@ namespace Hospital_Management_System
         private void Login_form_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void lbl_clean_Click(object sender, EventArgs e)
+        {
+            txt_user_ID.Clear();
+            txt_user_password.Clear();
+        }
+
+        private bool passwordVisible = false;
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            if (passwordVisible)
+            {
+                txt_user_password.UseSystemPasswordChar = true;
+                //guna2CirclePictureBox1.Image = Properties.Resources
+                passwordVisible = false;
+            }
+            else
+            {
+                txt_user_password.UseSystemPasswordChar = false;
+                //guna2CirclePictureBox1.Image = Properties.Resource
+                passwordVisible = true;
+            }
         }
     }
 }

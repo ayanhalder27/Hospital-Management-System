@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Hospital_Management_System
 {
@@ -22,7 +23,11 @@ namespace Hospital_Management_System
                 {
                     return user;
                 }
-                return null;
+                else
+                {
+                    MessageBox.Show("Login failed! Please Check UserID or Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                    return null;
             }
             catch (Exception ex)
             {
