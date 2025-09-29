@@ -59,30 +59,25 @@ namespace Hospital_Management_System
         {
             return context.Roles.Where(r => r.RoleID != 5).ToList();
         }
-        // Get users (with optional filters)
+
         public List<object> GetUsers(bool isPatientView, int? roleId = null, string searchText = null)
         {
             try
             {
                 var query = context.Users.AsQueryable();
-                // Patient view
                 if (isPatientView)
                 {
                     query = query.Where(u => u.RoleID == 5 && u.Status == true);
                 }
                 else
                 {
-                    // Always exclude patients in employee view
                     query = query.Where(u => u.RoleID != 5 && u.Status == true);
-
-                    // Role filter (only apply if roleId is provided)
                     if (roleId.HasValue)
                     {
                         query = query.Where(u => u.RoleID == roleId.Value);
                     }
                 }
 
-                // Search filter
                 if (!string.IsNullOrWhiteSpace(searchText))
                 {
                     searchText = searchText.ToLower();
