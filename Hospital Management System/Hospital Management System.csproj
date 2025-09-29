@@ -305,6 +305,7 @@
       <DependentUpon>HospitalContext.edmx</DependentUpon>
       <LastGenOutput>HospitalContext.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\blank-profile-picture-973460_1920.png" />
     <Content Include="Resources\hide.png" />
     <None Include="Resources\Niloy profile.jpg" />
     <None Include="Resources\visible.png" />
