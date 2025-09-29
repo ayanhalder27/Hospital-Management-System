@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_login = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txt_user_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_user_ID = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.SuspendLayout();
             // 
             // btn_login
@@ -46,11 +48,12 @@
             this.btn_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_login.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(377, 270);
+            this.btn_login.Location = new System.Drawing.Point(386, 324);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(180, 56);
-            this.btn_login.TabIndex = 10;
+            this.btn_login.TabIndex = 15;
             this.btn_login.Text = "Log in";
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // txt_user_password
             // 
@@ -69,14 +72,15 @@
             this.txt_user_password.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.txt_user_password.ForeColor = System.Drawing.Color.Black;
             this.txt_user_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_user_password.Location = new System.Drawing.Point(306, 184);
+            this.txt_user_password.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.txt_user_password.Location = new System.Drawing.Point(339, 238);
             this.txt_user_password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_user_password.Name = "txt_user_password";
             this.txt_user_password.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_user_password.PlaceholderText = "";
             this.txt_user_password.SelectedText = "";
             this.txt_user_password.Size = new System.Drawing.Size(390, 36);
-            this.txt_user_password.TabIndex = 9;
+            this.txt_user_password.TabIndex = 14;
             this.txt_user_password.UseSystemPasswordChar = true;
             // 
             // label2
@@ -84,10 +88,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(145, 184);
+            this.label2.Location = new System.Drawing.Point(154, 238);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 36);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 13;
             this.label2.Text = "Password:";
             // 
             // label1
@@ -95,10 +99,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(145, 122);
+            this.label1.Location = new System.Drawing.Point(154, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 36);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 12;
             this.label1.Text = "User ID:";
             // 
             // txt_user_ID
@@ -118,21 +122,22 @@
             this.txt_user_ID.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.txt_user_ID.ForeColor = System.Drawing.Color.Black;
             this.txt_user_ID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_user_ID.Location = new System.Drawing.Point(306, 122);
+            this.txt_user_ID.Location = new System.Drawing.Point(339, 176);
             this.txt_user_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_user_ID.Name = "txt_user_ID";
             this.txt_user_ID.PlaceholderForeColor = System.Drawing.Color.Black;
             this.txt_user_ID.PlaceholderText = "";
             this.txt_user_ID.SelectedText = "";
             this.txt_user_ID.Size = new System.Drawing.Size(390, 36);
-            this.txt_user_ID.TabIndex = 6;
+            this.txt_user_ID.TabIndex = 11;
             // 
             // Login_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(950, 546);
+            this.ClientSize = new System.Drawing.Size(939, 595);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_user_password);
             this.Controls.Add(this.label2);
@@ -141,6 +146,7 @@
             this.Name = "Login_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login_form";
+            this.Load += new System.EventHandler(this.Login_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +159,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txt_user_ID;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

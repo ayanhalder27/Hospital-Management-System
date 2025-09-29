@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPortal.Designer.cs">
+      <DependentUpon>AdminPortal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
@@ -82,6 +88,7 @@
     <Compile Include="Billing.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Check_login_authorization.cs" />
     <Compile Include="DoctorPortal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,11 +116,23 @@
     <Compile Include="Login_form.Designer.cs">
       <DependentUpon>Login_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerPortal.Designer.cs">
+      <DependentUpon>ManagerPortal.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedicalTest.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Medicine.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PatientPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientPortal.Designer.cs">
+      <DependentUpon>PatientPortal.cs</DependentUpon>
     </Compile>
     <Compile Include="Prescribe.cs">
       <SubType>Form</SubType>
@@ -132,12 +151,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceptionistPortal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceptionistPortal.Designer.cs">
+      <DependentUpon>ReceptionistPortal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserProfileForm.Designer.cs">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserService.cs" />
+    <EmbeddedResource Include="AdminPortal.resx">
+      <DependentUpon>AdminPortal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppointmentPanelDesign.resx">
       <DependentUpon>AppointmentPanelDesign.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerPortal.resx">
+      <DependentUpon>ManagerPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientPortal.resx">
+      <DependentUpon>PatientPortal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prescribe.resx">
       <DependentUpon>Prescribe.cs</DependentUpon>
@@ -163,6 +204,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReceptionistPortal.resx">
+      <DependentUpon>ReceptionistPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserProfileForm.resx">
+      <DependentUpon>UserProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="HospitalContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HospitalContext.Designer.cs</LastGenOutput>
