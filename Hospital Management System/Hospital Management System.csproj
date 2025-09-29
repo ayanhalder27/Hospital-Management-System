@@ -135,18 +135,6 @@
     <Compile Include="Role.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="test 2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test 2.Designer.cs">
-      <DependentUpon>test 2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
@@ -175,12 +163,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="test 2.resx">
-      <DependentUpon>test 2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
-    </EmbeddedResource>
     <EntityDeploy Include="HospitalContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>HospitalContext.Designer.cs</LastGenOutput>
