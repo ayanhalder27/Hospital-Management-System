@@ -61,7 +61,7 @@ namespace Hospital_Management_System
         private void btn_manage_employee_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var manageEmployeesForm = new ManageUsers(false, UserID); // false = Employee view
+            var manageEmployeesForm = new ManageUsers(false, UserID); 
             manageEmployeesForm.ShowDialog();
         }
     }

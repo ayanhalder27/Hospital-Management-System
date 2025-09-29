@@ -68,13 +68,18 @@ namespace Hospital_Management_System
                 // Patient view
                 if (isPatientView)
                 {
-                    query = query.Where(u => u.Role.RoleName == "Patient" && u.Status==true);
+                    query = query.Where(u => u.RoleID == 5 && u.Status == true);
                 }
-                    
-                // Role filter
-                if (!isPatientView && roleId.HasValue)
+                else
                 {
-                    query = query.Where(u => u.RoleID == roleId.Value && u.Status == true);
+                    // Always exclude patients in employee view
+                    query = query.Where(u => u.RoleID != 5 && u.Status == true);
+
+                    // Role filter (only apply if roleId is provided)
+                    if (roleId.HasValue)
+                    {
+                        query = query.Where(u => u.RoleID == roleId.Value);
+                    }
                 }
 
                 // Search filter
