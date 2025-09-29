@@ -13,14 +13,10 @@ namespace Hospital_Management_System
     public partial class ReceptionistPortal : Form
     {
         private int UserID;
-        private int RoleID;
-        private string Username;
-        public ReceptionistPortal(int userid, int roleid, string username)
+        public ReceptionistPortal(int userid)
         {
             InitializeComponent();
             this.UserID = userid;
-            this.RoleID = roleid;
-            this.Username = username;
         }
     }
 }

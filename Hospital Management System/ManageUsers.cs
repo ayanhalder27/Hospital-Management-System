@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Hospital_Management_System
+{
+    public partial class ManageUsers : Form
+    {
+        private HospitalContext context = new HospitalContext();
+        private readonly UserService userService;
+        private User currentUser;
+        private readonly bool isPatientView;
+        public ManageUsers(bool isPatientView, int userid)
+        {
+            InitializeComponent();
+            this.isPatientView = isPatientView;
+            userService = new UserService();
+            currentUser = context.Users.FirstOrDefault(u => u.UserID == userid);
+        }
+
+        private void ManageUsers_Load(object sender, EventArgs e)
+        {
+            LoadRoles();
+            LoadUsers();
+            if (isPatientView)
+            {
+                lbl_manage_user_type.Text = "Manage Patients";
+                cmbRoles.Visible = false;
+            }
+            else
+            {
+                lbl_manage_user_type.Text = "Manage Users";
+                cmbRoles.Visible = true;
+            }
+        }
+
+        private void LoadRoles()
+        {
+            var roles = userService.GetRoles();
+            cmbRoles.DataSource = roles;
+            cmbRoles.DisplayMember = "RoleName";
+            cmbRoles.ValueMember = "RoleID";
+            cmbRoles.SelectedIndex = -1;
+
+            cmbRoles.Visible = !isPatientView;
+            lblRoleFilter.Visible = !isPatientView;
+        }
+
+        private void LoadUsers()
+        {
+            dgvUsers.DataSource = userService.GetUsers(isPatientView);
+        }
+
+        private void ApplyFilters()
+        {
+            int? selectedRoleId = cmbRoles.SelectedValue as int?;
+            string searchText = txtSearch.Text;
+
+            dgvUsers.DataSource = userService.GetUsers(isPatientView, selectedRoleId, searchText);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+        }
+
+        private void btn_add_new_user_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            cmbRoles.SelectedIndex = -1;
+            LoadUsers();
+            dgvUsers.ClearSelection();
+            dgvUsers.Refresh();
+        }
+
+        private void pic_back_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var adminPortal = new AdminPortal(currentUser.UserID);
+            adminPortal.Show();
+        }
+    }
+}

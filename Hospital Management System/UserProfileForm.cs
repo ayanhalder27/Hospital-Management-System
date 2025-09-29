@@ -17,14 +17,10 @@ namespace Hospital_Management_System
         private  UserService userService = new UserService();
         private User currentUser;
         private int UserID;
-        private int RoleID;
-        private string Username;
-        public UserProfileForm(int userid, int roleid, string username)
+        public UserProfileForm(int userid)
         {
             InitializeComponent();;
             this.UserID = userid;
-            this.RoleID = roleid;
-            this.Username = username;
             currentUser = context.Users.FirstOrDefault(u => u.UserID == UserID);
         }
 
@@ -54,7 +50,7 @@ namespace Hospital_Management_System
             {
                 if (currentUser != null)
                 {
-                    string roleName = GetRoleName(RoleID);
+                    string roleName = GetRoleName(currentUser.RoleID);
                     txtUserId.Text = UserID.ToString();
                     txtUserRoleName.Text = roleName;
                     txtFullName.Text = currentUser.FullName;
@@ -65,7 +61,7 @@ namespace Hospital_Management_System
                     txtGender.Text = currentUser.Gender;
                     datetimeDOB.Text = currentUser.DOB.ToString("dd-MM-yyyy");
 
-                    if (RoleID == 4) // Doctor
+                    if (currentUser.RoleID == 4) // Doctor
                     {
                         txtSpecialization.Text = currentUser.Specialization;
                         txtVisitFee.Text = currentUser.Visit_Fee?.ToString();
@@ -130,7 +126,7 @@ namespace Hospital_Management_System
                 currentUser.Gender = txtGender.Text;
                 currentUser.DOB = DateTime.Parse(datetimeDOB.Text);
 
-                if (RoleID == 4) // Doctor
+                if (currentUser.RoleID == 4) // Doctor
                 {
                     currentUser.Specialization = txtSpecialization.Text;
                     currentUser.Visit_Fee = double.TryParse(txtVisitFee.Text, out double fee) ? fee : 0;
@@ -158,7 +154,7 @@ namespace Hospital_Management_System
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AdminPortal(UserID, RoleID, Username).Show();
+            new AdminPortal(UserID).Show();
         }
     }
 }

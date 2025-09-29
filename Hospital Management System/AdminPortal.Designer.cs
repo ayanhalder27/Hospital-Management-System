@@ -250,6 +250,7 @@
             this.btn_manage_employee.TabIndex = 2;
             this.btn_manage_employee.Text = "Mange Employee";
             this.btn_manage_employee.UseTransparentBackground = true;
+            this.btn_manage_employee.Click += new System.EventHandler(this.btn_manage_employee_Click);
             // 
             // btn_manage_patient
             // 
@@ -278,6 +279,7 @@
             this.btn_manage_patient.TabIndex = 1;
             this.btn_manage_patient.Text = "Mange Patient";
             this.btn_manage_patient.UseTransparentBackground = true;
+            this.btn_manage_patient.Click += new System.EventHandler(this.btn_manage_patient_Click);
             // 
             // btn_profile_button
             // 
@@ -333,7 +335,6 @@
             this.picbox_admin_portal.TabIndex = 3;
             this.picbox_admin_portal.TabStop = false;
             this.picbox_admin_portal.UseTransparentBackground = true;
-            //            this.picbox_admin_portal.Click += new System.EventHandler(this.picbox_admin_portal_Click);
             // 
             // lbl_profile_user_name
             // 
