@@ -33,14 +33,21 @@ namespace Hospital_Management_System
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
         {
-            lbl_profile_user_name.Text = correntUser.FullName;
-
-            if (!string.IsNullOrWhiteSpace(correntUser.Photo) && File.Exists(correntUser.Photo))
+            try
             {
-                using (var stream = new FileStream(correntUser.Photo, FileMode.Open, FileAccess.Read))
+                lbl_profile_user_name.Text = correntUser.FullName;
+
+                if (!string.IsNullOrWhiteSpace(correntUser.Photo) && File.Exists(correntUser.Photo))
                 {
-                    picbox_admin_portal.Image = Image.FromStream(stream);
+                    using (var stream = new FileStream(correntUser.Photo, FileMode.Open, FileAccess.Read))
+                    {
+                        picbox_admin_portal.Image = Image.FromStream(stream);
+                    }
                 }
+            }
+            catch (Exception ex)  
+            {
+                MessageBox.Show("Error loading user profile: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
