@@ -105,16 +105,6 @@ namespace Hospital_Management_System
             }
         }
 
-        public bool IsEmailExists(string email, int? excludeUserId = null)
-        {
-            return context.Users.Any(u => u.Email == email && (!excludeUserId.HasValue || u.UserID != excludeUserId.Value));
-        }
-
-        public bool IsPhoneExists(string phone, int? excludeUserId = null)
-        {
-            return context.Users.Any(u => u.PhoneNumber == phone && (!excludeUserId.HasValue || u.UserID != excludeUserId.Value));
-        }
-
         public string SaveProfilePicture(string sourceFilePath)
         {
             try
