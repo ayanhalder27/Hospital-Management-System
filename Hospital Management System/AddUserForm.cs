@@ -66,7 +66,7 @@ namespace Hospital_Management_System
                     specialization = txtSpecialization.Text;
                 }
 
-                var result = userService.CreateUser(txtFullName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text, cmbGender.Text, dtpDOB.Value, roleId, specialization, visitFee);
+                var result = userService.CreateUser(txtFullName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text, cmbGender.Text, dtpDOB.Value, roleId, specialization, visitFee, photoPath);
                 if (!result.Success)
                 {
                     MessageBox.Show(result.ErrorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);

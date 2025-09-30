@@ -169,7 +169,7 @@ namespace Hospital_Management_System
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (!userService.IsEmailUnique(txtEmail.Text))
+            if (!userService.IsEmailUnique(txtEmail.Text) && txtEmail.Text != currentUser.Email)
             {
                 lbl_warning_email_uniqueness.Visible = true;
             }
@@ -181,7 +181,7 @@ namespace Hospital_Management_System
 
         private void txtPhoneNum_TextChanged(object sender, EventArgs e)
         {
-            if (!userService.IsPhoneUnique(txtPhoneNum.Text))
+            if (!userService.IsPhoneUnique(txtPhoneNum.Text) && txtPhoneNum.Text != currentUser.PhoneNumber)
             {
                 lbl_warning_phoneNum_uniqueness.Visible = true;
             }

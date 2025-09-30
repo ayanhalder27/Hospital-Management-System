@@ -196,7 +196,7 @@ namespace Hospital_Management_System
             
         }
 
-        public (bool Success, string ErrorMessage) CreateUser(string fullName, string email, string phone, string address,string gender, DateTime dob, int roleId, string specialization = null, double? visitFee = null)
+        public (bool Success, string ErrorMessage) CreateUser(string fullName, string email, string phone, string address,string gender, DateTime dob, int roleId, string specialization = null, double? visitFee = null, string photoPath = null)
         {
             // Validate input
             string validationError = ValidateUserInput(fullName, email, phone, address, gender, dob);
@@ -231,11 +231,68 @@ namespace Hospital_Management_System
                 Status = true,
                 RoleID = roleId,
                 Specialization = specialization,
-                Visit_Fee = visitFee
+                Visit_Fee = visitFee,
+                Photo = photoPath
             };
             AddUser(user);
 
             return (true, null);
+        }
+
+        public (bool Success, string ErrorMessage) UpdateUsers(int userId, string fullName, string email, string phone, string address,string gender, DateTime dob, string specialization = null, double? visitFee = null, string photoPath = null)
+        {
+            var user = context.Users.FirstOrDefault(u => u.UserID == userId && u.Status == true);
+            if (user == null)
+                return (false, "User not found.");
+
+            // Validate
+            string validationError = ValidateUserInput(fullName, email, phone, address, gender, dob);
+            if (validationError != null)
+                return (false, validationError);
+
+            // Check email uniqueness (ignore current user)
+            if (context.Users.Any(u => u.Email == email && u.UserID != userId))
+                return (false, "Email already exists.");
+
+            // Check phone uniqueness (ignore current user)
+            if (context.Users.Any(u => u.PhoneNumber == phone && u.UserID != userId))
+                return (false, "Phone number already exists.");
+
+            // Update fields
+            user.FullName = fullName;
+            user.Email = email;
+            user.PhoneNumber = phone;
+            user.Address = address;
+            user.Gender = gender;
+            user.DOB = dob;
+            user.Specialization = specialization;
+            user.Visit_Fee = visitFee;
+
+            // Update photo (optional)
+            if (!string.IsNullOrEmpty(photoPath))
+            {
+                user.Photo = photoPath;
+            }
+
+            context.SaveChanges();
+            return (true, null);
+        }
+
+        public (bool Success, string ErrorMessage) DeleteUser(int userId)
+        {
+            var user = context.Users.FirstOrDefault(u => u.UserID == userId && u.Status == true);
+            if (user == null)
+                return (false, "User not found or already deleted.");
+
+            user.Status = false;  // Soft delete
+            context.SaveChanges();
+
+            return (true, null);
+        }
+
+        public User GetUserById(int userId)
+        {
+            return context.Users.FirstOrDefault(u => u.UserID == userId && u.Status == true);
         }
     }
 }

@@ -105,5 +105,18 @@ namespace Hospital_Management_System
             var adminPortal = new AdminPortal(currentUser.UserID);
             adminPortal.Show();
         }
+
+        private void dgvUsers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // make sure it’s not a header row
+            {
+                int userId = (int)dgvUsers.Rows[e.RowIndex].Cells["UserID"].Value;
+
+                var form = new UpdateDeleteUser(userId);
+                form.ShowDialog();
+
+                LoadUsers(); // Refresh DataGridView after update/delete
+            }
+        }
     }
 }

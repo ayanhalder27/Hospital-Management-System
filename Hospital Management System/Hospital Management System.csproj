@@ -172,6 +172,12 @@
     <Compile Include="Role.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="UpdateDeleteUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateDeleteUser.Designer.cs">
+      <DependentUpon>UpdateDeleteUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
@@ -224,6 +230,9 @@
     </Compile>
     <EmbeddedResource Include="ReceptionistPortal.resx">
       <DependentUpon>ReceptionistPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateDeleteUser.resx">
+      <DependentUpon>UpdateDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserProfileForm.resx">
       <DependentUpon>UserProfileForm.cs</DependentUpon>
