@@ -150,6 +150,7 @@ namespace Hospital_Management_System
         private void btn_cancel_profilePic_Click(object sender, EventArgs e)
         {
             picPhoto.Image = null;
+            photoPath = null;
         }
 
         private void btn_clearAll_form_Click(object sender, EventArgs e)

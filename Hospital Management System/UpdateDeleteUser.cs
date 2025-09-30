@@ -118,5 +118,11 @@ namespace Hospital_Management_System
         {
             LoadUserData(); 
         }
+
+        private void btn_cancel_profilePic_Click(object sender, EventArgs e)
+        {
+            picPhoto.Image = null;
+            photoPath = null;
+        }
     }
 }

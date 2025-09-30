@@ -60,6 +60,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbGender = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_cancel_profilePic = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pnlDoctorFields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPhoto)).BeginInit();
             this.SuspendLayout();
@@ -228,7 +229,7 @@
             this.btnChangePic.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePic.ForeColor = System.Drawing.Color.Black;
             this.btnChangePic.IndicateFocus = true;
-            this.btnChangePic.Location = new System.Drawing.Point(811, 449);
+            this.btnChangePic.Location = new System.Drawing.Point(770, 449);
             this.btnChangePic.Name = "btnChangePic";
             this.btnChangePic.Size = new System.Drawing.Size(174, 28);
             this.btnChangePic.TabIndex = 82;
@@ -589,12 +590,36 @@
             this.cmbGender.Size = new System.Drawing.Size(179, 36);
             this.cmbGender.TabIndex = 90;
             // 
+            // btn_cancel_profilePic
+            // 
+            this.btn_cancel_profilePic.Animated = true;
+            this.btn_cancel_profilePic.AutoRoundedCorners = true;
+            this.btn_cancel_profilePic.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel_profilePic.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancel_profilePic.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancel_profilePic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_cancel_profilePic.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_cancel_profilePic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_cancel_profilePic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_cancel_profilePic.FillColor2 = System.Drawing.Color.Navy;
+            this.btn_cancel_profilePic.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btn_cancel_profilePic.ForeColor = System.Drawing.Color.White;
+            this.btn_cancel_profilePic.IndicateFocus = true;
+            this.btn_cancel_profilePic.Location = new System.Drawing.Point(950, 449);
+            this.btn_cancel_profilePic.Name = "btn_cancel_profilePic";
+            this.btn_cancel_profilePic.Size = new System.Drawing.Size(94, 28);
+            this.btn_cancel_profilePic.TabIndex = 92;
+            this.btn_cancel_profilePic.Text = "Cancel";
+            this.btn_cancel_profilePic.UseTransparentBackground = true;
+            this.btn_cancel_profilePic.Click += new System.EventHandler(this.btn_cancel_profilePic_Click);
+            // 
             // UpdateDeleteUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1110, 733);
+            this.Controls.Add(this.btn_cancel_profilePic);
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.lbl_warning_email_uniqueness);
             this.Controls.Add(this.btn_close);
@@ -669,5 +694,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox cmbGender;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_cancel_profilePic;
     }
 }
