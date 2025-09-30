@@ -91,8 +91,20 @@
     <Compile Include="Appointments.Designer.cs">
       <DependentUpon>Appointments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointment_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment_form.Designer.cs">
+      <DependentUpon>Appointment_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Billing.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Billing_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing_form.Designer.cs">
+      <DependentUpon>Billing_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Check_login_authorization.cs" />
     <Compile Include="DoctorPortal.cs">
