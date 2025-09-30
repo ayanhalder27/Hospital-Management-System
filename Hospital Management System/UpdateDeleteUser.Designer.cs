@@ -234,7 +234,6 @@
             this.btnChangePic.TabIndex = 82;
             this.btnChangePic.Text = "Change profile pic";
             this.btnChangePic.UseTransparentBackground = true;
-            this.btnChangePic.Visible = false;
             this.btnChangePic.Click += new System.EventHandler(this.btnChangePic_Click);
             // 
             // btn_delete_user
