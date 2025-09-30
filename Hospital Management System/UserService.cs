@@ -115,7 +115,7 @@ namespace Hospital_Management_System
                 string fileName = Path.GetFileName(sourceFilePath);
 
                 // Set destination folder inside your project Resources/Users
-                string photoFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "Users");
+                string photoFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "Users Profile Pic");
 
                 // Make sure the folder exists
                 if (!Directory.Exists(photoFolder))
@@ -150,6 +150,92 @@ namespace Hospital_Management_System
             }
         }
 
+        public (string username, string password) GenerateCredentials(string fullName, string email, string phone)
+        {
+            // Username: fullname (lowercase, no spaces) + nextUserId
+            int nextId = (context.Users.Any() ? context.Users.Max(u => u.UserID) : 1000) + 1;
+            string username = fullName.ToLower().Replace(" ", "") + nextId;
 
+            // Password: email prefix + last 5 digits of phone
+            string emailPrefix = email.Split('@')[0];
+            string phoneSuffix = phone.Length >= 5 ? phone.Substring(phone.Length - 5) : phone;
+            string password = emailPrefix + phoneSuffix;
+
+            return (username, password);
+        }
+
+        // ✅ Check if Email is unique
+        public bool IsEmailUnique(string email)
+        {
+            return !context.Users.Any(u => u.Email == email);
+        }
+
+        // ✅ Check if Phone is unique
+        public bool IsPhoneUnique(string phone)
+        {
+            return !context.Users.Any(u => u.PhoneNumber == phone);
+        }
+
+        public string ValidateUserInput(string fullName, string email, string phone, string address, string gender, DateTime? dob)
+        {
+            if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(email) ||string.IsNullOrWhiteSpace(phone) ||string.IsNullOrWhiteSpace(address) ||string.IsNullOrWhiteSpace(gender) ||!dob.HasValue)
+            {
+                return "All fields are required.";
+            }
+            if (!email.Contains("@"))
+            {
+                return "Invalid email format. Email must contain '@'.";
+            }
+            return null; // No error
+        }
+
+        public void AddUser(User user)
+        {
+            context.Users.Add(user);
+            context.SaveChanges();
+            
+        }
+
+        public (bool Success, string ErrorMessage) CreateUser(string fullName, string email, string phone, string address,string gender, DateTime dob, int roleId, string specialization = null, double? visitFee = null)
+        {
+            // Validate input
+            string validationError = ValidateUserInput(fullName, email, phone, address, gender, dob);
+            if (validationError != null)
+            {
+                return (false, validationError);
+            }
+            if (!IsEmailUnique(email))
+            {
+                return (false, "Email already exists.");
+            }
+            if (!IsPhoneUnique(phone))
+            {
+                return (false, "Phone number already exists.");
+            }
+
+            // Generate credentials
+            var (username, password) = GenerateCredentials(fullName, email, phone);
+
+
+            // Create user object
+            var user = new User
+            {
+                FullName = fullName,
+                Username = username,
+                Email = email,
+                PhoneNumber = phone,
+                Address = address,
+                Gender = gender,
+                DOB = dob,
+                Password = password,
+                Status = true,
+                RoleID = roleId,
+                Specialization = specialization,
+                Visit_Fee = visitFee
+            };
+            AddUser(user);
+
+            return (true, null);
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace Hospital_Management_System
     {
         private HospitalContext context = new HospitalContext();
         private  UserService userService = new UserService();
+        private string photoPath;
         private User currentUser;
         private int UserID;
         public UserProfileForm(int userid)
@@ -74,7 +75,7 @@ namespace Hospital_Management_System
 
                     if (!string.IsNullOrEmpty(currentUser.Photo) && File.Exists(currentUser.Photo))
                     {
-                        picProfileBox.Image = Image.FromFile(currentUser.Photo);
+                        picPhoto.Image = Image.FromFile(currentUser.Photo);
                     }
                 }
             }
@@ -106,11 +107,16 @@ namespace Hospital_Management_System
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    currentUser.Photo = ofd.FileName;
-                    picProfileBox.Image = Image.FromFile(ofd.FileName);
+                    string sourceFilePath = ofd.FileName;
+                    string relativePath = userService.SaveProfilePicture(sourceFilePath);
+                    photoPath = relativePath;
+                    if (!string.IsNullOrEmpty(relativePath))
+                    {
+                        picPhoto.Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+                    }
                 }
             }
         }
@@ -125,6 +131,10 @@ namespace Hospital_Management_System
                 currentUser.Address = txtAddress.Text;
                 currentUser.Gender = txtGender.Text;
                 currentUser.DOB = DateTime.Parse(datetimeDOB.Text);
+                if (!string.IsNullOrEmpty(photoPath))
+                {
+                    currentUser.Photo = photoPath;
+                }
 
                 if (currentUser.RoleID == 4) // Doctor
                 {
@@ -155,6 +165,30 @@ namespace Hospital_Management_System
         {
             this.Hide();
             new AdminPortal(UserID).Show();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (!userService.IsEmailUnique(txtEmail.Text))
+            {
+                lbl_warning_email_uniqueness.Visible = true;
+            }
+            else
+            {
+                lbl_warning_email_uniqueness.Visible = false;
+            }
+        }
+
+        private void txtPhoneNum_TextChanged(object sender, EventArgs e)
+        {
+            if (!userService.IsPhoneUnique(txtPhoneNum.Text))
+            {
+                lbl_warning_phoneNum_uniqueness.Visible = true;
+            }
+            else
+            {
+                lbl_warning_phoneNum_uniqueness.Visible = false;
+            }
         }
     }
 }

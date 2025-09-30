@@ -78,7 +78,16 @@ namespace Hospital_Management_System
 
         private void btn_add_new_user_Click(object sender, EventArgs e)
         {
-
+            if (isPatientView)
+            {
+                var addPatientForm = new AddUserForm(true);
+                addPatientForm.ShowDialog();
+            }
+            else
+            {
+                var addEmployeeForm = new AddUserForm(false);
+                addEmployeeForm.ShowDialog();
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
