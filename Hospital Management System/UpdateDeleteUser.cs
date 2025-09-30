@@ -25,36 +25,43 @@ namespace Hospital_Management_System
 
         private void LoadUserData()
         {
-            var user = userService.GetUserById(userId);
-            if (user == null) return;
-
-            txtUserId.Text = user.UserID.ToString();       // Read-only
-            txtUserName.Text = user.Username;              // Read-only
-            txtRole.Text = user.Role.RoleName;             // Read-only
-
-            txtFullName.Text = user.FullName;
-            txtEmail.Text = user.Email;
-            txtPhone.Text = user.PhoneNumber;
-            txtAddress.Text = user.Address;
-            cmbGender.Text = user.Gender;
-            dtpDOB.Value = user.DOB;
-
-            // Doctor-only fields
-            if (user.RoleID == 4)
+            try
             {
-                pnlDoctorFields.Visible = true;
-                txtSpecialization.Text = user.Specialization;
-                txtVisitFee.Text = user.Visit_Fee?.ToString();
+                var user = userService.GetUserById(userId);
+                if (user == null) return;
+
+                txtUserId.Text = user.UserID.ToString();       // Read-only
+                txtUserName.Text = user.Username;              // Read-only
+                txtRole.Text = user.Role.RoleName;             // Read-only
+
+                txtFullName.Text = user.FullName;
+                txtEmail.Text = user.Email;
+                txtPhone.Text = user.PhoneNumber;
+                txtAddress.Text = user.Address;
+                cmbGender.Text = user.Gender;
+                dtpDOB.Value = user.DOB;
+
+                // Doctor-only fields
+                if (user.RoleID == 4)
+                {
+                    pnlDoctorFields.Visible = true;
+                    txtSpecialization.Text = user.Specialization;
+                    txtVisitFee.Text = user.Visit_Fee?.ToString();
+                }
+                else
+                {
+                    pnlDoctorFields.Visible = false;
+                }
+
+                // Profile picture
+                if (!string.IsNullOrEmpty(user.Photo) && File.Exists(user.Photo))
+                {
+                    picPhoto.Image = Image.FromFile(user.Photo);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pnlDoctorFields.Visible = false;
-            }
-
-            // Profile picture
-            if (!string.IsNullOrEmpty(user.Photo) && File.Exists(user.Photo))
-            {
-                picPhoto.Image = Image.FromFile(user.Photo);
+                MessageBox.Show("Error loading user data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -65,53 +72,78 @@ namespace Hospital_Management_System
 
         private void btn_update_and_save_Click(object sender, EventArgs e)
         {
-            var visitFee = string.IsNullOrEmpty(txtVisitFee.Text) ? (double?)null : double.Parse(txtVisitFee.Text);
-
-            var result = userService.UpdateUsers(userId, txtFullName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text, cmbGender.Text, dtpDOB.Value, txtSpecialization.Text, visitFee, photoPath.ToString());
-
-            if (!result.Success)
+            try
             {
-                MessageBox.Show(result.ErrorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                var visitFee = string.IsNullOrEmpty(txtVisitFee.Text) ? (double?)null : double.Parse(txtVisitFee.Text);
 
-            MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                var result = userService.UpdateUsers(userId, txtFullName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text, cmbGender.Text, dtpDOB.Value, txtSpecialization.Text, visitFee, photoPath);
+
+                if (!result.Success)
+                {
+                    MessageBox.Show(result.ErrorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number for Visit Fee.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnChangePic_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            try
             {
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                if (ofd.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog ofd = new OpenFileDialog())
                 {
-                    string sourceFilePath = ofd.FileName;
-                    string relativePath = userService.SaveProfilePicture(sourceFilePath);
-                    photoPath = relativePath;
-                    if (!string.IsNullOrEmpty(relativePath))
+                    ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        picPhoto.Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+                        string sourceFilePath = ofd.FileName;
+                        string relativePath = userService.SaveProfilePicture(sourceFilePath);
+                        photoPath = relativePath;
+                        if (!string.IsNullOrEmpty(relativePath))
+                        {
+                            picPhoto.Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btn_delete_user_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show("Are you sure you want to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirm != DialogResult.Yes) return;
-
-            var result = userService.DeleteUser(userId);
-
-            if (!result.Success)
+            try
             {
-                MessageBox.Show(result.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                var confirm = MessageBox.Show("Are you sure you want to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm != DialogResult.Yes) return;
 
-            MessageBox.Show("User deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+                var result = userService.DeleteUser(userId);
+
+                if (!result.Success)
+                {
+                    MessageBox.Show(result.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                MessageBox.Show("User deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void UpdateDeleteUser_Load(object sender, EventArgs e)
@@ -121,8 +153,16 @@ namespace Hospital_Management_System
 
         private void btn_cancel_profilePic_Click(object sender, EventArgs e)
         {
-            picPhoto.Image = null;
-            photoPath = null;
+            try
+            {
+                picPhoto.Image = null;
+                photoPath = null;
+                context.Users.Find(userId).Photo = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error removing profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

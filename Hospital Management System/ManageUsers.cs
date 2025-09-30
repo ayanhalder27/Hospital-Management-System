@@ -27,20 +27,26 @@ namespace Hospital_Management_System
 
         private void ManageUsers_Load(object sender, EventArgs e)
         {
-            LoadRoles();
-            LoadUsers();
-            if (isPatientView)
+            try
             {
-                lbl_manage_user_type.Text = "Manage Patients";
-                cmbRoles.Visible = false;
+                LoadRoles();
+                LoadUsers();
+                if (isPatientView)
+                {
+                    lbl_manage_user_type.Text = "Manage Patients";
+                    cmbRoles.Visible = false;
+                }
+                else
+                {
+                    lbl_manage_user_type.Text = "Manage Users";
+                    cmbRoles.Visible = true;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lbl_manage_user_type.Text = "Manage Users";
-                cmbRoles.Visible = true;
+                MessageBox.Show("Error loading form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void LoadRoles()
         {
             var roles = userService.GetRoles();
@@ -60,10 +66,17 @@ namespace Hospital_Management_System
 
         private void ApplyFilters()
         {
-            int? selectedRoleId = cmbRoles.SelectedValue as int?;
-            string searchText = txtSearch.Text;
+            try
+            {
+                int? selectedRoleId = cmbRoles.SelectedValue as int?;
+                string searchText = txtSearch.Text;
 
-            dgvUsers.DataSource = userService.GetUsers(isPatientView, selectedRoleId, searchText);
+                dgvUsers.DataSource = userService.GetUsers(isPatientView, selectedRoleId, searchText);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error applying filters: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -78,15 +91,22 @@ namespace Hospital_Management_System
 
         private void btn_add_new_user_Click(object sender, EventArgs e)
         {
-            if (isPatientView)
+            try
             {
-                var addPatientForm = new AddUserForm(true);
-                addPatientForm.ShowDialog();
+                if (isPatientView)
+                {
+                    var addPatientForm = new AddUserForm(true);
+                    addPatientForm.ShowDialog();
+                }
+                else
+                {
+                    var addEmployeeForm = new AddUserForm(false);
+                    addEmployeeForm.ShowDialog();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var addEmployeeForm = new AddUserForm(false);
-                addEmployeeForm.ShowDialog();
+                MessageBox.Show("Error opening add user form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -101,21 +121,35 @@ namespace Hospital_Management_System
 
         private void pic_back_button_Click(object sender, EventArgs e)
         {
-            this.Close();
-            var adminPortal = new AdminPortal(currentUser.UserID);
-            adminPortal.Show();
+            try
+            {
+                this.Close();
+                var adminPortal = new AdminPortal(currentUser.UserID);
+                adminPortal.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error returning to admin portal: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvUsers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // make sure it’s not a header row
+            try
             {
-                int userId = (int)dgvUsers.Rows[e.RowIndex].Cells["UserID"].Value;
+                if (e.RowIndex >= 0) // make sure it’s not a header row
+                {
+                    int userId = (int)dgvUsers.Rows[e.RowIndex].Cells["UserID"].Value;
 
-                var form = new UpdateDeleteUser(userId);
-                form.ShowDialog();
+                    var form = new UpdateDeleteUser(userId);
+                    form.ShowDialog();
 
-                LoadUsers(); // Refresh DataGridView after update/delete
+                    LoadUsers(); // Refresh DataGridView after update/delete
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening user details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

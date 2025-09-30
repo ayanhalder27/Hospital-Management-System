@@ -14,13 +14,13 @@ namespace Hospital_Management_System
     public partial class UserProfileForm : Form
     {
         private HospitalContext context = new HospitalContext();
-        private  UserService userService = new UserService();
+        private UserService userService = new UserService();
         private string photoPath;
         private User currentUser;
         private int UserID;
         public UserProfileForm(int userid)
         {
-            InitializeComponent();;
+            InitializeComponent(); ;
             this.UserID = userid;
             currentUser = context.Users.FirstOrDefault(u => u.UserID == UserID);
         }
@@ -35,7 +35,7 @@ namespace Hospital_Management_System
         {
             try
             {
-               return context.Roles.Where(r => r.RoleID == roleId).Select(r => r.RoleName).FirstOrDefault();   
+                return context.Roles.Where(r => r.RoleID == roleId).Select(r => r.RoleName).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -89,35 +89,50 @@ namespace Hospital_Management_System
 
         private void SetReadOnlyMode(bool isReadOnly)
         {
-            txtUserId.ReadOnly = true; // Always read-only
-            txtUserRoleName.ReadOnly = true; // Always read-only
-            txtFullName.ReadOnly = isReadOnly;
-            txtUserName.ReadOnly = true; // Username should not be editable
-            txtEmail.ReadOnly = isReadOnly;
-            txtPhoneNum.ReadOnly = isReadOnly;
-            txtAddress.ReadOnly = isReadOnly;
-            txtGender.ReadOnly = isReadOnly;
-            datetimeDOB.Enabled = !isReadOnly;
+            try
+            {
+                txtUserId.ReadOnly = true; // Always read-only
+                txtUserRoleName.ReadOnly = true; // Always read-only
+                txtFullName.ReadOnly = isReadOnly;
+                txtUserName.ReadOnly = true; // Username should not be editable
+                txtEmail.ReadOnly = isReadOnly;
+                txtPhoneNum.ReadOnly = isReadOnly;
+                txtAddress.ReadOnly = isReadOnly;
+                txtGender.ReadOnly = isReadOnly;
+                datetimeDOB.Enabled = !isReadOnly;
 
-            txtSpecialization.ReadOnly = isReadOnly;
-            txtVisitFee.ReadOnly = isReadOnly;
+                txtSpecialization.ReadOnly = isReadOnly;
+                txtVisitFee.ReadOnly = isReadOnly;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error setting read-only mode: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnChangePic_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            try
             {
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                if (ofd.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog ofd = new OpenFileDialog())
                 {
-                    string sourceFilePath = ofd.FileName;
-                    string relativePath = userService.SaveProfilePicture(sourceFilePath);
-                    photoPath = relativePath;
-                    if (!string.IsNullOrEmpty(relativePath))
+                    ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        picPhoto.Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+                        string sourceFilePath = ofd.FileName;
+                        string relativePath = userService.SaveProfilePicture(sourceFilePath);
+                        photoPath = relativePath;
+                        if (!string.IsNullOrEmpty(relativePath))
+                        {
+                            picPhoto.Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -169,25 +184,39 @@ namespace Hospital_Management_System
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (!userService.IsEmailUnique(txtEmail.Text) && txtEmail.Text != currentUser.Email)
+            try
             {
-                lbl_warning_email_uniqueness.Visible = true;
+                if (!userService.IsEmailUnique(txtEmail.Text) && txtEmail.Text != currentUser.Email)
+                {
+                    lbl_warning_email_uniqueness.Visible = true;
+                }
+                else
+                {
+                    lbl_warning_email_uniqueness.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lbl_warning_email_uniqueness.Visible = false;
+                MessageBox.Show("Error validating email uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtPhoneNum_TextChanged(object sender, EventArgs e)
         {
-            if (!userService.IsPhoneUnique(txtPhoneNum.Text) && txtPhoneNum.Text != currentUser.PhoneNumber)
+            try
             {
-                lbl_warning_phoneNum_uniqueness.Visible = true;
+                if (!userService.IsPhoneUnique(txtPhoneNum.Text) && txtPhoneNum.Text != currentUser.PhoneNumber)
+                {
+                    lbl_warning_phoneNum_uniqueness.Visible = true;
+                }
+                else
+                {
+                    lbl_warning_phoneNum_uniqueness.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lbl_warning_phoneNum_uniqueness.Visible = false;
+                MessageBox.Show("Error validating phone number uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

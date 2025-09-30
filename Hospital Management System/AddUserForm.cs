@@ -27,19 +27,26 @@ namespace Hospital_Management_System
 
         private void btnChangePic_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog())
+            try
             {
-                ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                if (ofd.ShowDialog() == DialogResult.OK)
+                using (OpenFileDialog ofd = new OpenFileDialog())
                 {
-                    string sourceFilePath = ofd.FileName;
-                    string relativePath = userService.SaveProfilePicture(sourceFilePath);
-                    photoPath = relativePath;
-                    if (!string.IsNullOrEmpty(relativePath))
+                    ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
+                    if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        picPhoto.Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+                        string sourceFilePath = ofd.FileName;
+                        string relativePath = userService.SaveProfilePicture(sourceFilePath);
+                        photoPath = relativePath;
+                        if (!string.IsNullOrEmpty(relativePath))
+                        {
+                            picPhoto.Image = Image.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath));
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -108,37 +115,58 @@ namespace Hospital_Management_System
 
         private void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbRoles.SelectedItem is Role selectedRole && selectedRole.RoleName == "Doctor")
+            try
             {
-                pnlDoctorFields.Visible = true;
+                if (cmbRoles.SelectedItem is Role selectedRole && selectedRole.RoleName == "Doctor")
+                {
+                    pnlDoctorFields.Visible = true;
+                }
+                else
+                {
+                    pnlDoctorFields.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                pnlDoctorFields.Visible = false;
+                MessageBox.Show("Error handling role selection: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
-            if (!userService.IsEmailUnique(txtEmail.Text))
+            try
             {
-                lbl_warning_eamil_uniqueness.Visible = true;
+                if (!userService.IsEmailUnique(txtEmail.Text))
+                {
+                    lbl_warning_eamil_uniqueness.Visible = true;
+                }
+                else
+                {
+                    lbl_warning_eamil_uniqueness.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lbl_warning_eamil_uniqueness.Visible = false;
+                MessageBox.Show("Error validating email: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
-            if (!userService.IsPhoneUnique(txtPhone.Text))
+            try
             {
-                lbl_warning_phoneNum_uniqueness.Visible = true;
+                if (!userService.IsPhoneUnique(txtPhone.Text))
+                {
+                    lbl_warning_phoneNum_uniqueness.Visible = true;
+                }
+                else
+                {
+                    lbl_warning_phoneNum_uniqueness.Visible = false;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lbl_warning_phoneNum_uniqueness.Visible = false;
+                MessageBox.Show("Error validating phone number: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -149,22 +177,36 @@ namespace Hospital_Management_System
 
         private void btn_cancel_profilePic_Click(object sender, EventArgs e)
         {
-            picPhoto.Image = null;
-            photoPath = null;
+            try
+            {
+                picPhoto.Image = null;
+                photoPath = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error removing profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_clearAll_form_Click(object sender, EventArgs e)
         {
-            cmbRoles.SelectedIndex = -1;
-            txtFullName.Clear();
-            txtEmail.Clear();
-            txtPhone.Clear();
-            txtAddress.Clear();
-            cmbGender.SelectedIndex = -1;
-            dtpDOB.Value = DateTime.Now;
-            txtSpecialization.Clear();
-            txtVisitFee.Clear();
-            picPhoto.Image = null; 
+            try
+            {
+                cmbRoles.SelectedIndex = -1;
+                txtFullName.Clear();
+                txtEmail.Clear();
+                txtPhone.Clear();
+                txtAddress.Clear();
+                cmbGender.SelectedIndex = -1;
+                dtpDOB.Value = DateTime.Now;
+                txtSpecialization.Clear();
+                txtVisitFee.Clear();
+                picPhoto.Image = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error clearing form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
