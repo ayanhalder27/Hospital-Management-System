@@ -218,7 +218,7 @@
             this.dtpAppointment.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtpAppointment.IndicateFocus = true;
-            this.dtpAppointment.Location = new System.Drawing.Point(632, 150);
+            this.dtpAppointment.Location = new System.Drawing.Point(622, 150);
             this.dtpAppointment.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpAppointment.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpAppointment.Name = "dtpAppointment";
@@ -261,7 +261,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDoctors.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDoctors.GridColor = System.Drawing.Color.Black;
-            this.dgvDoctors.Location = new System.Drawing.Point(971, 196);
+            this.dgvDoctors.Location = new System.Drawing.Point(957, 196);
             this.dgvDoctors.MultiSelect = false;
             this.dgvDoctors.Name = "dgvDoctors";
             this.dgvDoctors.ReadOnly = true;
@@ -292,7 +292,6 @@
             this.dgvDoctors.ThemeStyle.RowsStyle.Height = 35;
             this.dgvDoctors.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDoctors.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-//            this.dgvDoctors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoctors_CellContentClick);
             this.dgvDoctors.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDoctors_CellMouseDoubleClick);
             // 
             // txtDoctorSearch
@@ -314,7 +313,7 @@
             this.txtDoctorSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDoctorSearch.IconRight = global::Hospital_Management_System.Properties.Resources.search;
             this.txtDoctorSearch.IconRightSize = new System.Drawing.Size(40, 40);
-            this.txtDoctorSearch.Location = new System.Drawing.Point(971, 132);
+            this.txtDoctorSearch.Location = new System.Drawing.Point(957, 132);
             this.txtDoctorSearch.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.txtDoctorSearch.Name = "txtDoctorSearch";
             this.txtDoctorSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -427,7 +426,7 @@
             this.guna2GradientPanel2.Controls.Add(this.label15);
             this.guna2GradientPanel2.Controls.Add(this.label16);
             this.guna2GradientPanel2.Controls.Add(this.lbldocotor_name);
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(974, 439);
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(960, 439);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(567, 251);
             this.guna2GradientPanel2.TabIndex = 39;
@@ -523,7 +522,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.IndicateFocus = true;
-            this.btnSave.Location = new System.Drawing.Point(646, 475);
+            this.btnSave.Location = new System.Drawing.Point(636, 475);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(286, 57);
             this.btnSave.TabIndex = 40;
@@ -546,7 +545,7 @@
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
             this.btnRefresh.IndicateFocus = true;
-            this.btnRefresh.Location = new System.Drawing.Point(718, 633);
+            this.btnRefresh.Location = new System.Drawing.Point(708, 633);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(158, 57);
             this.btnRefresh.TabIndex = 41;
