@@ -164,5 +164,45 @@ namespace Hospital_Management_System
                 MessageBox.Show("Error removing profile picture: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var user = userService.GetUserById(userId);
+                if (!userService.IsEmailUnique(txtEmail.Text) && txtEmail.Text != user.Email)
+                {
+                    lbl_warning_email_uniqueness.Visible = true;
+                }
+                else
+                {
+                    lbl_warning_email_uniqueness.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error validating email uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var user = userService.GetUserById(userId);
+                if (!userService.IsPhoneUnique(txtPhone.Text) && txtPhone.Text != user.PhoneNumber)
+                {
+                    lbl_warning_phoneNum_uniqueness.Visible = true;
+                }
+                else
+                {
+                    lbl_warning_phoneNum_uniqueness.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error validating phone uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

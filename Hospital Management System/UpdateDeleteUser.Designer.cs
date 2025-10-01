@@ -421,6 +421,7 @@
             this.txtPhone.SelectedText = "";
             this.txtPhone.Size = new System.Drawing.Size(391, 35);
             this.txtPhone.TabIndex = 72;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtEmail
             // 
@@ -444,6 +445,7 @@
             this.txtEmail.SelectedText = "";
             this.txtEmail.Size = new System.Drawing.Size(391, 35);
             this.txtEmail.TabIndex = 71;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtUserName
             // 
