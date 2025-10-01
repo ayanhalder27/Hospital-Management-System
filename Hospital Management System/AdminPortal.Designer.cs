@@ -207,6 +207,7 @@
             this.btn_manage_appointment.TabIndex = 3;
             this.btn_manage_appointment.Text = "Appointment";
             this.btn_manage_appointment.UseTransparentBackground = true;
+            this.btn_manage_appointment.Click += new System.EventHandler(this.btn_manage_appointment_Click);
             // 
             // btn_manage_employee
             // 

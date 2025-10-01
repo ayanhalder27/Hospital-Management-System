@@ -142,8 +142,8 @@ namespace Hospital_Management_System
                 }
                 else
                 {
-                    lbl_warning_eamil_uniqueness.Visible = false;
-                }
+                    lbl_warning_eamil_uniqueness.Visible = false; 
+                }  
             }
             catch (Exception ex)
             {
