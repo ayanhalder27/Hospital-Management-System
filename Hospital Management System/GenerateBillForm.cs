@@ -21,9 +21,8 @@ namespace Hospital_Management_System
             InitializeComponent();
             this.billId = billId;
         }
-        public (bool Success, string Error) PayBill(int billId, decimal paidAmount, string paymentMethod, out string invoicePath)
+        public (bool Success, string Error) PayBill(int billId, decimal paidAmount)
         {
-            invoicePath = null;
             try
             {
                 var bill = context.Billings.FirstOrDefault(b => b.BillID == billId);
@@ -66,7 +65,7 @@ namespace Hospital_Management_System
                             join a in context.Appointments on b.AppointmentID equals a.AppointmentID
                             join p in context.Users on a.Patient_User_ID equals p.UserID
                             join d in context.Users on a.Doctor_User_ID equals d.UserID
-                            where b.Status == "Unpaid" || b.Status == "Paid"
+                            where b.Status == "Unpaid"
                             select new BillingDto
                             {
                                 BillID = b.BillID,
@@ -108,24 +107,119 @@ namespace Hospital_Management_System
 
         private void GenerateBillForm_Load(object sender, EventArgs e)
         {
-            var bills = GetBills(null);
-            billingDto = bills.FirstOrDefault(b => b.BillID == billId);
-            if (billingDto == null) { MessageBox.Show("Bill not found."); Close(); return; }
+            try
+            {
+                var bills = GetBills(null);
+                billingDto = bills.FirstOrDefault(b => b.BillID == billId);
+                if (billingDto == null) { MessageBox.Show("Bill not found."); Close(); return; }
 
-            lblBillID.Text = billingDto.BillID.ToString();
-            lblAppointmentID.Text = billingDto.AppointmentID.ToString();
-            lblPatientName.Text = billingDto.PatientName;
-            lblDoctorName.Text = billingDto.DoctorName;
-            lblFee.Text = billingDto.Amount.ToString();
-            lblBillDate.Text = billingDto.BillDate.ToString("dd-MMM-yyyy");
+                lblBillID.Text = billingDto.BillID.ToString();
+                lblAppointmentID.Text = billingDto.AppointmentID.ToString();
+                lblPatientName.Text = billingDto.PatientName;
+                lblDoctorName.Text = billingDto.DoctorName;
+                lblFee.Text = billingDto.Amount.ToString();
+                lblBillDate.Text = billingDto.BillDate.ToString("dd-MMM-yyyy");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading bill: " + ex.Message);
+                Close();
+            }
         }
 
-        private void rdoCash_CheckedChanged(object sender, EventArgs e)
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-            pnlCash.Visible = rdoCash.Checked;
-            pnlCard.Visible = rdoCard.Checked;
+            this.Close();
         }
 
+        private void txtPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtPaidAmount.Text))
+                {
+                    txtChangeAmount.Text = "";
+                    return;
+                }
+                if (decimal.TryParse(txtPaidAmount.Text, out decimal paid))
+                {
+                    if (paid < 0)
+                    {
+                        MessageBox.Show("Paid amount must be a positive value.",
+                                        "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtPaidAmount.Clear();
+                        txtChangeAmount.Text = "";
+                        return;
+                    }
 
+                    decimal change = paid - billingDto.Amount;
+                    txtChangeAmount.Text = change >= 0 ? change.ToString() : "";
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid decimal number.",
+                                    "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPaidAmount.Clear();
+                    txtChangeAmount.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error: {ex.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPaidAmount.Clear();
+                txtChangeAmount.Text = "";
+            }
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal paid = 0;
+                if (!decimal.TryParse(txtPaidAmount.Text, out paid))
+                {
+                    MessageBox.Show("Enter valid paid amount.");
+                    return;
+                }
+                var (ok, err) = PayBill(billId, paid);
+                if (!ok)
+                {
+                    MessageBox.Show(err);
+                    return;
+                }
+
+                // Ask user where to save invoice
+                using (var sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "PDF Files|*.pdf";
+                    sfd.FileName = $"Invoice_{billingDto.BillID}_{billingDto.PatientName}.pdf"; // default name
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        string path = InvoiceService.GenerateInvoicePdf(
+                            billingDto.BillID,
+                            billingDto.PatientName,
+                            billingDto.DoctorName,
+                            billingDto.Amount,
+                            "Cash",
+                            paid,
+                            paid - billingDto.Amount,
+                            DateTime.Now,
+                            sfd.FileName // pass full file path
+                        );
+
+                        MessageBox.Show("Payment saved and invoice generated: " + path);
+                    }
+                }
+
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error processing payment: " + ex.Message);
+            }
+        }
     }
 }

@@ -27,18 +27,18 @@ namespace Hospital_Management_System
                 var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
                 var normal = FontFactory.GetFont(FontFactory.HELVETICA, 12);
 
-                doc.Add(new Paragraph("Hospital Name", titleFont));
-                doc.Add(new Paragraph("Address line 1", normal));
+                doc.Add(new Paragraph("Project : Hospital Management System", titleFont));
+                doc.Add(new Paragraph("AIUB", normal));
                 doc.Add(new Paragraph(" "));
                 doc.Add(new Paragraph($"Bill ID: {billId}", normal));
-                doc.Add(new Paragraph($"Bill Date: {billDate:yyyy-MM-dd HH:mm}", normal));
+                doc.Add(new Paragraph($"Bill Date: {billDate:dd-MMM-yyyy}", normal));
                 doc.Add(new Paragraph($"Patient: {patientName}", normal));
                 doc.Add(new Paragraph($"Doctor: {doctorName}", normal));
                 doc.Add(new Paragraph(" "));
-                doc.Add(new Paragraph($"Doctor Visit Fee: {amount:C2}", normal));
+                doc.Add(new Paragraph($"Doctor Visit Fee: {amount}", normal));
                 doc.Add(new Paragraph($"Payment Method: {paymentMethod}", normal));
-                doc.Add(new Paragraph($"Paid Amount: {paidAmount:C2}", normal));
-                doc.Add(new Paragraph($"Change: {changeAmount:C2}", normal));
+                doc.Add(new Paragraph($"Paid Amount: {paidAmount}", normal));
+                doc.Add(new Paragraph($"Change: {changeAmount}", normal));
                 doc.Add(new Paragraph(" "));
                 doc.Add(new Paragraph("Thank you.", normal));
 

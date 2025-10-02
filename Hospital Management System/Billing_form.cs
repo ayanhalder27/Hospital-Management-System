@@ -37,7 +37,7 @@ namespace Hospital_Management_System
                             join a in context.Appointments on b.AppointmentID equals a.AppointmentID
                             join p in context.Users on a.Patient_User_ID equals p.UserID
                             join d in context.Users on a.Doctor_User_ID equals d.UserID
-                            where b.Status == "Unpaid" || b.Status == "Paid"
+                            where  b.Status == "Unpaid"
                             select new BillingDto
                             {
                                 BillID = b.BillID,
