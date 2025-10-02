@@ -96,7 +96,7 @@ namespace Hospital_Management_System
 
             foreach (var ap in pendings)
             {
-                var cancelDeadline = ap.AppointmentDate.Date.AddHours(12);
+                var cancelDeadline = ap.AppointmentDate.Date.AddHours(36);
                 if (now > cancelDeadline)
                 {
                     ap.Appoinment_Status = "Cancelled";

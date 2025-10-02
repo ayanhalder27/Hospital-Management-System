@@ -46,10 +46,11 @@ namespace Hospital_Management_System
             {
                 var today = DateTime.Now.Date;
                 var tomorrow = today.AddDays(1);
+                var dayAfterTomorrow = today.AddDays(2);
                 var dateOnly = appointmentDate.Date;
 
-                if (dateOnly != today && dateOnly != tomorrow)
-                    return (false, "Appointment must be for today or tomorrow.");
+                if (dateOnly != today && dateOnly != tomorrow && dateOnly != dayAfterTomorrow)
+                    return (false, "Appointment must be for today or tomorrow or day after tomorrow.");
 
                 var appointment = new Appointment
                 {
@@ -85,10 +86,11 @@ namespace Hospital_Management_System
 
                 var today = DateTime.Now.Date;
                 var tomorrow = today.AddDays(1);
+                var dayAfterTomorrow = today.AddDays(2);
                 var dateOnly = newDate.Date;
 
-                if (dateOnly != today && dateOnly != tomorrow)
-                    return (false, "Appointment must be for today or tomorrow.");
+                if (dateOnly != today && dateOnly != tomorrow && dateOnly != dayAfterTomorrow)
+                    return (false, "Appointment must be for today or tomorrow or day after tomorrow.");
 
                 appointment.AppointmentDate = newDate;
                 context.SaveChanges();
@@ -98,6 +100,23 @@ namespace Hospital_Management_System
             catch (Exception ex)
             {
                 return (false, "Error updating appointment: " + ex.Message);
+            }
+        }
+
+        public (bool Success, string Error) CancelAppointment(int appointmentId)
+        {
+            try
+            {
+                var ap = context.Appointments.FirstOrDefault(a => a.AppointmentID == appointmentId);
+                if (ap == null) return (false, "Appointment not found.");
+
+                ap.Appoinment_Status = "Cancelled";
+                context.SaveChanges();
+                return (true, null);
+            }
+            catch (Exception ex)
+            {
+                return (false, "Error cancelling appointment: " + ex.Message);
             }
         }
 
@@ -112,19 +131,6 @@ namespace Hospital_Management_System
                 }).ToList();
 
             dgvPatients.DataSource = allPatients;
-        }
-
-        private void CancelAppointment(int appointmentId)
-        {
-            var ap = context.Appointments.FirstOrDefault(a => a.AppointmentID == appointmentId);
-            if (ap == null)
-            {
-                MessageBox.Show("Appointment not found.");
-                return;
-            }
-
-            ap.Appoinment_Status = "Cancelled";
-            context.SaveChanges();
         }
 
         private void LoadDoctors()
@@ -183,6 +189,15 @@ namespace Hospital_Management_System
                 LoadAppointmentForUpdate(appointmentId.Value);
                 txtPatientSearch.Enabled = false;
                 txtDoctorSearch.Enabled = false;
+                btnSave.Visible = false;
+                btnUpdate.Visible = true;
+                btnCancell.Visible = true;
+            }
+            else
+            {
+                btnSave.Visible = true;
+                btnUpdate.Visible = false;
+                btnCancell.Visible = false;
             }
         }
 
@@ -206,24 +221,12 @@ namespace Hospital_Management_System
                 MessageBox.Show("Please select both patient and doctor.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             DateTime apDate = dtpAppointment.Value;
             (bool Success, string Error) result;
-
-            if (appointmentId.HasValue)
-            {
-                // Update appointment
-                result = UpdateAppointmentDate(appointmentId.Value, apDate);
-            }
-            else
-            {
-                // Create new appointment
-                result = CreateAppointment(selectedPatientId.Value, selectedDoctorId.Value, apDate);
-            }
-
+            result = CreateAppointment(selectedPatientId.Value, selectedDoctorId.Value, apDate);
             if (result.Success)
             {
-                MessageBox.Show("Saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("A new Appointment is added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
@@ -296,11 +299,47 @@ namespace Hospital_Management_System
             // Clear search & grid
             txtDoctorSearch.Text = "";
             dgvDoctors.Refresh();
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            DateTime apDate = dtpAppointment.Value;
+            (bool Success, string Error) result;
 
+            if (appointmentId.HasValue)
+            {
+                // Update appointment
+                result = UpdateAppointmentDate(appointmentId.Value, apDate);
+                if (result.Success)
+                {
+                    MessageBox.Show("Appointment updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(result.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnCancell_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Cancel this appointment?", "Confirm", MessageBoxButtons.YesNo);
+            if (confirm == DialogResult.Yes)
+            {
+                var res = CancelAppointment(appointmentId.Value);
+                
+                if (res.Success)
+                {
+                    MessageBox.Show("Appointment cancelled successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(res.Error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 
