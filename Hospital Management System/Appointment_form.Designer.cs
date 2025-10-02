@@ -35,18 +35,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pic_back_button = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dgvAppointments = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pic_back_button = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_back_button)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_back_button)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -58,6 +58,32 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1383, 106);
             this.guna2GradientPanel1.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(488, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(452, 58);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Manage Appointment";
+            // 
+            // pic_back_button
+            // 
+            this.pic_back_button.BackColor = System.Drawing.Color.Transparent;
+            this.pic_back_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_back_button.Image = global::Hospital_Management_System.Properties.Resources.back;
+            this.pic_back_button.ImageRotate = 0F;
+            this.pic_back_button.Location = new System.Drawing.Point(0, 16);
+            this.pic_back_button.Name = "pic_back_button";
+            this.pic_back_button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pic_back_button.Size = new System.Drawing.Size(63, 63);
+            this.pic_back_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_back_button.TabIndex = 3;
+            this.pic_back_button.TabStop = false;
+            this.pic_back_button.UseTransparentBackground = true;
+            this.pic_back_button.Click += new System.EventHandler(this.pic_back_button_Click);
             // 
             // btnRefresh
             // 
@@ -81,6 +107,7 @@
             this.btnRefresh.TabIndex = 34;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseTransparentBackground = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // dgvAppointments
             // 
@@ -125,7 +152,7 @@
             this.dgvAppointments.RowHeadersWidth = 51;
             this.dgvAppointments.RowTemplate.Height = 35;
             this.dgvAppointments.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointments.Size = new System.Drawing.Size(1358, 470);
+            this.dgvAppointments.Size = new System.Drawing.Size(1355, 470);
             this.dgvAppointments.TabIndex = 31;
             this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -148,6 +175,7 @@
             this.dgvAppointments.ThemeStyle.RowsStyle.Height = 35;
             this.dgvAppointments.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAppointments.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvAppointments.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvAppointments_CellMouseDoubleClick);
             // 
             // guna2DataGridView1
             // 
@@ -234,35 +262,9 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(538, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(356, 41);
+            this.label2.Size = new System.Drawing.Size(347, 40);
             this.label2.TabIndex = 28;
             this.label2.Text = "Add new Appointment :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(488, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(452, 58);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Manage Appointment";
-            // 
-            // pic_back_button
-            // 
-            this.pic_back_button.BackColor = System.Drawing.Color.Transparent;
-            this.pic_back_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_back_button.Image = global::Hospital_Management_System.Properties.Resources.back;
-            this.pic_back_button.ImageRotate = 0F;
-            this.pic_back_button.Location = new System.Drawing.Point(0, 16);
-            this.pic_back_button.Name = "pic_back_button";
-            this.pic_back_button.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pic_back_button.Size = new System.Drawing.Size(63, 63);
-            this.pic_back_button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_back_button.TabIndex = 3;
-            this.pic_back_button.TabStop = false;
-            this.pic_back_button.UseTransparentBackground = true;
-            this.pic_back_button.Click += new System.EventHandler(this.pic_back_button_Click);
             // 
             // txtSearch
             // 
@@ -291,6 +293,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(458, 54);
             this.txtSearch.TabIndex = 27;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // Appointment_form
             // 
@@ -308,11 +311,12 @@
             this.Name = "Appointment_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appointment_form";
+            this.Load += new System.EventHandler(this.Appointment_form_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_back_button)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_back_button)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

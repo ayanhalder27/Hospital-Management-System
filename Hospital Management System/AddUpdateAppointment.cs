@@ -27,11 +27,17 @@ namespace Hospital_Management_System
 
         // If updating an appointment
         private int? appointmentId;
+        private DateTime? appointmentDate;
 
-        public AddUpdateAppointment(int? appointmentId)
+        public AddUpdateAppointment(int? appointmentId = null, DateTime? dateTime = null)
         {
             InitializeComponent();
             this.appointmentId = appointmentId;
+            this.appointmentDate = dateTime;
+            if (dateTime.HasValue)
+            {
+                dtpAppointment.Value = dateTime.Value;
+            }
         }
 
         private (bool Success, string Error) CreateAppointment(int patientId, int doctorId, DateTime appointmentDate)
@@ -106,6 +112,19 @@ namespace Hospital_Management_System
                 }).ToList();
 
             dgvPatients.DataSource = allPatients;
+        }
+
+        private void CancelAppointment(int appointmentId)
+        {
+            var ap = context.Appointments.FirstOrDefault(a => a.AppointmentID == appointmentId);
+            if (ap == null)
+            {
+                MessageBox.Show("Appointment not found.");
+                return;
+            }
+
+            ap.Appoinment_Status = "Cancelled";
+            context.SaveChanges();
         }
 
         private void LoadDoctors()
@@ -277,6 +296,11 @@ namespace Hospital_Management_System
             // Clear search & grid
             txtDoctorSearch.Text = "";
             dgvDoctors.Refresh();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
