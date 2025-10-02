@@ -44,14 +44,28 @@ namespace Hospital_Management_System
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var addAppointmentForm = new AddUpdateAppointment(); 
-            addAppointmentForm.Show();
+            try
+            {
+                var addAppointmentForm = new AddUpdateAppointment();
+                addAppointmentForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening add appointment form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Appointment_form_Load(object sender, EventArgs e)
         {
-            AutoCancelExpiredAppointments();
-            LoadAppointments();
+            try
+            {
+                AutoCancelExpiredAppointments();
+                LoadAppointments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading appointments: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -86,9 +100,7 @@ namespace Hospital_Management_System
 
             return query.OrderBy(a => a.AppointmentDate).ToList();
         }
-
-        
-
+     
         private void AutoCancelExpiredAppointments()
         {
             var now = DateTime.Now;
@@ -112,18 +124,32 @@ namespace Hospital_Management_System
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            txtSearch.Clear();
-            dgvAppointments.Refresh();
-            LoadAppointments();
+            try
+            {
+                txtSearch.Clear();
+                dgvAppointments.Refresh();
+                LoadAppointments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing appointments: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvAppointments_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                var selectedAppointment = (AppointmentDto)dgvAppointments.Rows[e.RowIndex].DataBoundItem;
-                var updateAppointmentForm = new AddUpdateAppointment(selectedAppointment.AppointmentID);
-                updateAppointmentForm.ShowDialog();
+                if (e.RowIndex >= 0)
+                {
+                    var selectedAppointment = (AppointmentDto)dgvAppointments.Rows[e.RowIndex].DataBoundItem;
+                    var updateAppointmentForm = new AddUpdateAppointment(selectedAppointment.AppointmentID);
+                    updateAppointmentForm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening update appointment form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
