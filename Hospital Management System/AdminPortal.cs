@@ -78,5 +78,12 @@ namespace Hospital_Management_System
             var manageAppointment = new Appointment_form(UserID);
             manageAppointment.ShowDialog();
         }
+
+        private void btn_manage_billing_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var manageBilling = new Billing_form(UserID);
+            manageBilling.ShowDialog();
+        }
     }
 }
