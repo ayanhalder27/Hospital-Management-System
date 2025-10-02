@@ -56,7 +56,7 @@
             this.guna2GradientPanel1.Controls.Add(this.pic_back_button);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1782, 106);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1705, 106);
             this.guna2GradientPanel1.TabIndex = 26;
             // 
             // label1
@@ -101,7 +101,7 @@
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.IndicateFocus = true;
-            this.btnRefresh.Location = new System.Drawing.Point(1313, 127);
+            this.btnRefresh.Location = new System.Drawing.Point(1463, 126);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(184, 54);
             this.btnRefresh.TabIndex = 34;
@@ -152,7 +152,7 @@
             this.dgvAppointments.RowHeadersWidth = 51;
             this.dgvAppointments.RowTemplate.Height = 35;
             this.dgvAppointments.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointments.Size = new System.Drawing.Size(1593, 500);
+            this.dgvAppointments.Size = new System.Drawing.Size(1632, 686);
             this.dgvAppointments.TabIndex = 31;
             this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -248,7 +248,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.IndicateFocus = true;
-            this.btnAdd.Location = new System.Drawing.Point(937, 139);
+            this.btnAdd.Location = new System.Drawing.Point(949, 139);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(143, 41);
             this.btnAdd.TabIndex = 29;
@@ -260,7 +260,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(575, 139);
+            this.label2.Location = new System.Drawing.Point(587, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(347, 40);
             this.label2.TabIndex = 28;
@@ -302,7 +302,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1670, 753);
+            this.ClientSize = new System.Drawing.Size(1704, 916);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvAppointments);

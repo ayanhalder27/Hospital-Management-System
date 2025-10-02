@@ -63,9 +63,9 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_manage_employee);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_manage_patient);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_profile_button);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(-7, -1);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(-1, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(295, 1033);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(291, 768);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // guna2PictureBox1
@@ -319,9 +319,9 @@
             this.guna2GradientPanel1.Controls.Add(this.lbl_profile_user_name);
             this.guna2GradientPanel1.Controls.Add(this.label2);
             this.guna2GradientPanel1.Controls.Add(this.label1);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(287, 2);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(290, 2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1164, 148);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1161, 145);
             this.guna2GradientPanel1.TabIndex = 1;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
@@ -372,19 +372,21 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.guna2Panel1.Location = new System.Drawing.Point(287, 147);
+            this.guna2Panel1.Location = new System.Drawing.Point(290, 147);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1164, 623);
+            this.guna2Panel1.Size = new System.Drawing.Size(1161, 623);
             this.guna2Panel1.TabIndex = 2;
             // 
             // AdminPortal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1450, 770);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AdminPortal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPortal";

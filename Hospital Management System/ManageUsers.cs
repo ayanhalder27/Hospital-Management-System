@@ -133,7 +133,7 @@ namespace Hospital_Management_System
             }
         }
 
-        private void dgvUsers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
             {

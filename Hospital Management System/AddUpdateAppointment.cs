@@ -10,9 +10,6 @@ using System.Windows.Forms;
 
 namespace Hospital_Management_System
 {
-
-    
-
     public partial class AddUpdateAppointment : Form
     {
         private readonly HospitalContext context = new HospitalContext();
@@ -62,6 +59,18 @@ namespace Hospital_Management_System
                 };
 
                 context.Appointments.Add(appointment);
+                context.SaveChanges();
+
+                var doctorFee = context.Users.Where(u => u.UserID == doctorId).Select(u => u.Visit_Fee).FirstOrDefault() ?? 0;
+                var billing = new Billing
+                {
+                    Biller_User_ID = patientId, 
+                    AppointmentID = appointment.AppointmentID,
+                    Amount = (decimal)doctorFee,
+                    Status = "Unpaid",
+                    BillDate = DateTime.Now
+                };
+                context.Billings.Add(billing);
                 context.SaveChanges();
 
                 return (true, null);
@@ -221,6 +230,7 @@ namespace Hospital_Management_System
                     btnSave.Visible = true;
                     btnUpdate.Visible = false;
                     btnCancell.Visible = false;
+                    dtpAppointment.Value = DateTime.Now;
                 }
             }
             catch (Exception ex)
@@ -307,6 +317,11 @@ namespace Hospital_Management_System
             lblDoctorVisitFee.Text = "";
 
             dtpAppointment.Value = DateTime.Now;
+
+            dgvDoctors.ClearSelection();
+            dgvPatients.ClearSelection();
+            dgvDoctors.Refresh();
+            dgvPatients.Refresh();
         }
 
         private void dgvPatients_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

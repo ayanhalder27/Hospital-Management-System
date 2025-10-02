@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Cmp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +15,7 @@ namespace Hospital_Management_System
     public partial class Billing_form : Form
     {
         private int userID;
-        private HospitalContext _ctx = new HospitalContext();
+        private HospitalContext context = new HospitalContext();
         private User currentUser;
 
         public Billing_form(int userID)
@@ -22,65 +24,90 @@ namespace Hospital_Management_System
             this.userID = userID;
         }
 
-        public List<BillingDto> GetBills(string search = null,
-            int? patientId = null, int? doctorId = null, DateTime? date = null, string status = null)
+        private void LoadBills()
+        {
+            dgvBills.DataSource = GetBills(txtSearch.Text, null);
+        }
+
+        private List<BillingDto> GetBills(string search = null, string status = null)
         {
             try
             {
-                var q = _ctx.Billing.AsQueryable();
+                var query = from b in context.Billings
+                            join a in context.Appointments on b.AppointmentID equals a.AppointmentID
+                            join p in context.Users on a.Patient_User_ID equals p.UserID
+                            join d in context.Users on a.Doctor_User_ID equals d.UserID
+                            where b.Status == "Unpaid" || b.Status == "Paid"
+                            select new BillingDto
+                            {
+                                BillID = b.BillID,
+                                AppointmentID = b.AppointmentID,
+                                PatientName = p.FullName,
+                                PatientPhone = p.PhoneNumber,
+                                DoctorName = d.FullName,
+                                BillDate = b.BillDate,
+                                Amount = (decimal)b.Amount,
+                                Status = b.Status
+                            };
 
-                if (patientId.HasValue)
-                    q = q.Where(b => b.Appointment.Patient_User_ID == patientId.Value);
-
-                if (doctorId.HasValue)
-                    q = q.Where(b => b.Appointment.Doctor_User_ID == doctorId.Value);
-
-                if (date.HasValue)
+                // filter by status if provided
+                if (!string.IsNullOrWhiteSpace(status))
                 {
-                    var d = date.Value.Date;
-                    q = q.Where(b => System.Data.Entity.DbFunctions.TruncateTime(b.BillDate) == d);
+                    query = query.Where(x => x.Status == status);
                 }
 
-                if (!string.IsNullOrWhiteSpace(status))
-                    q = q.Where(b => b.Status == status);
-
+                // filter by search text if provided
                 if (!string.IsNullOrWhiteSpace(search))
                 {
                     string s = search.Trim().ToLower();
-                    q = q.Where(b =>
-                        b.BillID.ToString().Contains(s) ||
-                        b.Appointment.Patient.FullName.ToLower().Contains(s) ||
-                        b.Appointment.Patient.PhoneNumber.ToLower().Contains(s) ||
-                        b.Appointment.Doctor.FullName.ToLower().Contains(s)
+                    query = query.Where(x =>
+                        x.BillID.ToString().Contains(s) ||
+                        x.PatientName.ToLower().Contains(s) ||
+                        x.PatientPhone.ToLower().Contains(s) ||
+                        x.DoctorName.ToLower().Contains(s)
                     );
                 }
 
-                var list = q.Select(b => new BillingDto
-                {
-                    BillID = b.BillID,
-                    AppointmentID = b.AppointmentID,
-                    PatientName = b.Appointment.Patient.FullName,
-                    PatientPhone = b.Appointment.Patient.PhoneNumber,
-                    DoctorName = b.Appointment.Doctor.FullName,
-                    BillDate = b.BillDate,
-                    Amount = (decimal)b.Amount,
-                    Status = b.Status
-                }).OrderByDescending(x => x.BillDate).ToList();
-
-                return list;
+                return query.OrderByDescending(x => x.BillDate).ToList();
             }
-            catch
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Error loading bills: " + ex.Message);
+                return new List<BillingDto>();
             }
         }
-
 
         private void pic_back_button_Click(object sender, EventArgs e)
         {
             this.Close();
             AdminPortal adminPortal = new AdminPortal(userID);
             adminPortal.Show();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadBills();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadBills();
+            txtSearch.Clear();           
+            dgvBills.Refresh();          
+            dgvBills.ClearSelection();
+        }
+
+        private void Billing_form_Load(object sender, EventArgs e)
+        {
+            LoadBills();
+        }
+
+        private void dgvBills_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            int billId = (int)dgvBills.Rows[e.RowIndex].Cells["BillID"].Value;
+            var form = new GenerateBillForm(billId);
+            form.ShowDialog();
         }
     }
     public class BillingDto

@@ -98,7 +98,7 @@ namespace Hospital_Management_System
                 );
             }
 
-            return query.OrderBy(a => a.AppointmentDate).ToList();
+            return query.OrderByDescending(a => a.AppointmentDate).ToList();
         }
      
         private void AutoCancelExpiredAppointments()
@@ -122,13 +122,14 @@ namespace Hospital_Management_System
             LoadAppointments();
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e) 
         {
             try
             {
-                txtSearch.Clear();
-                dgvAppointments.Refresh();
                 LoadAppointments();
+                txtSearch.Clear();
+                dgvAppointments.ClearSelection();
+                dgvAppointments.Refresh();
             }
             catch (Exception ex)
             {

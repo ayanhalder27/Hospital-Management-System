@@ -125,6 +125,12 @@
     <Compile Include="DoctorPortal.Designer.cs">
       <DependentUpon>DoctorPortal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenerateBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateBillForm.Designer.cs">
+      <DependentUpon>GenerateBillForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HospitalContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +146,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HospitalContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceService.cs" />
     <Compile Include="Login_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoctorPortal.resx">
       <DependentUpon>DoctorPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateBillForm.resx">
+      <DependentUpon>GenerateBillForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login_form.resx">
       <DependentUpon>Login_form.cs</DependentUpon>

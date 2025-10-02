@@ -38,12 +38,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pic_back_button = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.dgvAppointments = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvBills = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_back_button)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.guna2GradientPanel1.Controls.Add(this.pic_back_button);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(-2, -1);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1672, 118);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1539, 118);
             this.guna2GradientPanel1.TabIndex = 35;
             // 
             // label1
@@ -99,29 +99,30 @@
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.IndicateFocus = true;
-            this.btnRefresh.Location = new System.Drawing.Point(1451, 135);
+            this.btnRefresh.Location = new System.Drawing.Point(1315, 135);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(178, 57);
             this.btnRefresh.TabIndex = 41;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseTransparentBackground = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // dgvAppointments
+            // dgvBills
             // 
-            this.dgvAppointments.AllowUserToAddRows = false;
-            this.dgvAppointments.AllowUserToDeleteRows = false;
-            this.dgvAppointments.AllowUserToResizeColumns = false;
-            this.dgvAppointments.AllowUserToResizeRows = false;
+            this.dgvBills.AllowUserToAddRows = false;
+            this.dgvBills.AllowUserToDeleteRows = false;
+            this.dgvBills.AllowUserToResizeColumns = false;
+            this.dgvBills.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvAppointments.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAppointments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvAppointments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dgvAppointments.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvBills.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvBills.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvBills.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dgvBills.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -129,9 +130,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAppointments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAppointments.ColumnHeadersHeight = 40;
-            this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvBills.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvBills.ColumnHeadersHeight = 40;
+            this.dgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,39 +140,40 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointments.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAppointments.GridColor = System.Drawing.Color.Black;
-            this.dgvAppointments.Location = new System.Drawing.Point(42, 212);
-            this.dgvAppointments.MultiSelect = false;
-            this.dgvAppointments.Name = "dgvAppointments";
-            this.dgvAppointments.ReadOnly = true;
-            this.dgvAppointments.RowHeadersVisible = false;
-            this.dgvAppointments.RowHeadersWidth = 51;
-            this.dgvAppointments.RowTemplate.Height = 35;
-            this.dgvAppointments.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointments.Size = new System.Drawing.Size(1587, 547);
-            this.dgvAppointments.TabIndex = 40;
-            this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvAppointments.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvAppointments.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvAppointments.ThemeStyle.GridColor = System.Drawing.Color.Black;
-            this.dgvAppointments.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvAppointments.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvAppointments.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAppointments.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvAppointments.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvAppointments.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvAppointments.ThemeStyle.ReadOnly = true;
-            this.dgvAppointments.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvAppointments.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvAppointments.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvAppointments.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvAppointments.ThemeStyle.RowsStyle.Height = 35;
-            this.dgvAppointments.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvAppointments.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBills.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBills.GridColor = System.Drawing.Color.Black;
+            this.dgvBills.Location = new System.Drawing.Point(42, 212);
+            this.dgvBills.MultiSelect = false;
+            this.dgvBills.Name = "dgvBills";
+            this.dgvBills.ReadOnly = true;
+            this.dgvBills.RowHeadersVisible = false;
+            this.dgvBills.RowHeadersWidth = 51;
+            this.dgvBills.RowTemplate.Height = 35;
+            this.dgvBills.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBills.Size = new System.Drawing.Size(1451, 689);
+            this.dgvBills.TabIndex = 40;
+            this.dgvBills.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBills.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvBills.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvBills.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvBills.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvBills.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBills.ThemeStyle.GridColor = System.Drawing.Color.Black;
+            this.dgvBills.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvBills.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvBills.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBills.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvBills.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvBills.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvBills.ThemeStyle.ReadOnly = true;
+            this.dgvBills.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvBills.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvBills.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvBills.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBills.ThemeStyle.RowsStyle.Height = 35;
+            this.dgvBills.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvBills.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvBills.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBills_CellMouseDoubleClick);
             // 
             // guna2DataGridView1
             // 
@@ -255,6 +257,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(452, 57);
             this.txtSearch.TabIndex = 36;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // Billing_form
             // 
@@ -263,20 +266,21 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1670, 771);
+            this.ClientSize = new System.Drawing.Size(1537, 913);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.dgvAppointments);
+            this.Controls.Add(this.dgvBills);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.txtSearch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Billing_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Billing_form";
+            this.Load += new System.EventHandler(this.Billing_form_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_back_button)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -288,7 +292,7 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pic_back_button;
         private Guna.UI2.WinForms.Guna2GradientButton btnRefresh;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvAppointments;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvBills;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
     }
