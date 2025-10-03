@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -210,6 +211,7 @@ namespace Hospital_Management_System
                         );
 
                         MessageBox.Show("Payment saved and invoice generated: " + path);
+                        System.Diagnostics.Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
                     }
                 }
 
