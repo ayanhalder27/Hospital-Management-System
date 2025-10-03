@@ -68,7 +68,7 @@ namespace Hospital_Management_System
                     );
                 }
 
-                return query.OrderByDescending(x => x.BillDate).ToList();
+                return query.OrderByDescending(x => x.BillID).ToList();
             }
             catch (Exception ex)
             {

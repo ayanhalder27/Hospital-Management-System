@@ -98,7 +98,7 @@ namespace Hospital_Management_System
                 );
             }
 
-            return query.OrderByDescending(a => a.AppointmentDate).ToList();
+            return query.OrderByDescending(a => a.AppointmentID).ToList();
         }
      
         private void AutoCancelExpiredAppointments()
