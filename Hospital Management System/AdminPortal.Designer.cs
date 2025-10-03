@@ -330,7 +330,7 @@
             this.picbox_admin_portal.BackColor = System.Drawing.Color.Transparent;
             this.picbox_admin_portal.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
             this.picbox_admin_portal.ImageRotate = 0F;
-            this.picbox_admin_portal.Location = new System.Drawing.Point(1050, 35);
+            this.picbox_admin_portal.Location = new System.Drawing.Point(1047, 23);
             this.picbox_admin_portal.Name = "picbox_admin_portal";
             this.picbox_admin_portal.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picbox_admin_portal.Size = new System.Drawing.Size(111, 104);
