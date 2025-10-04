@@ -17,9 +17,22 @@ namespace Hospital_Management_System
     public partial class Prescribe : Form
     {
         HospitalContext db = new HospitalContext();
-        public Prescribe()
+        int appointmentID;
+        public Prescribe(int id)
         {
             InitializeComponent();
+            this.appointmentID = id;
+            var patient = db.Appointments.Where(a => a.AppointmentID == id).Join(db.Users, a=>a.Patient_User_ID, u=> u.UserID, (a,u)=> new
+            {
+                u.FullName,
+                u.DOB,
+                u.Gender
+            }).FirstOrDefault();
+
+            lblName.Text = patient.FullName;
+            lblAge.Text = (DateTime.Now.Year - patient.DOB.Year) + " Years";
+            lblSex.Text = patient.Gender;
+
         }
 
         private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -38,7 +51,8 @@ namespace Hospital_Management_System
             AutoCompleteStringCollection tests = new AutoCompleteStringCollection();
             tests.AddRange(db.MedicalTests.Select(t => t.TestName).ToArray());
             txtTest.AutoCompleteCustomSource = tests;
-
+            
+            this.Owner.Hide();
         }
 
         private void txtTest_KeyDown(object sender, KeyEventArgs e)
@@ -72,22 +86,87 @@ namespace Hospital_Management_System
 
         private void btnSavePrescription_Click(object sender, EventArgs e)
         {
-            prescribe();
+            //var prescription = new Prescription
+            //{
+            //    AppointmentID = this.appointmentID,
+            //    Date = DateTime.Now
+            //};
+
+            //db.Prescriptions.Add(prescription);
+            //db.SaveChanges();
+
+            //List<string> testNames = new List<string>();
+
+            //for (int i=0; i<dgvTest.Rows.Count-1; i++)
+            //{
+            //    testNames.Add(dgvTest.Rows[i].Cells[0].Value.ToString());
+            //}
+            //var testMap = db.MedicalTests.Where(t=> testNames.Contains(t.TestName))
+            //    .ToDictionary(t=> t.TestName, t=> t.TestID);
+            //foreach (string name in testNames)
+            //{
+            //    if(testMap.TryGetValue(name, out int testID))
+            //    {
+            //        db.Prescribed_Tests.Add(new Prescribed_Tests
+            //        {
+            //            PrescriptionID = prescription.PrescriptionID,
+            //            TestID = testID
+            //        });
+            //    }
+            //}
+
+            //List<string> medicineNames = new List<string>();
+            //for (int i=0; i<dgvMedicines.Rows.Count-1; i++)
+            //{
+            //    medicineNames.Add(dgvMedicines.Rows[i].Cells[0].Value.ToString().Split('~')[0]);
+            //}
+            //var medicineMap = db.Medicines.Where(m => medicineNames.Contains(m.Medicine_Name))
+            //    .ToDictionary(m => m.Medicine_Name, m => m.MedicineID);
+            //foreach(string name in medicineNames)
+            //{
+            //    if(medicineMap.TryGetValue(name, out int medicineID))
+            //    {
+            //        int i = 0;
+            //        db.Prescribed_Medicines.Add(new Prescribed_Medicines
+            //        {
+            //            PrescriptionID = prescription.PrescriptionID,
+            //            MedicineID = medicineID,
+            //            Dosage = dgvMedicines.Rows[i].Cells[1].Value.ToString(),
+            //            Instructions = dgvMedicines.Rows[i].Cells[2].Value.ToString(),
+            //            Feed_Days = dgvMedicines.Rows[i].Cells[3].Value.ToString()
+            //        });
+            //        i++;
+            //    }
+            //}
+
+            ////Appointment a = db.Appointments.Find(appointmentID);
+            ////a.Appoinment_Status = "Completed";
+
+            //db.SaveChanges();
+
+            //MessageBox.Show("Prescription Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            PrescriptionGenerator.CreatePrescription();
+
         }
 
-        private void prescribe()
+        //private void prescribe()
+        //{
+        //    string filepath = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName, "Documents", "Prescription.pdf");
+        //    Document doc = new Document(iTextSharp.text.PageSize.A4);
+        //    PdfWriter writer = PdfWriter.GetInstance(doc, new System.IO.FileStream(filepath, System.IO.FileMode.Create));
+        //    doc.Open();
+        //    Paragraph header = new Paragraph("Hospital Management System.");
+        //    doc.Add(header);
+        //    doc.Close();
+        //    Process.Start(filepath);
+        //}
+
+
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            string filepath = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName, "Documents", "Prescription.pdf");
-            Document doc = new Document(iTextSharp.text.PageSize.A4);
-            PdfWriter writer = PdfWriter.GetInstance(doc, new System.IO.FileStream(filepath, System.IO.FileMode.Create));
-            doc.Open();
-            Paragraph header = new Paragraph("Hospital Management System.");
-            doc.Add(header);
-            doc.Close();
-            Process.Start(filepath);
+            this.Owner.Show();
+            this.Close();
         }
-
-
-
     }
 }

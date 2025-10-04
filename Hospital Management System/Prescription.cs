@@ -24,6 +24,7 @@ namespace Hospital_Management_System
         public int PrescriptionID { get; set; }
         public int AppointmentID { get; set; }
         public string Prescription_File { get; set; }
+        public System.DateTime Date { get; set; }
     
         public virtual Appointment Appointment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

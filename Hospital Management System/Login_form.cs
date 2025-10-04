@@ -12,6 +12,7 @@ namespace Hospital_Management_System
 {
     public partial class Login_form : Form
     {
+        public static int userID;
         private readonly Check_login_authorization checkLoginAuthorization;
         public Login_form()
         {
@@ -27,6 +28,7 @@ namespace Hospital_Management_System
                 User user = checkLoginAuthorization.Login(userInput, password);
                 if (user != null)
                 {
+                    userID = user.UserID;
                     switch (user.RoleID)
                     {
                         case 1:

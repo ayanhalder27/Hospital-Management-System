@@ -192,6 +192,7 @@
     <Compile Include="Prescription.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="PrescriptionGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceptionistPortal.cs">
@@ -366,7 +367,9 @@
       <DependentUpon>HospitalContext.edmx</DependentUpon>
       <LastGenOutput>HospitalContext.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Pending.png" />
     <None Include="Resources\blank-profile-picture-973460_1920.png" />
+    <None Include="Resources\Done.png" />
     <Content Include="Resources\hide.png" />
     <None Include="Resources\Niloy profile.jpg" />
     <None Include="Resources\visible.png" />

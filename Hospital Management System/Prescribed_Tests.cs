@@ -17,7 +17,6 @@ namespace Hospital_Management_System
         public int Prescribed_Tests_ID { get; set; }
         public int PrescriptionID { get; set; }
         public int TestID { get; set; }
-        public string Instructions { get; set; }
     
         public virtual MedicalTest MedicalTest { get; set; }
         public virtual Prescription Prescription { get; set; }

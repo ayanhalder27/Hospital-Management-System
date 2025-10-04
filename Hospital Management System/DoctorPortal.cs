@@ -16,5 +16,11 @@ namespace Hospital_Management_System
         {
             InitializeComponent();
         }
+
+        private void btnAppointment_Click(object sender, EventArgs e)
+        {
+            Appointments appointments = new Appointments();
+            appointments.Show(this);
+        }
     }
 }

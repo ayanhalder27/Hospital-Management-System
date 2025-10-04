@@ -61,7 +61,6 @@
           <Property Name="Prescribed_Tests_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PrescriptionID" Type="int" Nullable="false" />
           <Property Name="TestID" Type="int" Nullable="false" />
-          <Property Name="Instructions" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Prescriptions">
           <Key>
@@ -69,7 +68,8 @@
           </Key>
           <Property Name="PrescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AppointmentID" Type="int" Nullable="false" />
-          <Property Name="Prescription_File" Type="nchar" MaxLength="10" />
+          <Property Name="Prescription_File" Type="nvarchar" MaxLength="200" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -338,7 +338,6 @@
           <Property Name="Prescribed_Tests_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PrescriptionID" Type="Int32" Nullable="false" />
           <Property Name="TestID" Type="Int32" Nullable="false" />
-          <Property Name="Instructions" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="MedicalTest" Relationship="Self.FK_Prescribed_Tests_ToTable_1" FromRole="Prescribed_Tests" ToRole="MedicalTests" />
           <NavigationProperty Name="Prescription" Relationship="Self.FK_Prescribed_Tests_ToTable" FromRole="Prescribed_Tests" ToRole="Prescriptions" />
         </EntityType>
@@ -348,10 +347,11 @@
           </Key>
           <Property Name="PrescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AppointmentID" Type="Int32" Nullable="false" />
-          <Property Name="Prescription_File" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Prescription_File" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Appointment" Relationship="Self.FK_Prescriptions_ToTable" FromRole="Prescriptions" ToRole="Appointments" />
           <NavigationProperty Name="Prescribed_Medicines" Relationship="Self.FK_Prescribed_Medicines_ToTable" FromRole="Prescriptions" ToRole="Prescribed_Medicines" />
           <NavigationProperty Name="Prescribed_Tests" Relationship="Self.FK_Prescribed_Tests_ToTable" FromRole="Prescriptions" ToRole="Prescribed_Tests" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -621,13 +621,13 @@
                 <ScalarProperty Name="Prescribed_Tests_ID" ColumnName="Prescribed_Tests_ID" />
                 <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
                 <ScalarProperty Name="TestID" ColumnName="TestID" />
-                <ScalarProperty Name="Instructions" ColumnName="Instructions" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Prescriptions">
             <EntityTypeMapping TypeName="ayanhalder2705_Model.Prescription">
               <MappingFragment StoreEntitySet="Prescriptions">
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
                 <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
                 <ScalarProperty Name="Prescription_File" ColumnName="Prescription_File" />

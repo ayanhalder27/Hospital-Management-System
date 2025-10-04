@@ -28,64 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPrescribe = new Guna.UI2.WinForms.Guna2Button();
             this.lblID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblNumber = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.pbStatus = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.btnPrescribe = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDetails.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnDetails.BorderRadius = 6;
-            this.btnDetails.BorderThickness = 1;
-            this.btnDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDetails.FillColor = System.Drawing.Color.White;
-            this.btnDetails.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnDetails.Image = global::Hospital_Management_System.Properties.Resources.file__1_;
-            this.btnDetails.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDetails.Location = new System.Drawing.Point(16, 198);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(120, 35);
-            this.btnDetails.TabIndex = 17;
-            this.btnDetails.Text = "Details";
-            this.btnDetails.TextOffset = new System.Drawing.Point(10, 0);
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
-            // 
-            // btnPrescribe
-            // 
-            this.btnPrescribe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrescribe.BorderRadius = 6;
-            this.btnPrescribe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrescribe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrescribe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrescribe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrescribe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnPrescribe.ForeColor = System.Drawing.Color.White;
-            this.btnPrescribe.Image = global::Hospital_Management_System.Properties.Resources.prescription;
-            this.btnPrescribe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPrescribe.Location = new System.Drawing.Point(146, 198);
-            this.btnPrescribe.Name = "btnPrescribe";
-            this.btnPrescribe.Size = new System.Drawing.Size(144, 35);
-            this.btnPrescribe.TabIndex = 18;
-            this.btnPrescribe.Text = "Prescribe";
-            this.btnPrescribe.TextOffset = new System.Drawing.Point(10, 0);
-            this.btnPrescribe.Click += new System.EventHandler(this.btnPrescribe_Click);
             // 
             // lblID
             // 
@@ -133,28 +91,14 @@
             this.lblDate.TabIndex = 22;
             this.lblDate.Text = "27, May 2025";
             // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(203, 18);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Padding = new System.Windows.Forms.Padding(5);
-            this.lblStatus.Size = new System.Drawing.Size(84, 28);
-            this.lblStatus.TabIndex = 23;
-            this.lblStatus.Text = "Pending";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 8;
+            this.guna2Panel1.Controls.Add(this.pbStatus);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Controls.Add(this.guna2Separator1);
-            this.guna2Panel1.Controls.Add(this.lblStatus);
             this.guna2Panel1.Controls.Add(this.lblDate);
             this.guna2Panel1.Controls.Add(this.lblNumber);
             this.guna2Panel1.Controls.Add(this.lblName);
@@ -172,6 +116,28 @@
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
             this.guna2Panel1.Size = new System.Drawing.Size(300, 250);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Separator1.Location = new System.Drawing.Point(23, 174);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(254, 10);
+            this.guna2Separator1.TabIndex = 24;
+            // 
+            // pbStatus
+            // 
+            this.pbStatus.Image = global::Hospital_Management_System.Properties.Resources.Pending;
+            this.pbStatus.ImageRotate = 0F;
+            this.pbStatus.Location = new System.Drawing.Point(254, 3);
+            this.pbStatus.Name = "pbStatus";
+            this.pbStatus.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbStatus.Size = new System.Drawing.Size(44, 46);
+            this.pbStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbStatus.TabIndex = 27;
+            this.pbStatus.TabStop = false;
             // 
             // guna2PictureBox2
             // 
@@ -197,15 +163,48 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // guna2Separator1
+            // btnPrescribe
             // 
-            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Separator1.Location = new System.Drawing.Point(23, 174);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(254, 10);
-            this.guna2Separator1.TabIndex = 24;
+            this.btnPrescribe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrescribe.BorderRadius = 6;
+            this.btnPrescribe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrescribe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrescribe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrescribe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrescribe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnPrescribe.ForeColor = System.Drawing.Color.White;
+            this.btnPrescribe.Image = global::Hospital_Management_System.Properties.Resources.prescription;
+            this.btnPrescribe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPrescribe.Location = new System.Drawing.Point(146, 198);
+            this.btnPrescribe.Name = "btnPrescribe";
+            this.btnPrescribe.Size = new System.Drawing.Size(144, 35);
+            this.btnPrescribe.TabIndex = 18;
+            this.btnPrescribe.Text = "Prescribe";
+            this.btnPrescribe.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnPrescribe.Click += new System.EventHandler(this.btnPrescribe_Click);
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetails.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnDetails.BorderRadius = 6;
+            this.btnDetails.BorderThickness = 1;
+            this.btnDetails.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDetails.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDetails.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDetails.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDetails.FillColor = System.Drawing.Color.White;
+            this.btnDetails.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnDetails.Image = global::Hospital_Management_System.Properties.Resources.file__1_;
+            this.btnDetails.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDetails.Location = new System.Drawing.Point(16, 198);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(120, 35);
+            this.btnDetails.TabIndex = 17;
+            this.btnDetails.Text = "Details";
+            this.btnDetails.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // AppointmentPanelDesign
             // 
@@ -219,6 +218,7 @@
             this.Text = "Appointment";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -233,10 +233,10 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblNumber;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblStatus;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox pbStatus;
     }
 }

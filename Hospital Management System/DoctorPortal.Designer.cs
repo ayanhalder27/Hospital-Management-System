@@ -35,7 +35,7 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAppointment = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
@@ -118,7 +118,7 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
             this.guna2Panel2.Controls.Add(this.btnLogout);
-            this.guna2Panel2.Controls.Add(this.guna2Button2);
+            this.guna2Panel2.Controls.Add(this.btnAppointment);
             this.guna2Panel2.Controls.Add(this.btnDashboard);
             this.guna2Panel2.Controls.Add(this.btnProfile);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -150,26 +150,27 @@
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             // 
-            // guna2Button2
+            // btnAppointment
             // 
-            this.guna2Button2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.HoverState.BorderColor = System.Drawing.Color.Navy;
-            this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.guna2Button2.Image = global::Hospital_Management_System.Properties.Resources.schedule;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageOffset = new System.Drawing.Point(8, 0);
-            this.guna2Button2.Location = new System.Drawing.Point(3, 122);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(240, 45);
-            this.guna2Button2.TabIndex = 2;
-            this.guna2Button2.Text = "Appointments";
+            this.btnAppointment.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.btnAppointment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAppointment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAppointment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAppointment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAppointment.FillColor = System.Drawing.Color.Transparent;
+            this.btnAppointment.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAppointment.ForeColor = System.Drawing.Color.Black;
+            this.btnAppointment.HoverState.BorderColor = System.Drawing.Color.Navy;
+            this.btnAppointment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnAppointment.Image = global::Hospital_Management_System.Properties.Resources.schedule;
+            this.btnAppointment.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAppointment.ImageOffset = new System.Drawing.Point(8, 0);
+            this.btnAppointment.Location = new System.Drawing.Point(3, 122);
+            this.btnAppointment.Name = "btnAppointment";
+            this.btnAppointment.Size = new System.Drawing.Size(240, 45);
+            this.btnAppointment.TabIndex = 2;
+            this.btnAppointment.Text = "Appointments";
+            this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
             // btnDashboard
             // 
@@ -249,7 +250,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnProfile;
         private System.Windows.Forms.Label lblWelcome;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnAppointment;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label label1;

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,12 +13,15 @@ namespace Hospital_Management_System
 {
     public partial class Appointments : Form
     {
+        HospitalContext db = new HospitalContext();
+        public static IWin32Window thisPage;
         public Appointments()
         {
             InitializeComponent();
+            thisPage = this;
         }
 
-        private Panel dynamicPanel(int id)
+        private Panel dynamicPanel(int id, string name, DateTime date, string number, string status)
         {
             Panel panel = new Panel();
             panel.SuspendLayout();
@@ -27,7 +31,7 @@ namespace Hospital_Management_System
             panel.Size = new Size(250, 250);
             panel.TabIndex = 0;
 
-            AppointmentPanelDesign appointment = new AppointmentPanelDesign(id);
+            AppointmentPanelDesign appointment = new AppointmentPanelDesign(id, name, date, number, status);
             appointment.TopLevel = false;
             appointment.FormBorderStyle = FormBorderStyle.None;
             appointment.AutoScroll = true;
@@ -43,11 +47,23 @@ namespace Hospital_Management_System
 
         private void Appointments2_Load(object sender, EventArgs e)
         {
-            for (int i = 1; i <= 50; i++)
+            var appointments = from a in db.Appointments
+                               join u in db.Users on a.Patient_User_ID equals u.UserID
+                               where a.Appoinment_Status == "Confirmed" && a.Doctor_User_ID == 1027
+                               select new { a.AppointmentID, u.FullName, a.AppointmentDate, u.PhoneNumber, a.Appoinment_Status};
+
+            foreach (var a in appointments)
             {
-                flowLayoutPanel1.Controls.Add(dynamicPanel(i));
+                flowLayoutPanel1.Controls.Add(dynamicPanel(a.AppointmentID, a.FullName, a.AppointmentDate, a.PhoneNumber, a.Appoinment_Status));
             }
+
+            this.Owner.Hide();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Owner.Show();
+            this.Close();
+        }
     }
 }

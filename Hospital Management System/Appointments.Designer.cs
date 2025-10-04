@@ -66,7 +66,8 @@
             this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox1.ItemHeight = 30;
             this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Pending Appointments",
+            "Confirmed",
+            "Half Done",
             "Completed",
             "All Appointments"});
             this.guna2ComboBox1.Location = new System.Drawing.Point(79, 8);
@@ -129,6 +130,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(67, 58);
             this.btnBack.TabIndex = 0;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // guna2Panel2
             // 
