@@ -68,7 +68,7 @@ namespace Hospital_Management_System
                     AppointmentID = appointment.AppointmentID,
                     Amount = (decimal)doctorFee,
                     Status = "Unpaid",
-                    BillDate = DateTime.Now
+                    BillDate = appointmentDate
                 };
                 context.Billings.Add(billing);
                 context.SaveChanges();
