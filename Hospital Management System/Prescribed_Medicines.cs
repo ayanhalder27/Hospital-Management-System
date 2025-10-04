@@ -19,6 +19,7 @@ namespace Hospital_Management_System
         public int MedicineID { get; set; }
         public string Dosage { get; set; }
         public string Instructions { get; set; }
+        public string Feed_Days { get; set; }
     
         public virtual Medicine Medicine { get; set; }
         public virtual Prescription Prescription { get; set; }

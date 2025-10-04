@@ -103,7 +103,7 @@
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CirclePictureBox1.Image = global::Hospital_Management_System.Properties.Resources.IMG_20241011_184004;
+            this.guna2CirclePictureBox1.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(0, 12);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";

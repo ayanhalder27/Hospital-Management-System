@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ayanhalder2705_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ayanhalder2705_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Appointments">
           <Key>
             <PropertyRef Name="AppointmentID" />
@@ -52,6 +52,7 @@
           <Property Name="MedicineID" Type="int" Nullable="false" />
           <Property Name="Dosage" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Instructions" Type="nvarchar" MaxLength="200" />
+          <Property Name="Feed_Days" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Prescribed_Tests">
           <Key>
@@ -267,8 +268,7 @@
             <End Role="Prescriptions" EntitySet="Prescriptions" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ayanhalder2705_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -329,6 +329,7 @@
           <Property Name="Instructions" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Medicine" Relationship="Self.FK_Prescribed_Medicines_ToTable_1" FromRole="Prescribed_Medicines" ToRole="Medicines" />
           <NavigationProperty Name="Prescription" Relationship="Self.FK_Prescribed_Medicines_ToTable" FromRole="Prescribed_Medicines" ToRole="Prescriptions" />
+          <Property Name="Feed_Days" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Prescribed_Tests">
           <Key>
@@ -605,6 +606,7 @@
           <EntitySetMapping Name="Prescribed_Medicines">
             <EntityTypeMapping TypeName="ayanhalder2705_Model.Prescribed_Medicines">
               <MappingFragment StoreEntitySet="Prescribed_Medicines">
+                <ScalarProperty Name="Feed_Days" ColumnName="Feed_Days" />
                 <ScalarProperty Name="Prescribed_Medicines_ID" ColumnName="Prescribed_Medicines_ID" />
                 <ScalarProperty Name="PrescriptionID" ColumnName="PrescriptionID" />
                 <ScalarProperty Name="MedicineID" ColumnName="MedicineID" />
