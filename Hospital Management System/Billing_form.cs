@@ -45,7 +45,7 @@ namespace Hospital_Management_System
                                 PatientName = p.FullName,
                                 PatientPhone = p.PhoneNumber,
                                 DoctorName = d.FullName,
-                                Appointment_Date = b.BillDate,
+                                BillDate = b.BillDate,
                                 Amount = (decimal)b.Amount,
                                 Status = b.Status
                             };
@@ -117,7 +117,7 @@ namespace Hospital_Management_System
         public string PatientName { get; set; }
         public string PatientPhone { get; set; }
         public string DoctorName { get; set; }
-        public DateTime Appointment_Date { get; set; }
+        public DateTime BillDate { get; set; }
         public decimal Amount { get; set; } // doctor visit fee
         public string Status { get; set; }  // Paid/Unpaid
     }
