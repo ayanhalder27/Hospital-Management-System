@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Hospital_Management_System
 {
@@ -47,23 +48,50 @@ namespace Hospital_Management_System
 
         private void Appointments2_Load(object sender, EventArgs e)
         {
+            loadAppointments(cbStatus.Text);
+            this.Owner.Hide();
+        }
+
+        private void loadAppointments(string status)
+        {
+            flowLayoutPanel1.Controls.Clear();
             var appointments = from a in db.Appointments
                                join u in db.Users on a.Patient_User_ID equals u.UserID
-                               where a.Appoinment_Status == "Confirmed" && a.Doctor_User_ID == 1027
-                               select new { a.AppointmentID, u.FullName, a.AppointmentDate, u.PhoneNumber, a.Appoinment_Status};
+                               where a.Appoinment_Status == status && a.Doctor_User_ID == Login_form.userID
+                               select new { a.AppointmentID, u.FullName, a.AppointmentDate, u.PhoneNumber, a.Appoinment_Status };
 
             foreach (var a in appointments)
             {
                 flowLayoutPanel1.Controls.Add(dynamicPanel(a.AppointmentID, a.FullName, a.AppointmentDate, a.PhoneNumber, a.Appoinment_Status));
             }
 
-            this.Owner.Hide();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Owner.Show();
             this.Close();
+        }
+
+        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbStatus.Text == "All")
+            {
+                flowLayoutPanel1.Controls.Clear();
+                var appointments = from a in db.Appointments
+                                   join u in db.Users on a.Patient_User_ID equals u.UserID
+                                   where a.Doctor_User_ID == Login_form.userID
+                                   select new { a.AppointmentID, u.FullName, a.AppointmentDate, u.PhoneNumber, a.Appoinment_Status };
+
+                foreach (var a in appointments)
+                {
+                    flowLayoutPanel1.Controls.Add(dynamicPanel(a.AppointmentID, a.FullName, a.AppointmentDate, a.PhoneNumber, a.Appoinment_Status));
+                }
+            }
+            else
+            {
+                loadAppointments(cbStatus.Text);
+            }
         }
     }
 }

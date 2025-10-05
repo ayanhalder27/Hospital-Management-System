@@ -17,7 +17,7 @@ namespace Hospital_Management_System
     public partial class Prescribe : Form
     {
         HospitalContext db = new HospitalContext();
-        int appointmentID;
+        int appointmentID, prescriptionID;
         public Prescribe(int id)
         {
             InitializeComponent();
@@ -86,81 +86,100 @@ namespace Hospital_Management_System
 
         private void btnSavePrescription_Click(object sender, EventArgs e)
         {
-            //var prescription = new Prescription
-            //{
-            //    AppointmentID = this.appointmentID,
-            //    Date = DateTime.Now
-            //};
-
-            //db.Prescriptions.Add(prescription);
-            //db.SaveChanges();
-
-            //List<string> testNames = new List<string>();
-
-            //for (int i=0; i<dgvTest.Rows.Count-1; i++)
-            //{
-            //    testNames.Add(dgvTest.Rows[i].Cells[0].Value.ToString());
-            //}
-            //var testMap = db.MedicalTests.Where(t=> testNames.Contains(t.TestName))
-            //    .ToDictionary(t=> t.TestName, t=> t.TestID);
-            //foreach (string name in testNames)
-            //{
-            //    if(testMap.TryGetValue(name, out int testID))
-            //    {
-            //        db.Prescribed_Tests.Add(new Prescribed_Tests
-            //        {
-            //            PrescriptionID = prescription.PrescriptionID,
-            //            TestID = testID
-            //        });
-            //    }
-            //}
-
-            //List<string> medicineNames = new List<string>();
-            //for (int i=0; i<dgvMedicines.Rows.Count-1; i++)
-            //{
-            //    medicineNames.Add(dgvMedicines.Rows[i].Cells[0].Value.ToString().Split('~')[0]);
-            //}
-            //var medicineMap = db.Medicines.Where(m => medicineNames.Contains(m.Medicine_Name))
-            //    .ToDictionary(m => m.Medicine_Name, m => m.MedicineID);
-            //foreach(string name in medicineNames)
-            //{
-            //    if(medicineMap.TryGetValue(name, out int medicineID))
-            //    {
-            //        int i = 0;
-            //        db.Prescribed_Medicines.Add(new Prescribed_Medicines
-            //        {
-            //            PrescriptionID = prescription.PrescriptionID,
-            //            MedicineID = medicineID,
-            //            Dosage = dgvMedicines.Rows[i].Cells[1].Value.ToString(),
-            //            Instructions = dgvMedicines.Rows[i].Cells[2].Value.ToString(),
-            //            Feed_Days = dgvMedicines.Rows[i].Cells[3].Value.ToString()
-            //        });
-            //        i++;
-            //    }
-            //}
-
-            ////Appointment a = db.Appointments.Find(appointmentID);
-            ////a.Appoinment_Status = "Completed";
-
-            //db.SaveChanges();
-
-            //MessageBox.Show("Prescription Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            PrescriptionGenerator.CreatePrescription();
-
+            if(dgvMedicines.Rows.Count <=1 && dgvTest.Rows.Count <=1)
+            {
+                MessageBox.Show("Please add at least one medicine or test to prescribe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            savePrescription();
+            prescribe();
         }
 
-        //private void prescribe()
-        //{
-        //    string filepath = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName, "Documents", "Prescription.pdf");
-        //    Document doc = new Document(iTextSharp.text.PageSize.A4);
-        //    PdfWriter writer = PdfWriter.GetInstance(doc, new System.IO.FileStream(filepath, System.IO.FileMode.Create));
-        //    doc.Open();
-        //    Paragraph header = new Paragraph("Hospital Management System.");
-        //    doc.Add(header);
-        //    doc.Close();
-        //    Process.Start(filepath);
-        //}
+        private void savePrescription()
+        {
+            var prescription = new Prescription
+            {
+                AppointmentID = this.appointmentID,
+                Date = DateTime.Now
+            };
+
+            db.Prescriptions.Add(prescription);
+            db.SaveChanges();
+            prescriptionID = prescription.PrescriptionID;
+
+            List<string> testNames = new List<string>();
+
+            for (int i = 0; i < dgvTest.Rows.Count - 1; i++)
+            {
+                testNames.Add(dgvTest.Rows[i].Cells[0].Value.ToString());
+            }
+            var testMap = db.MedicalTests.Where(t => testNames.Contains(t.TestName))
+                .ToDictionary(t => t.TestName, t => t.TestID);
+            foreach (string name in testNames)
+            {
+                if (testMap.TryGetValue(name, out int testID))
+                {
+                    db.Prescribed_Tests.Add(new Prescribed_Tests
+                    {
+                        PrescriptionID = prescription.PrescriptionID,
+                        TestID = testID
+                    });
+                }
+            }
+
+            List<string> medicineNames = new List<string>();
+            for (int i = 0; i < dgvMedicines.Rows.Count - 1; i++)
+            {
+                medicineNames.Add(dgvMedicines.Rows[i].Cells[0].Value.ToString().Split('~')[0]);
+            }
+            var medicineMap = db.Medicines.Where(m => medicineNames.Contains(m.Medicine_Name))
+                .ToDictionary(m => m.Medicine_Name, m => m.MedicineID);
+            foreach (string name in medicineNames)
+            {
+                if (medicineMap.TryGetValue(name, out int medicineID))
+                {
+                    int i = 0;
+                    db.Prescribed_Medicines.Add(new Prescribed_Medicines
+                    {
+                        PrescriptionID = prescription.PrescriptionID,
+                        MedicineID = medicineID,
+                        Dosage = dgvMedicines.Rows[i].Cells[1].Value.ToString(),
+                        Instructions = dgvMedicines.Rows[i].Cells[2].Value.ToString(),
+                        Feed_Days = dgvMedicines.Rows[i].Cells[3].Value.ToString()
+                    });
+                    i++;
+                }
+            }
+
+            Appointment a = db.Appointments.Find(appointmentID);
+            a.Appoinment_Status = "Completed";
+
+            db.SaveChanges();
+
+            MessageBox.Show("Prescription Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void prescribe()
+        {
+
+            List testList = new List(List.ORDERED,10f);
+            testList.IndentationLeft = 20f;
+            for(int i=0; i<dgvTest.Rows.Count-1; i++)
+            {
+                testList.Add(new ListItem(dgvTest.Rows[i].Cells[0].Value.ToString()));
+            }
+
+            List<string> medicineList = new List<string>();
+            for (int i=0; i<dgvMedicines.Rows.Count-1; i++)
+            {
+                medicineList.Add(dgvMedicines.Rows[i].Cells[0].Value + "~" +
+                                 dgvMedicines.Rows[i].Cells[1].Value + "~" +
+                                 dgvMedicines.Rows[i].Cells[2].Value + "~" +
+                                 dgvMedicines.Rows[i].Cells[3].Value);
+            }
+            PrescriptionGenerator.CreatePrescription(prescriptionID,lblName.Text, lblAge.Text, lblSex.Text,testList , medicineList);
+
+        }
 
 
         private void btnBack_Click(object sender, EventArgs e)
