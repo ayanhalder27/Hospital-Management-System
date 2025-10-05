@@ -34,7 +34,8 @@ namespace Hospital_Management_System
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(lblID.Text.Replace("#", ""));
+            AppointmentDetails details = new AppointmentDetails(int.Parse(lblID.Text.Replace("#", "")));
+            details.Show(Appointments.thisPage);
         }
     }
 }

@@ -73,6 +73,16 @@ namespace Hospital_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap birthday_cake {
+            get {
+                object obj = ResourceManager.GetObject("birthday-cake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blank_profile_picture_973460_1920 {
             get {
                 object obj = ResourceManager.GetObject("blank-profile-picture-973460_1920", resourceCulture);
@@ -126,6 +136,16 @@ namespace Hospital_Management_System.Properties {
         internal static System.Drawing.Bitmap Done {
             get {
                 object obj = ResourceManager.GetObject("Done", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap equality {
+            get {
+                object obj = ResourceManager.GetObject("equality", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -379,6 +379,8 @@
     <None Include="Resources\Pending.png" />
     <None Include="Resources\blank-profile-picture-973460_1920.png" />
     <None Include="Resources\Done.png" />
+    <None Include="Resources\birthday-cake.png" />
+    <None Include="Resources\equality.png" />
     <Content Include="Resources\hide.png" />
     <None Include="Resources\Niloy profile.jpg" />
     <None Include="Resources\visible.png" />
