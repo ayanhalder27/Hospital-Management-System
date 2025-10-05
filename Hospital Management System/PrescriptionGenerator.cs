@@ -27,6 +27,10 @@ public class PrescriptionGenerator
         try
         {
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(filepath, FileMode.Create));
+            HospitalContext db = new HospitalContext();
+            var prescription = db.Prescriptions.Find(prescriptionID);
+            prescription.Prescription_File = fileName;
+            db.SaveChanges();
 
             // Assign our custom class to handle page events (header and footer).
             writer.PageEvent = new PrescriptionPageEvents();

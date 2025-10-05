@@ -93,6 +93,9 @@ namespace Hospital_Management_System
             }
             savePrescription();
             prescribe();
+            this.Owner.Show();
+            ((Appointments)this.Owner).loadAppointments("Confirmed");
+            this.Close();
         }
 
         private void savePrescription()
@@ -109,7 +112,7 @@ namespace Hospital_Management_System
 
             List<string> testNames = new List<string>();
 
-            for (int i = 0; i < dgvTest.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvTest.Rows.Count; i++)
             {
                 testNames.Add(dgvTest.Rows[i].Cells[0].Value.ToString());
             }
@@ -128,7 +131,7 @@ namespace Hospital_Management_System
             }
 
             List<string> medicineNames = new List<string>();
-            for (int i = 0; i < dgvMedicines.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvMedicines.Rows.Count; i++)
             {
                 medicineNames.Add(dgvMedicines.Rows[i].Cells[0].Value.ToString().Split('~')[0]);
             }
@@ -164,13 +167,13 @@ namespace Hospital_Management_System
 
             List testList = new List(List.ORDERED,10f);
             testList.IndentationLeft = 20f;
-            for(int i=0; i<dgvTest.Rows.Count-1; i++)
+            for(int i=0; i<dgvTest.Rows.Count; i++)
             {
                 testList.Add(new ListItem(dgvTest.Rows[i].Cells[0].Value.ToString()));
             }
 
             List<string> medicineList = new List<string>();
-            for (int i=0; i<dgvMedicines.Rows.Count-1; i++)
+            for (int i=0; i<dgvMedicines.Rows.Count; i++)
             {
                 medicineList.Add(dgvMedicines.Rows[i].Cells[0].Value + "~" +
                                  dgvMedicines.Rows[i].Cells[1].Value + "~" +
@@ -181,6 +184,21 @@ namespace Hospital_Management_System
 
         }
 
+        private void dgvTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvTest.Columns[e.ColumnIndex].Name == "remove")
+            {
+                dgvTest.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private void dgvMedicines_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if( e.RowIndex >= 0 && dgvMedicines.Columns[e.ColumnIndex].Name == "removeDrug")
+            {
+                dgvMedicines.Rows.RemoveAt(e.RowIndex);
+            }
+        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {

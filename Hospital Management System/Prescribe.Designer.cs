@@ -299,6 +299,7 @@
             // 
             // dgvMedicines
             // 
+            this.dgvMedicines.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvMedicines.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMedicines.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -357,6 +358,7 @@
             this.dgvMedicines.ThemeStyle.RowsStyle.Height = 28;
             this.dgvMedicines.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvMedicines.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvMedicines.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicines_CellContentClick);
             // 
             // medicineName
             // 
@@ -578,6 +580,7 @@
             // 
             // dgvTest
             // 
+            this.dgvTest.AllowUserToAddRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.dgvTest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -633,6 +636,7 @@
             this.dgvTest.ThemeStyle.RowsStyle.Height = 28;
             this.dgvTest.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTest.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTest_CellContentClick);
             // 
             // testName
             // 

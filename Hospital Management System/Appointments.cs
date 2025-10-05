@@ -52,7 +52,7 @@ namespace Hospital_Management_System
             this.Owner.Hide();
         }
 
-        private void loadAppointments(string status)
+        public void loadAppointments(string status)
         {
             flowLayoutPanel1.Controls.Clear();
             var appointments = from a in db.Appointments

@@ -19,8 +19,11 @@ namespace Hospital_Management_System
             lblName.Text = name;
             lblDate.Text = date.ToString("dd, MMMM yyyy");
             lblNumber.Text = number;
-            if(status == "Completed")
+            if (status == "Completed")
+            {
                 this.pbStatus.Image = global::Hospital_Management_System.Properties.Resources.Done;
+                btnPrescribe.Enabled = false;
+            }
         }
 
         private void btnPrescribe_Click(object sender, EventArgs e)

@@ -125,6 +125,12 @@
     <Compile Include="DoctorPortal.Designer.cs">
       <DependentUpon>DoctorPortal.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentDetails.Designer.cs">
+      <DependentUpon>AppointmentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenerateBillForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminPortal.resx">
       <DependentUpon>AdminPortal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentDetails.resx">
+      <DependentUpon>AppointmentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppointmentPanelDesign.resx">
       <DependentUpon>AppointmentPanelDesign.cs</DependentUpon>
