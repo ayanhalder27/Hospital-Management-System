@@ -49,6 +49,7 @@ namespace Hospital_Management_System
                                                 x.p.Prescription_File
                                             }).ToList();
             dgvPrescriptions.DataSource = result;
+            this.Owner.Hide();
         }
 
         private void dgvPrescriptions_CellContentClick(object sender, DataGridViewCellEventArgs e)

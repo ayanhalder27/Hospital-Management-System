@@ -376,6 +376,9 @@
       <DependentUpon>HospitalContext.edmx</DependentUpon>
       <LastGenOutput>HospitalContext.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\user1.png" />
+    <None Include="Resources\password.png" />
+    <None Include="Resources\Login BG.jpg" />
     <None Include="Resources\Pending.png" />
     <None Include="Resources\blank-profile-picture-973460_1920.png" />
     <None Include="Resources\Done.png" />
