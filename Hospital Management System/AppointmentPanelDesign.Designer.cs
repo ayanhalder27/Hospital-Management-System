@@ -196,7 +196,7 @@
             this.btnDetails.FillColor = System.Drawing.Color.White;
             this.btnDetails.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnDetails.Image = global::Hospital_Management_System.Properties.Resources.file__1_;
+            this.btnDetails.Image = global::Hospital_Management_System.Properties.Resources.file;
             this.btnDetails.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDetails.Location = new System.Drawing.Point(16, 198);
             this.btnDetails.Name = "btnDetails";

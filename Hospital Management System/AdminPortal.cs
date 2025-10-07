@@ -85,5 +85,11 @@ namespace Hospital_Management_System
             var manageBilling = new Billing_form(UserID);
             manageBilling.ShowDialog();
         }
+
+        private void btn_manage_medicine_Click(object sender, EventArgs e)
+        {
+            ManageMedicines manageMedicines = new ManageMedicines();
+            manageMedicines.Show(this);
+        }
     }
 }

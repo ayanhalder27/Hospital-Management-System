@@ -138,6 +138,7 @@
             this.btn_manage_medicine.TabIndex = 6;
             this.btn_manage_medicine.Text = "Medicine";
             this.btn_manage_medicine.UseTransparentBackground = true;
+            this.btn_manage_medicine.Click += new System.EventHandler(this.btn_manage_medicine_Click);
             // 
             // btn_manage_prescription
             // 

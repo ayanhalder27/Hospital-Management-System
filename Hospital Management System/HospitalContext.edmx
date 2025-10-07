@@ -34,6 +34,15 @@
           <Property Name="TestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TestName" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
+        <EntityType Name="MEDICINE_BILLING">
+          <Key>
+            <PropertyRef Name="MEDICINE_BILLING_ID" />
+          </Key>
+          <Property Name="MEDICINE_BILLING_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHARMACY_BILLING_ID" Type="int" Nullable="false" />
+          <Property Name="MedicineID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Medicines">
           <Key>
             <PropertyRef Name="MedicineID" />
@@ -42,6 +51,20 @@
           <Property Name="Medicine_Name" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Generic_Name" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Formulation" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Stock" Type="int" />
+        </EntityType>
+        <EntityType Name="PHARMACY_BILLING">
+          <Key>
+            <PropertyRef Name="PHARMACY_BILLING_ID" />
+          </Key>
+          <Property Name="PHARMACY_BILLING_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pharmacists_User_ID" Type="int" Nullable="false" />
+          <Property Name="Patient_User_ID" Type="int" />
+          <Property Name="Subtotal" Type="float" Nullable="false" />
+          <Property Name="Discount" Type="float" Nullable="false" />
+          <Property Name="Total" Type="float" Nullable="false" />
+          <Property Name="Invoice" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <EntityType Name="Prescribed_Medicines">
           <Key>
@@ -157,6 +180,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_MEDICINE_BILLING_ToTable">
+          <End Role="PHARMACY_BILLING" Type="Self.PHARMACY_BILLING" Multiplicity="1" />
+          <End Role="MEDICINE_BILLING" Type="Self.MEDICINE_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHARMACY_BILLING">
+              <PropertyRef Name="PHARMACY_BILLING_ID" />
+            </Principal>
+            <Dependent Role="MEDICINE_BILLING">
+              <PropertyRef Name="PHARMACY_BILLING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDICINE_BILLING_ToTable_1">
+          <End Role="Medicines" Type="Self.Medicines" Multiplicity="1" />
+          <End Role="MEDICINE_BILLING" Type="Self.MEDICINE_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicines">
+              <PropertyRef Name="MedicineID" />
+            </Principal>
+            <Dependent Role="MEDICINE_BILLING">
+              <PropertyRef Name="MedicineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Prescribed_Medicines_ToTable">
           <End Role="Prescriptions" Type="Self.Prescriptions" Multiplicity="1" />
           <End Role="Prescribed_Medicines" Type="Self.Prescribed_Medicines" Multiplicity="*" />
@@ -217,11 +264,37 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Table_ToTable">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="PHARMACY_BILLING" Type="Self.PHARMACY_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="PHARMACY_BILLING">
+              <PropertyRef Name="Pharmacists_User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_ToTable_1">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="PHARMACY_BILLING" Type="Self.PHARMACY_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="PHARMACY_BILLING">
+              <PropertyRef Name="Patient_User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ayanhalder2705_ModelStoreContainer">
           <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Billing" EntityType="Self.Billing" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MedicalTests" EntityType="Self.MedicalTests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MEDICINE_BILLING" EntityType="Self.MEDICINE_BILLING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Medicines" EntityType="Self.Medicines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHARMACY_BILLING" EntityType="Self.PHARMACY_BILLING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Prescribed_Medicines" EntityType="Self.Prescribed_Medicines" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Prescribed_Tests" EntityType="Self.Prescribed_Tests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Prescriptions" EntityType="Self.Prescriptions" Schema="dbo" store:Type="Tables" />
@@ -247,6 +320,14 @@
             <End Role="Appointments" EntitySet="Appointments" />
             <End Role="Billing" EntitySet="Billing" />
           </AssociationSet>
+          <AssociationSet Name="FK_MEDICINE_BILLING_ToTable" Association="Self.FK_MEDICINE_BILLING_ToTable">
+            <End Role="PHARMACY_BILLING" EntitySet="PHARMACY_BILLING" />
+            <End Role="MEDICINE_BILLING" EntitySet="MEDICINE_BILLING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDICINE_BILLING_ToTable_1" Association="Self.FK_MEDICINE_BILLING_ToTable_1">
+            <End Role="Medicines" EntitySet="Medicines" />
+            <End Role="MEDICINE_BILLING" EntitySet="MEDICINE_BILLING" />
+          </AssociationSet>
           <AssociationSet Name="FK_Prescribed_Medicines_ToTable" Association="Self.FK_Prescribed_Medicines_ToTable">
             <End Role="Prescriptions" EntitySet="Prescriptions" />
             <End Role="Prescribed_Medicines" EntitySet="Prescribed_Medicines" />
@@ -266,6 +347,14 @@
           <AssociationSet Name="FK_Prescriptions_ToTable" Association="Self.FK_Prescriptions_ToTable">
             <End Role="Appointments" EntitySet="Appointments" />
             <End Role="Prescriptions" EntitySet="Prescriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToTable" Association="Self.FK_Table_ToTable">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PHARMACY_BILLING" EntitySet="PHARMACY_BILLING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToTable_1" Association="Self.FK_Table_ToTable_1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="PHARMACY_BILLING" EntitySet="PHARMACY_BILLING" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -317,6 +406,9 @@
           <Property Name="Generic_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Formulation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Prescribed_Medicines" Relationship="Self.FK_Prescribed_Medicines_ToTable_1" FromRole="Medicines" ToRole="Prescribed_Medicines" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Stock" Type="Int32" />
+          <NavigationProperty Name="MEDICINE_BILLING" Relationship="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable_1" FromRole="Medicine" ToRole="MEDICINE_BILLING" />
         </EntityType>
         <EntityType Name="Prescribed_Medicines">
           <Key>
@@ -383,6 +475,8 @@
           <NavigationProperty Name="Appointments1" Relationship="Self.FK__Appointme__Patie__114A936A" FromRole="Users" ToRole="Appointments" />
           <NavigationProperty Name="Billings" Relationship="Self.FK_Billin_ToTable" FromRole="Users" ToRole="Billing" />
           <NavigationProperty Name="Role" Relationship="Self.FK__Users__RoleID__0B91BA14" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="PHARMACY_BILLING" Relationship="ayanhalder2705_Model.FK_Table_ToTable" FromRole="User" ToRole="PHARMACY_BILLING" />
+          <NavigationProperty Name="PHARMACY_BILLING1" Relationship="ayanhalder2705_Model.FK_Table_ToTable_1" FromRole="User" ToRole="PHARMACY_BILLING" />
         </EntityType>
         <Association Name="FK__Appointme__Docto__123EB7A3">
           <End Role="Users" Type="Self.User" Multiplicity="1" />
@@ -554,7 +648,99 @@
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+          <EntitySet Name="MEDICINE_BILLING" EntityType="ayanhalder2705_Model.MEDICINE_BILLING" />
+          <EntitySet Name="PHARMACY_BILLING" EntityType="ayanhalder2705_Model.PHARMACY_BILLING" />
+          <AssociationSet Name="FK_MEDICINE_BILLING_ToTable" Association="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable">
+            <End Role="PHARMACY_BILLING" EntitySet="PHARMACY_BILLING" />
+            <End Role="MEDICINE_BILLING" EntitySet="MEDICINE_BILLING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MEDICINE_BILLING_ToTable_1" Association="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable_1">
+            <End Role="Medicine" EntitySet="Medicines" />
+            <End Role="MEDICINE_BILLING" EntitySet="MEDICINE_BILLING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToTable" Association="ayanhalder2705_Model.FK_Table_ToTable">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PHARMACY_BILLING" EntitySet="PHARMACY_BILLING" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToTable_1" Association="ayanhalder2705_Model.FK_Table_ToTable_1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="PHARMACY_BILLING" EntitySet="PHARMACY_BILLING" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="MEDICINE_BILLING">
+          <Key>
+            <PropertyRef Name="MEDICINE_BILLING_ID" />
+          </Key>
+          <Property Name="MEDICINE_BILLING_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHARMACY_BILLING_ID" Type="Int32" Nullable="false" />
+          <Property Name="MedicineID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PHARMACY_BILLING" Relationship="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable" FromRole="MEDICINE_BILLING" ToRole="PHARMACY_BILLING" />
+          <NavigationProperty Name="Medicine" Relationship="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable_1" FromRole="MEDICINE_BILLING" ToRole="Medicine" />
+        </EntityType>
+        <EntityType Name="PHARMACY_BILLING">
+          <Key>
+            <PropertyRef Name="PHARMACY_BILLING_ID" />
+          </Key>
+          <Property Name="PHARMACY_BILLING_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pharmacists_User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Patient_User_ID" Type="Int32" />
+          <Property Name="Subtotal" Type="Double" Nullable="false" />
+          <Property Name="Discount" Type="Double" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <Property Name="Invoice" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MEDICINE_BILLING" Relationship="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable" FromRole="PHARMACY_BILLING" ToRole="MEDICINE_BILLING" />
+          <NavigationProperty Name="User" Relationship="ayanhalder2705_Model.FK_Table_ToTable" FromRole="PHARMACY_BILLING" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="ayanhalder2705_Model.FK_Table_ToTable_1" FromRole="PHARMACY_BILLING" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_MEDICINE_BILLING_ToTable">
+          <End Type="ayanhalder2705_Model.PHARMACY_BILLING" Role="PHARMACY_BILLING" Multiplicity="1" />
+          <End Type="ayanhalder2705_Model.MEDICINE_BILLING" Role="MEDICINE_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHARMACY_BILLING">
+              <PropertyRef Name="PHARMACY_BILLING_ID" />
+            </Principal>
+            <Dependent Role="MEDICINE_BILLING">
+              <PropertyRef Name="PHARMACY_BILLING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MEDICINE_BILLING_ToTable_1">
+          <End Type="ayanhalder2705_Model.Medicine" Role="Medicine" Multiplicity="1" />
+          <End Type="ayanhalder2705_Model.MEDICINE_BILLING" Role="MEDICINE_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicine">
+              <PropertyRef Name="MedicineID" />
+            </Principal>
+            <Dependent Role="MEDICINE_BILLING">
+              <PropertyRef Name="MedicineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_ToTable">
+          <End Type="ayanhalder2705_Model.User" Role="User" Multiplicity="1" />
+          <End Type="ayanhalder2705_Model.PHARMACY_BILLING" Role="PHARMACY_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="PHARMACY_BILLING">
+              <PropertyRef Name="Pharmacists_User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_ToTable_1">
+          <End Type="ayanhalder2705_Model.User" Role="User" Multiplicity="0..1" />
+          <End Type="ayanhalder2705_Model.PHARMACY_BILLING" Role="PHARMACY_BILLING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="PHARMACY_BILLING">
+              <PropertyRef Name="Patient_User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -596,6 +782,8 @@
           <EntitySetMapping Name="Medicines">
             <EntityTypeMapping TypeName="ayanhalder2705_Model.Medicine">
               <MappingFragment StoreEntitySet="Medicines">
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="MedicineID" ColumnName="MedicineID" />
                 <ScalarProperty Name="Medicine_Name" ColumnName="Medicine_Name" />
                 <ScalarProperty Name="Generic_Name" ColumnName="Generic_Name" />
@@ -659,6 +847,29 @@
                 <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Visit_Fee" ColumnName="Visit_Fee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDICINE_BILLING">
+            <EntityTypeMapping TypeName="ayanhalder2705_Model.MEDICINE_BILLING">
+              <MappingFragment StoreEntitySet="MEDICINE_BILLING">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="MedicineID" ColumnName="MedicineID" />
+                <ScalarProperty Name="PHARMACY_BILLING_ID" ColumnName="PHARMACY_BILLING_ID" />
+                <ScalarProperty Name="MEDICINE_BILLING_ID" ColumnName="MEDICINE_BILLING_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHARMACY_BILLING">
+            <EntityTypeMapping TypeName="ayanhalder2705_Model.PHARMACY_BILLING">
+              <MappingFragment StoreEntitySet="PHARMACY_BILLING">
+                <ScalarProperty Name="Invoice" ColumnName="Invoice" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="Patient_User_ID" ColumnName="Patient_User_ID" />
+                <ScalarProperty Name="Pharmacists_User_ID" ColumnName="Pharmacists_User_ID" />
+                <ScalarProperty Name="PHARMACY_BILLING_ID" ColumnName="PHARMACY_BILLING_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

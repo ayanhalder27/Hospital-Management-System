@@ -12,25 +12,25 @@ namespace Hospital_Management_System
     using System;
     using System.Collections.Generic;
     
-    public partial class Medicine
+    public partial class PHARMACY_BILLING
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Medicine()
+        public PHARMACY_BILLING()
         {
-            this.Prescribed_Medicines = new HashSet<Prescribed_Medicines>();
             this.MEDICINE_BILLING = new HashSet<MEDICINE_BILLING>();
         }
     
-        public int MedicineID { get; set; }
-        public string Medicine_Name { get; set; }
-        public string Generic_Name { get; set; }
-        public string Formulation { get; set; }
-        public Nullable<double> Price { get; set; }
-        public Nullable<int> Stock { get; set; }
+        public int PHARMACY_BILLING_ID { get; set; }
+        public int Pharmacists_User_ID { get; set; }
+        public Nullable<int> Patient_User_ID { get; set; }
+        public double Subtotal { get; set; }
+        public double Discount { get; set; }
+        public double Total { get; set; }
+        public string Invoice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Prescribed_Medicines> Prescribed_Medicines { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MEDICINE_BILLING> MEDICINE_BILLING { get; set; }
+        public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

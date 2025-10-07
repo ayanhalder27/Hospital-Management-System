@@ -34,5 +34,7 @@ namespace Hospital_Management_System
         public virtual DbSet<Prescription> Prescriptions { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<MEDICINE_BILLING> MEDICINE_BILLING { get; set; }
+        public virtual DbSet<PHARMACY_BILLING> PHARMACY_BILLING { get; set; }
     }
 }

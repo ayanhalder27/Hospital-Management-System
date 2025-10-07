@@ -20,6 +20,8 @@ namespace Hospital_Management_System
             this.Appointments = new HashSet<Appointment>();
             this.Appointments1 = new HashSet<Appointment>();
             this.Billings = new HashSet<Billing>();
+            this.PHARMACY_BILLING = new HashSet<PHARMACY_BILLING>();
+            this.PHARMACY_BILLING1 = new HashSet<PHARMACY_BILLING>();
         }
     
         public int UserID { get; set; }
@@ -44,5 +46,9 @@ namespace Hospital_Management_System
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Billing> Billings { get; set; }
         public virtual Role Role { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHARMACY_BILLING> PHARMACY_BILLING { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHARMACY_BILLING> PHARMACY_BILLING1 { get; set; }
     }
 }
