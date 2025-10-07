@@ -1,6 +1,6 @@
 ﻿namespace Hospital_Management_System
 {
-    partial class Pharmacy_Billing
+    partial class PharmacyBilling
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Pharmacy_Billing";
+            this.Text = "PharmacyBilling";
         }
 
         #endregion

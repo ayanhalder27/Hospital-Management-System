@@ -198,11 +198,14 @@
     <Compile Include="PharmacistPortal.Designer.cs">
       <DependentUpon>PharmacistPortal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pharmacy_Billing.cs">
-      <DependentUpon>HospitalContext.tt</DependentUpon>
+    <Compile Include="PharmacyBilling.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pharmacy_Billing.Designer.cs">
-      <DependentUpon>Pharmacy_Billing.cs</DependentUpon>
+    <Compile Include="PharmacyBilling.Designer.cs">
+      <DependentUpon>PharmacyBilling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PHARMACY_BILLING.cs">
+      <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Prescribe.cs">
       <SubType>Form</SubType>
