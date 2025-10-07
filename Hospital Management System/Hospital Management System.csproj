@@ -303,6 +303,9 @@
     <EmbeddedResource Include="PharmacistPortal.resx">
       <DependentUpon>PharmacistPortal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PharmacyBilling.resx">
+      <DependentUpon>PharmacyBilling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prescribe.resx">
       <DependentUpon>Prescribe.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +409,7 @@
       <DependentUpon>HospitalContext.edmx</DependentUpon>
       <LastGenOutput>HospitalContext.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\patient.png" />
     <None Include="Resources\profit-up.png" />
     <None Include="Resources\syringe2.png" />
     <None Include="Resources\syringe1.png" />
@@ -419,6 +423,9 @@
     <None Include="Resources\birthday-cake.png" />
     <None Include="Resources\equality.png" />
     <None Include="Resources\cross-selling.png" />
+    <None Include="Resources\BG.jpg" />
+    <None Include="Resources\confirm.png" />
+    <None Include="Resources\emp.png" />
     <Content Include="Resources\hide.png" />
     <None Include="Resources\Niloy profile.jpg" />
     <None Include="Resources\visible.png" />

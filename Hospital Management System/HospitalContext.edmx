@@ -61,6 +61,7 @@
           <Property Name="PHARMACY_BILLING_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Pharmacists_User_ID" Type="int" Nullable="false" />
           <Property Name="Patient_User_ID" Type="int" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
           <Property Name="Subtotal" Type="float" Nullable="false" />
           <Property Name="Discount" Type="float" Nullable="false" />
           <Property Name="Total" Type="float" Nullable="false" />
@@ -692,6 +693,7 @@
           <NavigationProperty Name="MEDICINE_BILLING" Relationship="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable" FromRole="PHARMACY_BILLING" ToRole="MEDICINE_BILLING" />
           <NavigationProperty Name="User" Relationship="ayanhalder2705_Model.FK_Table_ToTable" FromRole="PHARMACY_BILLING" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="ayanhalder2705_Model.FK_Table_ToTable_1" FromRole="PHARMACY_BILLING" ToRole="User" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <Association Name="FK_MEDICINE_BILLING_ToTable">
           <End Type="ayanhalder2705_Model.PHARMACY_BILLING" Role="PHARMACY_BILLING" Multiplicity="1" />
@@ -863,6 +865,7 @@
           <EntitySetMapping Name="PHARMACY_BILLING">
             <EntityTypeMapping TypeName="ayanhalder2705_Model.PHARMACY_BILLING">
               <MappingFragment StoreEntitySet="PHARMACY_BILLING">
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Invoice" ColumnName="Invoice" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="Discount" ColumnName="Discount" />

@@ -27,6 +27,7 @@ namespace Hospital_Management_System
         public double Discount { get; set; }
         public double Total { get; set; }
         public string Invoice { get; set; }
+        public System.DateTime Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MEDICINE_BILLING> MEDICINE_BILLING { get; set; }
