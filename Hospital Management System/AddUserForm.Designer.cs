@@ -77,10 +77,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(850, 375);
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(803, 393);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(140, 28);
+            this.label13.Size = new System.Drawing.Size(150, 24);
             this.label13.TabIndex = 84;
             this.label13.Text = "Pofile Picture";
             // 
@@ -166,8 +167,9 @@
             // 
             this.picPhoto.BackColor = System.Drawing.Color.Transparent;
             this.picPhoto.BorderRadius = 50;
+            this.picPhoto.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
             this.picPhoto.ImageRotate = 0F;
-            this.picPhoto.Location = new System.Drawing.Point(754, 47);
+            this.picPhoto.Location = new System.Drawing.Point(718, 57);
             this.picPhoto.Name = "picPhoto";
             this.picPhoto.Size = new System.Drawing.Size(325, 325);
             this.picPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,12 +200,14 @@
             this.btnChangePic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChangePic.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChangePic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChangePic.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePic.ForeColor = System.Drawing.Color.Black;
+            this.btnChangePic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnChangePic.FillColor2 = System.Drawing.Color.Teal;
+            this.btnChangePic.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePic.ForeColor = System.Drawing.Color.White;
             this.btnChangePic.IndicateFocus = true;
-            this.btnChangePic.Location = new System.Drawing.Point(754, 406);
+            this.btnChangePic.Location = new System.Drawing.Point(773, 428);
             this.btnChangePic.Name = "btnChangePic";
-            this.btnChangePic.Size = new System.Drawing.Size(174, 28);
+            this.btnChangePic.Size = new System.Drawing.Size(196, 35);
             this.btnChangePic.TabIndex = 82;
             this.btnChangePic.Text = "Change profile pic";
             this.btnChangePic.UseTransparentBackground = true;
@@ -221,10 +225,10 @@
             this.btn_add_new_user.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_add_new_user.FillColor = System.Drawing.Color.LightGreen;
             this.btn_add_new_user.FillColor2 = System.Drawing.Color.DarkGreen;
-            this.btn_add_new_user.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btn_add_new_user.ForeColor = System.Drawing.Color.Black;
+            this.btn_add_new_user.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_new_user.ForeColor = System.Drawing.Color.White;
             this.btn_add_new_user.IndicateFocus = true;
-            this.btn_add_new_user.Location = new System.Drawing.Point(225, 661);
+            this.btn_add_new_user.Location = new System.Drawing.Point(861, 661);
             this.btn_add_new_user.Name = "btn_add_new_user";
             this.btn_add_new_user.Size = new System.Drawing.Size(243, 59);
             this.btn_add_new_user.TabIndex = 79;
@@ -258,6 +262,7 @@
             // 
             this.txtFullName.Animated = true;
             this.txtFullName.AutoRoundedCorners = true;
+            this.txtFullName.BackColor = System.Drawing.Color.Transparent;
             this.txtFullName.BorderColor = System.Drawing.Color.Black;
             this.txtFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFullName.DefaultText = "";
@@ -281,6 +286,7 @@
             // 
             this.txtAddress.Animated = true;
             this.txtAddress.AutoRoundedCorners = true;
+            this.txtAddress.BackColor = System.Drawing.Color.Transparent;
             this.txtAddress.BorderColor = System.Drawing.Color.Black;
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.DefaultText = "";
@@ -304,6 +310,7 @@
             // 
             this.txtPhone.Animated = true;
             this.txtPhone.AutoRoundedCorners = true;
+            this.txtPhone.BackColor = System.Drawing.Color.Transparent;
             this.txtPhone.BorderColor = System.Drawing.Color.Black;
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.DefaultText = "";
@@ -328,6 +335,7 @@
             // 
             this.txtEmail.Animated = true;
             this.txtEmail.AutoRoundedCorners = true;
+            this.txtEmail.BackColor = System.Drawing.Color.Transparent;
             this.txtEmail.BorderColor = System.Drawing.Color.Black;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.DefaultText = "";
@@ -351,80 +359,88 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 428);
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(89, 427);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 35);
+            this.label10.Size = new System.Drawing.Size(92, 30);
             this.label10.TabIndex = 69;
             this.label10.Text = "DOB :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(32, 382);
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(64, 381);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(115, 35);
+            this.label9.Size = new System.Drawing.Size(117, 30);
             this.label9.TabIndex = 68;
             this.label9.Text = "Gender :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(35, 337);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(53, 336);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 35);
+            this.label8.Size = new System.Drawing.Size(128, 30);
             this.label8.TabIndex = 67;
             this.label8.Text = "Address :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(32, 262);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(9, 261);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(165, 35);
+            this.label7.Size = new System.Drawing.Size(172, 30);
             this.label7.TabIndex = 66;
             this.label7.Text = "Phone Num :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 185);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(79, 184);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 35);
+            this.label6.Size = new System.Drawing.Size(102, 30);
             this.label6.TabIndex = 65;
             this.label6.Text = "Email :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 138);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(23, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 35);
+            this.label4.Size = new System.Drawing.Size(158, 30);
             this.label4.TabIndex = 63;
             this.label4.Text = "Full Name :";
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(35, 90);
+            this.lblRole.BackColor = System.Drawing.Color.Transparent;
+            this.lblRole.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Location = new System.Drawing.Point(94, 89);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(81, 35);
+            this.lblRole.Size = new System.Drawing.Size(87, 30);
             this.lblRole.TabIndex = 62;
             this.lblRole.Text = "Role :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(449, 9);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(440, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 49);
+            this.label1.Size = new System.Drawing.Size(263, 43);
             this.label1.TabIndex = 60;
             this.label1.Text = "Add new User";
             // 
@@ -479,14 +495,14 @@
             this.btn_close.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_close.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_close.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_close.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btn_close.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.ForeColor = System.Drawing.Color.Black;
             this.btn_close.IndicateFocus = true;
-            this.btn_close.Location = new System.Drawing.Point(-1, 0);
+            this.btn_close.Location = new System.Drawing.Point(12, 12);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(117, 41);
             this.btn_close.TabIndex = 90;
-            this.btn_close.Text = "Close";
+            this.btn_close.Text = "Back";
             this.btn_close.UseTransparentBackground = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
@@ -500,14 +516,14 @@
             this.btn_cancel_profilePic.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_cancel_profilePic.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_cancel_profilePic.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_cancel_profilePic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btn_cancel_profilePic.FillColor2 = System.Drawing.Color.Navy;
-            this.btn_cancel_profilePic.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.btn_cancel_profilePic.FillColor = System.Drawing.Color.Red;
+            this.btn_cancel_profilePic.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_cancel_profilePic.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel_profilePic.ForeColor = System.Drawing.Color.White;
             this.btn_cancel_profilePic.IndicateFocus = true;
-            this.btn_cancel_profilePic.Location = new System.Drawing.Point(985, 406);
+            this.btn_cancel_profilePic.Location = new System.Drawing.Point(827, 483);
             this.btn_cancel_profilePic.Name = "btn_cancel_profilePic";
-            this.btn_cancel_profilePic.Size = new System.Drawing.Size(94, 28);
+            this.btn_cancel_profilePic.Size = new System.Drawing.Size(94, 35);
             this.btn_cancel_profilePic.TabIndex = 91;
             this.btn_cancel_profilePic.Text = "Cancel";
             this.btn_cancel_profilePic.UseTransparentBackground = true;
@@ -525,10 +541,10 @@
             this.btn_clearAll_form.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_clearAll_form.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_clearAll_form.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_clearAll_form.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btn_clearAll_form.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clearAll_form.ForeColor = System.Drawing.Color.White;
             this.btn_clearAll_form.IndicateFocus = true;
-            this.btn_clearAll_form.Location = new System.Drawing.Point(724, 661);
+            this.btn_clearAll_form.Location = new System.Drawing.Point(673, 661);
             this.btn_clearAll_form.Name = "btn_clearAll_form";
             this.btn_clearAll_form.Size = new System.Drawing.Size(182, 59);
             this.btn_clearAll_form.TabIndex = 93;
@@ -542,6 +558,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.SkyBlue;
+            this.BackgroundImage = global::Hospital_Management_System.Properties.Resources.profilebg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1110, 732);
             this.Controls.Add(this.btn_clearAll_form);
             this.Controls.Add(this.btn_cancel_profilePic);
