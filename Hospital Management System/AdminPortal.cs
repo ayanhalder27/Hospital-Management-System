@@ -94,7 +94,9 @@ namespace Hospital_Management_System
 
         private void btn_profile_button_Click_1(object sender, EventArgs e)
         {
-
+            this.Hide();
+            UserProfileForm userProfileForm = new UserProfileForm(UserID);
+            userProfileForm.Show();
         }
     }
 }
