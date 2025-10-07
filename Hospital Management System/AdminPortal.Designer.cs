@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label11 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
@@ -147,6 +147,7 @@
             this.btn_profile_button.TabIndex = 9;
             this.btn_profile_button.Text = "Profile";
             this.btn_profile_button.UseTransparentBackground = true;
+            this.btn_profile_button.Click += new System.EventHandler(this.btn_profile_button_Click_1);
             // 
             // guna2PictureBox1
             // 
@@ -409,6 +410,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1161, 623);
             this.guna2Panel1.TabIndex = 2;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(477, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(237, 50);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Dashboard";
+            // 
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
@@ -592,17 +604,6 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(83, 75);
             this.guna2Panel2.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(477, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(237, 50);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Dashboard";
             // 
             // AdminPortal
             // 

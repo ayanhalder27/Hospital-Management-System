@@ -409,6 +409,7 @@
       <DependentUpon>HospitalContext.edmx</DependentUpon>
       <LastGenOutput>HospitalContext.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\profilebg.jpg" />
     <None Include="Resources\patient.png" />
     <None Include="Resources\profit-up.png" />
     <None Include="Resources\syringe2.png" />

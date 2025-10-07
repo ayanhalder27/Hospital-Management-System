@@ -91,5 +91,10 @@ namespace Hospital_Management_System
             ManageMedicines manageMedicines = new ManageMedicines();
             manageMedicines.Show(this);
         }
+
+        private void btn_profile_button_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
