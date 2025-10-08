@@ -205,6 +205,7 @@ namespace Hospital_Management_System
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
+            this.Owner.Show();
             this.Close();
         }
 

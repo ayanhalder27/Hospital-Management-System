@@ -24,7 +24,6 @@ namespace Hospital_Management_System
         private void ManageMedicines_Load(object sender, EventArgs e)
         {
             reloadData();
-            this.Owner.Hide();
         }
 
         private void reloadData()

@@ -99,9 +99,9 @@
             this.guna2GradientButton1.IndicateFocus = true;
             this.guna2GradientButton1.Location = new System.Drawing.Point(3, 3);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(84, 39);
+            this.guna2GradientButton1.Size = new System.Drawing.Size(78, 39);
             this.guna2GradientButton1.TabIndex = 1;
-            this.guna2GradientButton1.Text = "Close";
+            this.guna2GradientButton1.Text = "Back";
             this.guna2GradientButton1.UseTransparentBackground = true;
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 

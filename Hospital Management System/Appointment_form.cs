@@ -30,16 +30,8 @@ namespace Hospital_Management_System
 
         private void pic_back_button_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Close();
-                var adminPortal = new AdminPortal(currentUser.UserID);
-                adminPortal.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error returning to admin portal: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            this.Owner.Show();
+            this.Close();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -47,7 +39,8 @@ namespace Hospital_Management_System
             try
             {
                 var addAppointmentForm = new AddUpdateAppointment();
-                addAppointmentForm.Show();
+                addAppointmentForm.Show(this);
+                this.Hide();
             }
             catch (Exception ex)
             {

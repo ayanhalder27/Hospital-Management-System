@@ -178,8 +178,8 @@ namespace Hospital_Management_System
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new AdminPortal(UserID).Show();
+            this.Owner.Show();
+            this.Close();
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)

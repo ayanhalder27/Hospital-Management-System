@@ -32,19 +32,22 @@ namespace Hospital_Management_System
                     switch (user.RoleID)
                     {
                         case 1:
-                            new AdminPortal(user.UserID).Show();
+                            new AdminPortal(user.UserID).Show(this);
                             break;
                         case 2:
-                            new ManagerPortal(user.UserID).Show();
+                            new ManagerPortal(user.UserID).Show(this);
                             break;
                         case 3:
-                            new ReceptionistPortal(user.UserID).Show(); 
+                            new ReceptionistPortal(user.UserID).Show(this); 
                             break;
                         case 4:
-                            new DoctorPortal(user.UserID).Show();
+                            new DoctorPortal().Show(this);
                             break;
                         case 5:
-                            new PatientPortal(user.UserID).Show();
+                            new PatientPortal(user.UserID).Show(this);
+                            break;
+                        case 7:
+                            new PharmacistPortal().Show(this);
                             break;
                         default:
                             MessageBox.Show("Role not recognized!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

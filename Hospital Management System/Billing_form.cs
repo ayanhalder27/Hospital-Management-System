@@ -79,9 +79,8 @@ namespace Hospital_Management_System
 
         private void pic_back_button_Click(object sender, EventArgs e)
         {
+            this.Owner.Show();
             this.Close();
-            AdminPortal adminPortal = new AdminPortal(userID);
-            adminPortal.Show();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

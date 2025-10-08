@@ -118,6 +118,7 @@ namespace Hospital_Management_System
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.TextOffset = new System.Drawing.Point(30, 0);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnProfile
             // 
@@ -144,6 +145,7 @@ namespace Hospital_Management_System
             this.btnProfile.Text = "Profile";
             this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProfile.TextOffset = new System.Drawing.Point(30, 0);
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnSellMedicine
             // 
@@ -170,6 +172,7 @@ namespace Hospital_Management_System
             this.btnSellMedicine.Text = "Sell Medicine";
             this.btnSellMedicine.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSellMedicine.TextOffset = new System.Drawing.Point(30, 0);
+            this.btnSellMedicine.Click += new System.EventHandler(this.btnSellMedicine_Click);
             // 
             // btnViewMedicine
             // 
@@ -233,7 +236,7 @@ namespace Hospital_Management_System
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(244, 28);
             this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Welcome, Ayan Halder";
+            this.lblWelcome.Text = "Welcome, ";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbProfilePic
@@ -430,6 +433,7 @@ namespace Hospital_Management_System
             this.Name = "PharmacistPortal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PharmacistPortal";
+            this.Load += new System.EventHandler(this.PharmacistPortal_Load);
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();

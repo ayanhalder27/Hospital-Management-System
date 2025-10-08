@@ -49,7 +49,6 @@ namespace Hospital_Management_System
         private void Appointments2_Load(object sender, EventArgs e)
         {
             loadAppointments(cbStatus.Text);
-            this.Owner.Hide();
         }
 
         public void loadAppointments(string status)

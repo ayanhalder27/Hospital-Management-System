@@ -149,6 +149,7 @@
             this.btnLogout.Size = new System.Drawing.Size(240, 45);
             this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnAppointment
             // 
@@ -213,6 +214,7 @@
             this.btnProfile.Size = new System.Drawing.Size(240, 45);
             this.btnProfile.TabIndex = 0;
             this.btnProfile.Text = "Profile";
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // guna2Panel3
             // 

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace Hospital_Management_System
         HospitalContext db = new HospitalContext();
         Dictionary<int, string> medicines;
         float subtotal = 0;
+        int patientUserID = 0;
         public PharmacyBilling()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace Hospital_Management_System
             lblTotal.Text = (subtotal - float.Parse(txtDiscount.Text)).ToString();
             txtDrug.AutoCompleteCustomSource.Remove(txtDrug.Text);
             txtDrug.Text = txtQuantity.Text = "";
-
+            txtDrug.Focus();
         }
 
         private void txtDrug_KeyDown(object sender, KeyEventArgs e)
@@ -54,6 +57,8 @@ namespace Hospital_Management_System
             if (e.KeyCode == Keys.Enter)
             {
                 txtQuantity.Text = "1";
+                txtQuantity.Focus();
+                txtQuantity.SelectAll();
             }
         }
 
@@ -85,6 +90,10 @@ namespace Hospital_Management_System
                 lblPrescriptionWarning.Visible = true;
                 return;
             }
+            if (string.IsNullOrEmpty(txtPrescriptionId.Text))
+            {
+                return;
+            }
             
             int id = int.Parse(txtPrescriptionId.Text);
 
@@ -108,17 +117,19 @@ namespace Hospital_Management_System
                                where p.PrescriptionID == id
                                select new
                                {
+                                   u.UserID,
                                    u.FullName,
                                    u.PhoneNumber
                                }).FirstOrDefault();
-
-            if(dgvBill.Rows.Count > 0)
+            this.patientUserID = patientInfo.UserID;
+            if (dgvBill.Rows.Count > 0)
             {
                 btnClear.PerformClick();
             }
 
             txtCustomerName.Text = patientInfo.FullName;
             txtContact.Text = patientInfo.PhoneNumber;
+            txtCustomerName.ReadOnly = txtContact.ReadOnly = true;
 
             for (int i=0; i<medicinesList.Count; i++)
             {
@@ -139,6 +150,7 @@ namespace Hospital_Management_System
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtCustomerName.Text = txtContact.Text = txtDrug.Text = txtQuantity.Text = txtPrescriptionId.Text = "";
+            txtCustomerName.ReadOnly = txtContact.ReadOnly = false;
             txtDiscount.Text = "0";
             lblSubtotal.Text = lblTotal.Text = "0.00";
             subtotal = 0;
@@ -151,16 +163,134 @@ namespace Hospital_Management_System
 
         private void dgvBill_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (!dgvBill.Rows[e.RowIndex].Cells[3].Value.ToString().All(char.IsDigit) && int.Parse(dgvBill.Rows[e.RowIndex].Cells[3].Value.ToString()) <= 0){
+            if (!dgvBill.Rows[e.RowIndex].Cells[3].Value.ToString().All(char.IsDigit) || int.Parse(dgvBill.Rows[e.RowIndex].Cells[3].Value.ToString()) <= 0){
                 MessageBox.Show("Invalid Quantity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
             float price = float.Parse(dgvBill.Rows[e.RowIndex].Cells[2].Value.ToString()) * float.Parse(dgvBill.Rows[e.RowIndex].Cells[3].Value.ToString());
             dgvBill.Rows[e.RowIndex].Cells[4].Value = (price).ToString();
-            subtotal = subtotal + price - float.Parse(dgvBill.Rows[e.RowIndex].Cells[2].Value.ToString());
+            subtotal = 0;
+            for(int i=0; i<dgvBill.Rows.Count; i++)
+            {
+                subtotal += float.Parse(dgvBill.Rows[i].Cells[4].Value.ToString());
+            }
             lblSubtotal.Text = subtotal.ToString();
             lblTotal.Text = (subtotal - float.Parse(txtDiscount.Text)).ToString();
+        }
+
+        private void txtDiscount_KeyUp(object sender, KeyEventArgs e)
+        {
+            bool isInt = int.TryParse(txtDiscount.Text, out int discount);
+            bool isFloat = float.TryParse(txtDiscount.Text, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float discount2);
+            if (!isInt && !isFloat)
+            {
+                lblDiscountWarning.Visible = true;
+                return;
+            }
+            if (string.IsNullOrEmpty(txtDiscount.Text))
+            {
+                lblDiscountWarning.Visible = false;
+                return;
+            }
+
+            float total = subtotal - float.Parse(txtDiscount.Text);
+            if (total > 0)
+            {
+                lblTotal.Text = total.ToString();
+            }
+            else
+            {
+                txtDiscount.Text = lblSubtotal.Text;
+                lblTotal.Text = "0.00";
+            }
+            lblDiscountWarning.Visible = false;
+        }
+
+        private async void txtDiscount_Enter(object sender, EventArgs e)
+        {
+            await Task.Delay(10);
+            txtDiscount.SelectAll();
+        }
+
+        private void txtPrescriptionId_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLoad.PerformClick();
+            }
+        }
+
+        private void txtQuantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAdd.PerformClick();
+            }
+        }
+
+        private void btnSavePrint_Click(object sender, EventArgs e)
+        {
+            if(dgvBill.Rows.Count == 0)
+            {
+                MessageBox.Show("No items in the bill", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Pharmacy_Billing pb = new Pharmacy_Billing();
+            pb.Pharmacists_User_ID = Login_form.userID;
+            if (this.patientUserID != 0)
+            {
+                pb.Patient_User_ID = this.patientUserID;
+            }
+            pb.CustomerName= txtCustomerName.Text;
+            pb.PhoneNumber= txtContact.Text;
+            pb.Date= DateTime.Now;
+            pb.Subtotal= float.Parse(lblSubtotal.Text);
+            pb.Discount= float.Parse(txtDiscount.Text);
+            pb.Total= float.Parse(lblTotal.Text);
+            db.Pharmacy_Billing.Add(pb);
+            db.SaveChanges();
+            for(int i=0; i<dgvBill.Rows.Count; i++)
+            {
+                Medicine_Billing mb = new Medicine_Billing();
+                mb.Pharmacy_Billing_ID = pb.Pharmacy_Billing_ID;
+                mb.MedicineID = medicines.FirstOrDefault(x=> x.Value == dgvBill.Rows[i].Cells[1].Value + "~" + dgvBill.Rows[i].Cells[2].Value).Key;
+                mb.Quantity = int.Parse(dgvBill.Rows[i].Cells[3].Value.ToString());
+                db.Medicine_Billing.Add(mb);
+            }
+            db.SaveChanges();
+            MessageBox.Show("Billing Successfull");
+
+            InvoiceData invoiceData = new InvoiceData();
+            invoiceData.InvoiceId = pb.Pharmacy_Billing_ID;
+            invoiceData.CustomerName = pb.CustomerName;
+            invoiceData.CustomerContact = pb.PhoneNumber;
+            invoiceData.Subtotal = pb.Subtotal;
+            invoiceData.Discount = pb.Discount;
+            invoiceData.Total = pb.Total;
+
+            for (int i=0; i<dgvBill.Rows.Count; i++)
+            {
+                InvoiceItem item = new InvoiceItem();
+                item.DrugName = dgvBill.Rows[i].Cells[1].Value.ToString();
+                item.PricePerUnit = double.Parse(dgvBill.Rows[i].Cells[2].Value.ToString());
+                item.Quantity = int.Parse(dgvBill.Rows[i].Cells[3].Value.ToString());
+                invoiceData.Items.Add(item);
+            }
+
+
+            string fileName = "#" + pb.Pharmacy_Billing_ID +  ".Date-" + DateTime.Now.ToString("dd-mm-yyyy") + ".pdf";
+            string filePath = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName, "Documents", fileName);
+
+            InvoiceGenerator.GenerateInvoice(invoiceData, filePath);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Owner.Show();
+            this.Owner.Refresh();
+            this.Close();
         }
     }
 }

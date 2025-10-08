@@ -12,7 +12,7 @@ namespace Hospital_Management_System
 {
     public partial class DoctorPortal : Form
     {
-        public DoctorPortal(int UserID)
+        public DoctorPortal()
         {
             InitializeComponent();
         }
@@ -21,6 +21,20 @@ namespace Hospital_Management_System
         {
             Appointments appointments = new Appointments();
             appointments.Show(this);
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Owner.Show();
+            this.Close();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            UserProfileForm profile = new UserProfileForm(Login_form.userID);
+            profile.Show(this);
+            this.Hide();
         }
     }
 }
