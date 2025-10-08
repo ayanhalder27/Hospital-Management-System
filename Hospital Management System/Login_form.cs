@@ -96,5 +96,13 @@ namespace Hospital_Management_System
             }
 
         }
+
+        private void txt_user_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btn_login.PerformClick();
+            }
+        }
     }
 }
