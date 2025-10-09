@@ -106,7 +106,7 @@ namespace Hospital_Management_System
             if (e.RowIndex < 0) return;
             int billId = (int)dgvBills.Rows[e.RowIndex].Cells["BillID"].Value;
             var form = new GenerateBillForm(billId);
-            form.ShowDialog();
+            form.Show(this);
         }
     }
     public class BillingDto

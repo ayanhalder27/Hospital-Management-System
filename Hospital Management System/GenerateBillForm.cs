@@ -130,6 +130,7 @@ namespace Hospital_Management_System
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
+            this.Owner.Refresh();
             this.Close();
         }
 
