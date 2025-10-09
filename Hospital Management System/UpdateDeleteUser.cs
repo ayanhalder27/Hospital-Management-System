@@ -86,6 +86,8 @@ namespace Hospital_Management_System
                 }
 
                 MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Owner.Show();
+                this.Owner.Refresh();
                 this.Close();
             }
             catch (FormatException)
