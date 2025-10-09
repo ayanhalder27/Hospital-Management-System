@@ -227,14 +227,14 @@ namespace Hospital_Management_System
                     txtDoctorSearch.Enabled = false;
                     btnSave.Visible = false;
                     btnUpdate.Visible = true;
-                    btnCancell.Visible = true;
+                    btnCancel.Visible = true;
                     dtpAppointment.Value = appointmentDate ?? DateTime.Now;
                 }
                 else
                 {
                     btnSave.Visible = false;
                     btnUpdate.Visible = false;
-                    btnCancell.Visible = false;
+                    btnCancel.Visible = false;
                     dtpAppointment.Value = appointmentDate ?? DateTime.Now;
                 }
             }
@@ -299,7 +299,7 @@ namespace Hospital_Management_System
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
             // Clear selections
             selectedPatientId = null;
@@ -413,7 +413,7 @@ namespace Hospital_Management_System
             }
         }
 
-        private void btnCancell_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             try
             {

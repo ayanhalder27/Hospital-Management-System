@@ -410,6 +410,7 @@
       <DependentUpon>HospitalContext.edmx</DependentUpon>
       <LastGenOutput>HospitalContext.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\treat.png" />
     <None Include="Resources\profilebg.jpg" />
     <None Include="Resources\patient.png" />
     <None Include="Resources\profit-up.png" />
@@ -428,6 +429,9 @@
     <None Include="Resources\BG.jpg" />
     <None Include="Resources\confirm.png" />
     <None Include="Resources\emp.png" />
+    <None Include="Resources\change.png" />
+    <None Include="Resources\dollars.png" />
+    <None Include="Resources\change1.png" />
     <Content Include="Resources\hide.png" />
     <None Include="Resources\Niloy profile.jpg" />
     <None Include="Resources\visible.png" />

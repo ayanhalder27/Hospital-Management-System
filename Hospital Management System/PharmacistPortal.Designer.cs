@@ -33,34 +33,34 @@ namespace Hospital_Management_System
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.leftPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSellMedicine = new Guna.UI2.WinForms.Guna2Button();
-            this.btnViewMedicine = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.pbProfilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dashboardPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.panelWidget2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblSales = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelWidget1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblMedicinesCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblDashboard = new System.Windows.Forms.Label();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
+            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSellMedicine = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViewMedicine = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
+            this.pbProfilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.leftPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.dashboardPanel.SuspendLayout();
             this.panelWidget2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panelWidget1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -91,6 +91,187 @@ namespace Hospital_Management_System
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(290, 700);
             this.leftPanel.TabIndex = 0;
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(3, 177);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(244, 28);
+            this.lblWelcome.TabIndex = 2;
+            this.lblWelcome.Text = "Welcome, ";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Pharmacy";
+            // 
+            // dashboardPanel
+            // 
+            this.dashboardPanel.Controls.Add(this.panelWidget2);
+            this.dashboardPanel.Controls.Add(this.panelWidget1);
+            this.dashboardPanel.Controls.Add(this.lblDashboard);
+            this.dashboardPanel.Controls.Add(this.guna2ControlBox3);
+            this.dashboardPanel.Controls.Add(this.guna2ControlBox2);
+            this.dashboardPanel.Controls.Add(this.guna2ControlBox1);
+            this.dashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboardPanel.Location = new System.Drawing.Point(290, 0);
+            this.dashboardPanel.Name = "dashboardPanel";
+            this.dashboardPanel.Size = new System.Drawing.Size(810, 700);
+            this.dashboardPanel.TabIndex = 1;
+            // 
+            // panelWidget2
+            // 
+            this.panelWidget2.BackColor = System.Drawing.Color.Transparent;
+            this.panelWidget2.BorderRadius = 15;
+            this.panelWidget2.Controls.Add(this.lblSales);
+            this.panelWidget2.Controls.Add(this.label5);
+            this.panelWidget2.Controls.Add(this.guna2PictureBox2);
+            this.panelWidget2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelWidget2.Location = new System.Drawing.Point(313, 126);
+            this.panelWidget2.Name = "panelWidget2";
+            this.panelWidget2.ShadowDecoration.BorderRadius = 20;
+            this.panelWidget2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelWidget2.ShadowDecoration.Enabled = true;
+            this.panelWidget2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
+            this.panelWidget2.Size = new System.Drawing.Size(225, 125);
+            this.panelWidget2.TabIndex = 5;
+            // 
+            // lblSales
+            // 
+            this.lblSales.AutoSize = true;
+            this.lblSales.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSales.ForeColor = System.Drawing.Color.White;
+            this.lblSales.Location = new System.Drawing.Point(18, 59);
+            this.lblSales.Name = "lblSales";
+            this.lblSales.Size = new System.Drawing.Size(50, 37);
+            this.lblSales.TabIndex = 2;
+            this.lblSales.Text = "---";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(21, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 23);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Total Sales";
+            // 
+            // panelWidget1
+            // 
+            this.panelWidget1.BackColor = System.Drawing.Color.Transparent;
+            this.panelWidget1.BorderRadius = 15;
+            this.panelWidget1.Controls.Add(this.lblMedicinesCount);
+            this.panelWidget1.Controls.Add(this.label2);
+            this.panelWidget1.Controls.Add(this.guna2PictureBox1);
+            this.panelWidget1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.panelWidget1.Location = new System.Drawing.Point(34, 126);
+            this.panelWidget1.Name = "panelWidget1";
+            this.panelWidget1.ShadowDecoration.BorderRadius = 20;
+            this.panelWidget1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.panelWidget1.ShadowDecoration.Enabled = true;
+            this.panelWidget1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
+            this.panelWidget1.Size = new System.Drawing.Size(225, 125);
+            this.panelWidget1.TabIndex = 4;
+            // 
+            // lblMedicinesCount
+            // 
+            this.lblMedicinesCount.AutoSize = true;
+            this.lblMedicinesCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblMedicinesCount.ForeColor = System.Drawing.Color.White;
+            this.lblMedicinesCount.Location = new System.Drawing.Point(18, 59);
+            this.lblMedicinesCount.Name = "lblMedicinesCount";
+            this.lblMedicinesCount.Size = new System.Drawing.Size(50, 37);
+            this.lblMedicinesCount.TabIndex = 2;
+            this.lblMedicinesCount.Text = "---";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Medicines in Stock";
+            // 
+            // lblDashboard
+            // 
+            this.lblDashboard.AutoSize = true;
+            this.lblDashboard.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            this.lblDashboard.Location = new System.Drawing.Point(26, 47);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(193, 46);
+            this.lblDashboard.TabIndex = 3;
+            this.lblDashboard.Text = "Dashboard";
+            // 
+            // guna2ControlBox3
+            // 
+            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox3.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox3.Location = new System.Drawing.Point(661, 12);
+            this.guna2ControlBox3.Name = "guna2ControlBox3";
+            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox3.TabIndex = 2;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(706, 12);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox2.TabIndex = 1;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(751, 12);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 0;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::Hospital_Management_System.Properties.Resources.profit_up;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(145, 47);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 0;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::Hospital_Management_System.Properties.Resources.syringe;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(145, 47);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // btnLogout
             // 
@@ -228,17 +409,6 @@ namespace Hospital_Management_System
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.TextOffset = new System.Drawing.Point(30, 0);
             // 
-            // lblWelcome
-            // 
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(3, 177);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(244, 28);
-            this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Welcome, ";
-            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pbProfilePic
             // 
             this.pbProfilePic.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
@@ -250,176 +420,6 @@ namespace Hospital_Management_System
             this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfilePic.TabIndex = 1;
             this.pbProfilePic.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pharmacy";
-            // 
-            // dashboardPanel
-            // 
-            this.dashboardPanel.Controls.Add(this.panelWidget2);
-            this.dashboardPanel.Controls.Add(this.panelWidget1);
-            this.dashboardPanel.Controls.Add(this.lblDashboard);
-            this.dashboardPanel.Controls.Add(this.guna2ControlBox3);
-            this.dashboardPanel.Controls.Add(this.guna2ControlBox2);
-            this.dashboardPanel.Controls.Add(this.guna2ControlBox1);
-            this.dashboardPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboardPanel.Location = new System.Drawing.Point(290, 0);
-            this.dashboardPanel.Name = "dashboardPanel";
-            this.dashboardPanel.Size = new System.Drawing.Size(810, 700);
-            this.dashboardPanel.TabIndex = 1;
-            // 
-            // panelWidget2
-            // 
-            this.panelWidget2.BackColor = System.Drawing.Color.Transparent;
-            this.panelWidget2.BorderRadius = 15;
-            this.panelWidget2.Controls.Add(this.lblSales);
-            this.panelWidget2.Controls.Add(this.label5);
-            this.panelWidget2.Controls.Add(this.guna2PictureBox2);
-            this.panelWidget2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panelWidget2.Location = new System.Drawing.Point(313, 126);
-            this.panelWidget2.Name = "panelWidget2";
-            this.panelWidget2.ShadowDecoration.BorderRadius = 20;
-            this.panelWidget2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panelWidget2.ShadowDecoration.Enabled = true;
-            this.panelWidget2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
-            this.panelWidget2.Size = new System.Drawing.Size(225, 125);
-            this.panelWidget2.TabIndex = 5;
-            // 
-            // lblSales
-            // 
-            this.lblSales.AutoSize = true;
-            this.lblSales.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblSales.ForeColor = System.Drawing.Color.White;
-            this.lblSales.Location = new System.Drawing.Point(18, 59);
-            this.lblSales.Name = "lblSales";
-            this.lblSales.Size = new System.Drawing.Size(50, 37);
-            this.lblSales.TabIndex = 2;
-            this.lblSales.Text = "---";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(21, 23);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Total Sales";
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::Hospital_Management_System.Properties.Resources.profit_up;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(145, 47);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 0;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // panelWidget1
-            // 
-            this.panelWidget1.BackColor = System.Drawing.Color.Transparent;
-            this.panelWidget1.BorderRadius = 15;
-            this.panelWidget1.Controls.Add(this.lblMedicinesCount);
-            this.panelWidget1.Controls.Add(this.label2);
-            this.panelWidget1.Controls.Add(this.guna2PictureBox1);
-            this.panelWidget1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.panelWidget1.Location = new System.Drawing.Point(34, 126);
-            this.panelWidget1.Name = "panelWidget1";
-            this.panelWidget1.ShadowDecoration.BorderRadius = 20;
-            this.panelWidget1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.panelWidget1.ShadowDecoration.Enabled = true;
-            this.panelWidget1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
-            this.panelWidget1.Size = new System.Drawing.Size(225, 125);
-            this.panelWidget1.TabIndex = 4;
-            // 
-            // lblMedicinesCount
-            // 
-            this.lblMedicinesCount.AutoSize = true;
-            this.lblMedicinesCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblMedicinesCount.ForeColor = System.Drawing.Color.White;
-            this.lblMedicinesCount.Location = new System.Drawing.Point(18, 59);
-            this.lblMedicinesCount.Name = "lblMedicinesCount";
-            this.lblMedicinesCount.Size = new System.Drawing.Size(50, 37);
-            this.lblMedicinesCount.TabIndex = 2;
-            this.lblMedicinesCount.Text = "---";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Medicines in Stock";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::Hospital_Management_System.Properties.Resources.syringe;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(145, 47);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // lblDashboard
-            // 
-            this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            this.lblDashboard.Location = new System.Drawing.Point(26, 47);
-            this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(193, 46);
-            this.lblDashboard.TabIndex = 3;
-            this.lblDashboard.Text = "Dashboard";
-            // 
-            // guna2ControlBox3
-            // 
-            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox3.IconColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(661, 12);
-            this.guna2ControlBox3.Name = "guna2ControlBox3";
-            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox3.TabIndex = 2;
-            // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(706, 12);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox2.TabIndex = 1;
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(751, 12);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 0;
             // 
             // PharmacistPortal
             // 
@@ -436,15 +436,15 @@ namespace Hospital_Management_System
             this.Load += new System.EventHandler(this.PharmacistPortal_Load);
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.dashboardPanel.ResumeLayout(false);
             this.dashboardPanel.PerformLayout();
             this.panelWidget2.ResumeLayout(false);
             this.panelWidget2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panelWidget1.ResumeLayout(false);
             this.panelWidget1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }

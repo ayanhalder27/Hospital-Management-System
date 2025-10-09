@@ -45,6 +45,16 @@ namespace Hospital_Management_System
             await Task.Delay(100);
             HospitalContext db = new HospitalContext();
             lblWelcome.Text += db.Users.Where(u => u.UserID == Login_form.userID).Select(u => u.FullName).FirstOrDefault();
+
+            var data = db.Appointments.Where(a => a.Doctor_User_ID == Login_form.userID && (a.Appoinment_Status == "Confirmed" || a.Appoinment_Status == "Completed"))
+                                   .GroupBy(a => a.Appoinment_Status)
+                                   .Select(a => new
+                                   {
+                                       Status = a.Key,
+                                       Count = a.Count()
+                                   }).ToList();
+            lblPending.Text = data.FirstOrDefault(x=> x.Status == "Confirmed").Count.ToString();
+            lblTreated.Text = data.FirstOrDefault(x => x.Status == "Completed").Count.ToString();
         }
     }
 }
