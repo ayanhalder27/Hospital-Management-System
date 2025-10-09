@@ -284,7 +284,7 @@ namespace Hospital_Management_System
             InvoiceGenerator.GenerateInvoice(invoiceData, filePath);
             pb.Invoice = fileName;
             db.SaveChanges();
-
+            btnClear.PerformClick();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
