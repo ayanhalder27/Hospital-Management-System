@@ -13,19 +13,40 @@ namespace Hospital_Management_System
     public partial class Login_form : Form
     {
         public static int userID;
-        private readonly Check_login_authorization checkLoginAuthorization;
+        private readonly HospitalContext context = new HospitalContext();
         public Login_form()
         {
             InitializeComponent();
-            checkLoginAuthorization = new Check_login_authorization();
         }
+
+        public User Login(string userInput, string password)
+        {
+            try
+            {
+                var user = context.Users.FirstOrDefault(u => (u.UserID.ToString() == userInput || u.Username == userInput || u.Email == userInput || u.PhoneNumber == userInput) && u.Password == password);
+                if (user != null && user.Status == true)
+                {
+                    return user;
+                }
+                else
+                {
+                    MessageBox.Show("Login failed! Please Check UserID or Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error while logging in: " + ex.Message);
+            }
+        }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             string userInput = txt_user_ID.Text.Trim();
             string password = txt_user_password.Text.Trim();
             try
             {
-                User user = checkLoginAuthorization.Login(userInput, password);
+                var user = Login(userInput, password);
                 if (user != null)
                 {
                     userID = user.UserID;
@@ -46,7 +67,7 @@ namespace Hospital_Management_System
                         case 5:
                             new PatientPortal(user.UserID).Show(this);
                             break;
-                        case 7:
+                        case 6:
                             new PharmacistPortal().Show(this);
                             break;
                         default:
