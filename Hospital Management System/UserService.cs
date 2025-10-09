@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.Security;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 namespace Hospital_Management_System
@@ -178,15 +181,23 @@ namespace Hospital_Management_System
 
         public string ValidateUserInput(string fullName, string email, string phone, string address, string gender, DateTime? dob)
         {
-            if (string.IsNullOrWhiteSpace(fullName) || string.IsNullOrWhiteSpace(email) ||string.IsNullOrWhiteSpace(phone) ||string.IsNullOrWhiteSpace(address) ||string.IsNullOrWhiteSpace(gender) ||!dob.HasValue)
+            if (string.IsNullOrWhiteSpace(fullName) ||string.IsNullOrWhiteSpace(email) ||string.IsNullOrWhiteSpace(phone) ||string.IsNullOrWhiteSpace(address) ||string.IsNullOrWhiteSpace(gender) || !dob.HasValue)
             {
                 return "All fields are required.";
             }
-            if (!email.Contains("@"))
+
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            if (!Regex.IsMatch(email, emailPattern))
             {
-                return "Invalid email format. Email must contain '@'.";
+                return "Invalid email format.";
             }
-            return null; // No error
+
+            if (!Regex.IsMatch(phone, @"^0\d{10}$"))
+            {
+                return "Phone number must be 11 digits, start with '0', and contain only numbers.";
+            }
+
+            return null;
         }
 
         public void AddUser(User user)

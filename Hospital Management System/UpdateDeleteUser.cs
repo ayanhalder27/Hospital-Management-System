@@ -170,10 +170,11 @@ namespace Hospital_Management_System
         {
             try
             {
+                string email = txtEmail.Text.Trim();
                 var user = userService.GetUserById(userId);
-                if (!userService.IsEmailUnique(txtEmail.Text) && txtEmail.Text != user.Email)
+                if (email.Contains("@") && email.IndexOf('.') > email.IndexOf('@') && email != user.Email)
                 {
-                    lbl_warning_email_uniqueness.Visible = true;
+                    lbl_warning_email_uniqueness.Visible = !userService.IsEmailUnique(email);
                 }
                 else
                 {
@@ -190,10 +191,11 @@ namespace Hospital_Management_System
         {
             try
             {
+                string phone = txtPhone.Text.Trim();
                 var user = userService.GetUserById(userId);
-                if (!userService.IsPhoneUnique(txtPhone.Text) && txtPhone.Text != user.PhoneNumber)
+                if (phone.Length == 11)
                 {
-                    lbl_warning_phoneNum_uniqueness.Visible = true;
+                    lbl_warning_phoneNum_uniqueness.Visible = !userService.IsPhoneUnique(phone) && phone != user.PhoneNumber;
                 }
                 else
                 {
@@ -206,144 +208,35 @@ namespace Hospital_Management_System
             }
         }
 
-        private void pnlDoctorFields_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFullName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtRole_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpDOB_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_warning_phoneNum_uniqueness_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlDoctorFields_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtSpecialization_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtVisitFee_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtVisitFee.Text))
+                {
+                    return;
+                }
+                if (decimal.TryParse(txtVisitFee.Text, out decimal visitFee))
+                {
+                    if (visitFee < 0)
+                    {
+                        MessageBox.Show("Visit fee must be a positive value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtVisitFee.Clear();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid decimal number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtVisitFee.Clear();
 
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picPhoto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_warning_email_uniqueness_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtVisitFee.Clear();
+            }
         }
     }
 }

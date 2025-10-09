@@ -16,12 +16,31 @@ namespace Hospital_Management_System
         private int UserID;
         private HospitalContext context;
         private User correntUser;
+        private DashboardService dashboardService;
         public ReceptionistPortal(int userid)
         {
             InitializeComponent();
             this.UserID = userid;
             context = new HospitalContext();
             correntUser = context.Users.FirstOrDefault(u => u.UserID == UserID);
+            dashboardService = new DashboardService();
+            this.Load += ReceptionistPortal_Load;
+        }
+
+        private void RefreshDashboard()
+        {
+            try
+            {
+                var counts = dashboardService.GetDashboardCounts();
+
+                lblActivePatients.Text = counts.ActivePatients.ToString();
+                lblPendingAppointments.Text = counts.PendingAppointments.ToString();
+                lblConfirmedAppointments.Text = counts.ConfirmedAppointments.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing dashboard: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
@@ -76,6 +95,12 @@ namespace Hospital_Management_System
             var manageBilling = new Billing_form(UserID);
             manageBilling.ShowDialog();
             this.Hide();
+        }
+
+        private async void ReceptionistPortal_Load(object sender, EventArgs e)
+        {
+            await Task.Delay(100);
+            RefreshDashboard();
         }
     }
     

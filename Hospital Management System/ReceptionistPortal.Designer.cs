@@ -40,28 +40,26 @@
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblActivePatients = new System.Windows.Forms.Label();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblPendingAppointments = new System.Windows.Forms.Label();
-            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblConfirmedAppointments = new System.Windows.Forms.Label();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblConfirmedAppointments = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblPendingAppointments = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblActivePatients = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_admin_portal)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            this.guna2ShadowPanel1.SuspendLayout();
-            this.guna2ShadowPanel2.SuspendLayout();
             this.guna2ShadowPanel3.SuspendLayout();
+            this.guna2ShadowPanel2.SuspendLayout();
+            this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
@@ -266,143 +264,20 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Welcome to Receptionist Portal";
             // 
-            // guna2Panel1
+            // guna2ShadowPanel3
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.BackgroundImage = global::Hospital_Management_System.Properties.Resources.BG;
-            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Panel1.Controls.Add(this.guna2ShadowPanel3);
-            this.guna2Panel1.Controls.Add(this.guna2ShadowPanel2);
-            this.guna2Panel1.Controls.Add(this.guna2ShadowPanel1);
-            this.guna2Panel1.Controls.Add(this.label11);
-            this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Location = new System.Drawing.Point(262, 138);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1227, 648);
-            this.guna2Panel1.TabIndex = 7;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(477, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(237, 50);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Dashboard";
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackgroundImage = global::Hospital_Management_System.Properties.Resources.patient;
-            this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Panel2.Location = new System.Drawing.Point(358, 102);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(83, 75);
-            this.guna2Panel2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(25, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(241, 35);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Served Patient";
-            // 
-            // lblActivePatients
-            // 
-            this.lblActivePatients.AutoSize = true;
-            this.lblActivePatients.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivePatients.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblActivePatients.Location = new System.Drawing.Point(43, 122);
-            this.lblActivePatients.Name = "lblActivePatients";
-            this.lblActivePatients.Size = new System.Drawing.Size(45, 43);
-            this.lblActivePatients.TabIndex = 2;
-            this.lblActivePatients.Text = "--";
-            // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.lblActivePatients);
-            this.guna2ShadowPanel1.Controls.Add(this.label3);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2Panel2);
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(377, 120);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 10;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2ShadowPanel1.ShadowDepth = 150;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(472, 202);
-            this.guna2ShadowPanel1.TabIndex = 6;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackgroundImage = global::Hospital_Management_System.Properties.Resources.Pending;
-            this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Panel3.Location = new System.Drawing.Point(358, 102);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(83, 75);
-            this.guna2Panel3.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(25, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(372, 35);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Pending Appointments";
-            // 
-            // lblPendingAppointments
-            // 
-            this.lblPendingAppointments.AutoSize = true;
-            this.lblPendingAppointments.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPendingAppointments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPendingAppointments.Location = new System.Drawing.Point(64, 115);
-            this.lblPendingAppointments.Name = "lblPendingAppointments";
-            this.lblPendingAppointments.Size = new System.Drawing.Size(45, 43);
-            this.lblPendingAppointments.TabIndex = 2;
-            this.lblPendingAppointments.Text = "--";
-            // 
-            // guna2ShadowPanel2
-            // 
-            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.Controls.Add(this.lblPendingAppointments);
-            this.guna2ShadowPanel2.Controls.Add(this.label6);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2Panel3);
-            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.DarkGreen;
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(93, 379);
-            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
-            this.guna2ShadowPanel2.Radius = 10;
-            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.DarkGreen;
-            this.guna2ShadowPanel2.ShadowDepth = 150;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(472, 202);
-            this.guna2ShadowPanel2.TabIndex = 7;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BackgroundImage = global::Hospital_Management_System.Properties.Resources.confirm;
-            this.guna2Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Panel4.Location = new System.Drawing.Point(356, 102);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(83, 75);
-            this.guna2Panel4.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(25, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(411, 35);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Confirmed Appointments";
+            this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.lblConfirmedAppointments);
+            this.guna2ShadowPanel3.Controls.Add(this.label8);
+            this.guna2ShadowPanel3.Controls.Add(this.guna2Panel4);
+            this.guna2ShadowPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(946, 506);
+            this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
+            this.guna2ShadowPanel3.Radius = 10;
+            this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2ShadowPanel3.ShadowDepth = 150;
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(472, 202);
+            this.guna2ShadowPanel3.TabIndex = 13;
             // 
             // lblConfirmedAppointments
             // 
@@ -415,48 +290,160 @@
             this.lblConfirmedAppointments.TabIndex = 2;
             this.lblConfirmedAppointments.Text = "--";
             // 
-            // guna2ShadowPanel3
+            // label8
             // 
-            this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel3.Controls.Add(this.lblConfirmedAppointments);
-            this.guna2ShadowPanel3.Controls.Add(this.label8);
-            this.guna2ShadowPanel3.Controls.Add(this.guna2Panel4);
-            this.guna2ShadowPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2ShadowPanel3.Location = new System.Drawing.Point(679, 379);
-            this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
-            this.guna2ShadowPanel3.Radius = 10;
-            this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2ShadowPanel3.ShadowDepth = 150;
-            this.guna2ShadowPanel3.Size = new System.Drawing.Size(472, 202);
-            this.guna2ShadowPanel3.TabIndex = 9;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(25, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(411, 35);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Confirmed Appointments";
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackgroundImage = global::Hospital_Management_System.Properties.Resources.confirm;
+            this.guna2Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel4.Location = new System.Drawing.Point(356, 102);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(83, 75);
+            this.guna2Panel4.TabIndex = 0;
+            // 
+            // guna2ShadowPanel2
+            // 
+            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.Controls.Add(this.lblPendingAppointments);
+            this.guna2ShadowPanel2.Controls.Add(this.label6);
+            this.guna2ShadowPanel2.Controls.Add(this.guna2Panel3);
+            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.DarkGreen;
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(360, 506);
+            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
+            this.guna2ShadowPanel2.Radius = 10;
+            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.DarkGreen;
+            this.guna2ShadowPanel2.ShadowDepth = 150;
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(472, 202);
+            this.guna2ShadowPanel2.TabIndex = 12;
+            // 
+            // lblPendingAppointments
+            // 
+            this.lblPendingAppointments.AutoSize = true;
+            this.lblPendingAppointments.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingAppointments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPendingAppointments.Location = new System.Drawing.Point(64, 115);
+            this.lblPendingAppointments.Name = "lblPendingAppointments";
+            this.lblPendingAppointments.Size = new System.Drawing.Size(45, 43);
+            this.lblPendingAppointments.TabIndex = 2;
+            this.lblPendingAppointments.Text = "--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(25, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(372, 35);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Pending Appointments";
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackgroundImage = global::Hospital_Management_System.Properties.Resources.Pending;
+            this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel3.Location = new System.Drawing.Point(358, 102);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(83, 75);
+            this.guna2Panel3.TabIndex = 0;
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.lblActivePatients);
+            this.guna2ShadowPanel1.Controls.Add(this.label3);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2Panel2);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(644, 247);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 10;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.guna2ShadowPanel1.ShadowDepth = 150;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(472, 202);
+            this.guna2ShadowPanel1.TabIndex = 11;
+            // 
+            // lblActivePatients
+            // 
+            this.lblActivePatients.AutoSize = true;
+            this.lblActivePatients.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivePatients.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblActivePatients.Location = new System.Drawing.Point(43, 122);
+            this.lblActivePatients.Name = "lblActivePatients";
+            this.lblActivePatients.Size = new System.Drawing.Size(45, 43);
+            this.lblActivePatients.TabIndex = 2;
+            this.lblActivePatients.Text = "--";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(25, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(241, 35);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Served Patient";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackgroundImage = global::Hospital_Management_System.Properties.Resources.patient;
+            this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Panel2.Location = new System.Drawing.Point(358, 102);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(83, 75);
+            this.guna2Panel2.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(744, 149);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(237, 50);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Dashboard";
             // 
             // ReceptionistPortal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1450, 770);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.guna2ShadowPanel3);
+            this.Controls.Add(this.guna2ShadowPanel2);
+            this.Controls.Add(this.guna2ShadowPanel1);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ReceptionistPortal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReceptionistPortal";
+            this.Load += new System.EventHandler(this.ReceptionistPortal_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_admin_portal)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
-            this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
-            this.guna2ShadowPanel2.ResumeLayout(false);
-            this.guna2ShadowPanel2.PerformLayout();
             this.guna2ShadowPanel3.ResumeLayout(false);
             this.guna2ShadowPanel3.PerformLayout();
+            this.guna2ShadowPanel2.ResumeLayout(false);
+            this.guna2ShadowPanel2.PerformLayout();
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2ShadowPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -473,8 +460,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
         private System.Windows.Forms.Label lblConfirmedAppointments;
         private System.Windows.Forms.Label label8;
@@ -487,5 +472,6 @@
         private System.Windows.Forms.Label lblActivePatients;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.Label label11;
     }
 }

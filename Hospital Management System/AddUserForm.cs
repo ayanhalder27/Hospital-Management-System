@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Hospital_Management_System
 {
@@ -136,18 +137,19 @@ namespace Hospital_Management_System
         {
             try
             {
-                if (!userService.IsEmailUnique(txtEmail.Text))
+                string email = txtEmail.Text.Trim();
+                if (email.Contains("@") && email.IndexOf('.') > email.IndexOf('@'))
                 {
-                    lbl_warning_eamil_uniqueness.Visible = true;
+                    lbl_warning_email_uniqueness.Visible = !userService.IsEmailUnique(email);
                 }
                 else
                 {
-                    lbl_warning_eamil_uniqueness.Visible = false; 
-                }  
+                    lbl_warning_email_uniqueness.Visible = false;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error validating email: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error validating email uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -155,9 +157,10 @@ namespace Hospital_Management_System
         {
             try
             {
-                if (!userService.IsPhoneUnique(txtPhone.Text))
+                string phone = txtPhone.Text.Trim();
+                if (phone.Length == 11)
                 {
-                    lbl_warning_phoneNum_uniqueness.Visible = true;
+                    lbl_warning_phoneNum_uniqueness.Visible = !userService.IsPhoneUnique(phone) ;
                 }
                 else
                 {
@@ -166,7 +169,7 @@ namespace Hospital_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error validating phone number: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error validating phone uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -207,6 +210,37 @@ namespace Hospital_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show("Error clearing form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtVisitFee_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtVisitFee.Text))
+                {
+                    return;
+                }
+                if (decimal.TryParse(txtVisitFee.Text, out decimal visitFee))
+                {
+                    if (visitFee < 0)
+                    {
+                        MessageBox.Show("Visit fee must be a positive value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtVisitFee.Clear();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid decimal number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtVisitFee.Clear();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtVisitFee.Clear();
             }
         }
     }

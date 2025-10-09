@@ -16,12 +16,37 @@ namespace Hospital_Management_System
         private int UserID;
         private HospitalContext context;
         private User correntUser;
+        private DashboardService dashboardService;
         public ManagerPortal(int userid)
         {
             InitializeComponent();
             this.UserID = userid;
             context = new HospitalContext();
             correntUser = context.Users.FirstOrDefault(u => u.UserID == UserID);
+            dashboardService = new DashboardService();
+            this.Load += ManagerPortal_Load;
+        }
+
+        private void RefreshDashboard()
+        {
+            try
+            {
+                var counts = dashboardService.GetDashboardCounts();
+
+                lblActivePatients.Text = counts.ActivePatients.ToString();
+                lblActiveEmployee.Text = counts.ActiveEmployees.ToString();
+                lblPendingAppointments.Text = counts.PendingAppointments.ToString();
+                lblConfirmedAppointments.Text = counts.ConfirmedAppointments.ToString();
+                lblTotalAdmin.Text = counts.TotalAdmins.ToString();
+                lblTotalDoctor.Text = counts.TotalDoctors.ToString();
+                lblTotalReceptionist.Text = counts.TotalReceptionists.ToString();
+                lblTotalManager.Text = counts.TotalManagers.ToString();
+                lblTotalPharmacist.Text = counts.TotalPharmacists.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing dashboard: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_profile_button_Click(object sender, EventArgs e)
@@ -83,6 +108,12 @@ namespace Hospital_Management_System
         {
             this.Owner.Show();
             this.Close();
+        }
+
+        private async void ManagerPortal_Load(object sender, EventArgs e)
+        {
+            await Task.Delay(100);
+            RefreshDashboard();
         }
     }
 }

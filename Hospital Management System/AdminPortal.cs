@@ -16,37 +16,48 @@ namespace Hospital_Management_System
         private int UserID;
         private HospitalContext context;
         private User correntUser;
-        private readonly DashboardService dashboardService;
-        private Timer timer = new Timer();
+        private  DashboardService dashboardService;
+
+        private ManageUsers userForm;
+        private Appointment_form appointmentForm;
+        private Billing_form billingForm;
+        private UserProfileForm profileForm;
+
         public AdminPortal(int userid)
         {
             InitializeComponent();
             this.UserID = userid;
             context = new HospitalContext();
             correntUser = context.Users.FirstOrDefault(u => u.UserID == UserID);
-            dashboardService = new DashboardService(context);
+            dashboardService = new DashboardService();
             this.Load += AdminPortal_Load;
 
         }
-        private void RefreshDashboard()
+
+        private async void AdminPortal_Load(object sender, EventArgs e)
+        {
+            await Task.Delay(100);
+            RefreshDashboard();
+        }
+
+        private  void RefreshDashboard()
         {
             try
             {
-                var c = dashboardService.GetDashboardCounts();
+                var counts = dashboardService.GetDashboardCounts();
 
-                lblActivePatients.Text = c.ActivePatients.ToString();
-                lblActiveEmployee.Text = c.ActiveEmployees.ToString();
-                lblPendingAppointments.Text = c.PendingAppointments.ToString();
-                lblConfirmedAppointments.Text = c.ConfirmedAppointments.ToString();
-                lblTotalAdmin.Text = c.TotalAdmins.ToString();
-                lblTotalDoctor.Text = c.TotalDoctors.ToString();
-                lblTotalReceptionist.Text = c.TotalReceptionists.ToString();
-                lblTotalManager.Text = c.TotalManagers.ToString();
-                lblTotalPharmacist.Text = c.TotalPharmacists.ToString();
+                lblActivePatients.Text = counts.ActivePatients.ToString();
+                lblActiveEmployee.Text = counts.ActiveEmployees.ToString();
+                lblPendingAppointments.Text = counts.PendingAppointments.ToString();
+                lblConfirmedAppointments.Text = counts.ConfirmedAppointments.ToString();
+                lblTotalAdmin.Text = counts.TotalAdmins.ToString();
+                lblTotalDoctor.Text = counts.TotalDoctors.ToString();
+                lblTotalReceptionist.Text = counts.TotalReceptionists.ToString();
+                lblTotalManager.Text = counts.TotalManagers.ToString();
+                lblTotalPharmacist.Text = counts.TotalPharmacists.ToString();
             }
             catch (Exception ex)
             {
-                timer.Stop();
                 MessageBox.Show("Error refreshing dashboard: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -126,13 +137,7 @@ namespace Hospital_Management_System
             this.Hide();
         }
 
-        private void AdminPortal_Load(object sender, EventArgs e)
-        {
-            timer.Interval = 5000; 
-            timer.Tick += (s, ev) => RefreshDashboard();
-            timer.Start();
-            RefreshDashboard(); 
-        }
+        
     }
 
    

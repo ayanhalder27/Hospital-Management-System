@@ -141,33 +141,26 @@ namespace Hospital_Management_System
         {
             try
             {
-                currentUser.FullName = txtFullName.Text;
-                currentUser.Email = txtEmail.Text;
-                currentUser.PhoneNumber = txtPhoneNum.Text;
-                currentUser.Address = txtAddress.Text;
-                currentUser.Gender = txtGender.Text;
-                currentUser.DOB = DateTime.Parse(datetimeDOB.Text);
-                if (!string.IsNullOrEmpty(photoPath))
+                var visitFee = string.IsNullOrEmpty(txtVisitFee.Text) ? (double?)null : double.Parse(txtVisitFee.Text);
+
+                var result = userService.UpdateUsers(UserID, txtFullName.Text, txtEmail.Text, txtPhoneNum.Text, txtAddress.Text, txtGender.Text, datetimeDOB.Value, txtSpecialization.Text, visitFee, photoPath);
+
+                if (!result.Success)
                 {
-                    currentUser.Photo = photoPath;
+                    MessageBox.Show(result.ErrorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
-                if (currentUser.RoleID == 4) // Doctor
-                {
-                    currentUser.Specialization = txtSpecialization.Text;
-                    currentUser.Visit_Fee = double.TryParse(txtVisitFee.Text, out double fee) ? fee : 0;
-                }
-
-                userService.UpdateUser(currentUser);
-                MessageBox.Show("Profile updated successfully!");
-
-                SetReadOnlyMode(true);
-                btnChangePic.Visible = false;
-                LoadUserProfile();
+                MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid number for Visit Fee.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error updating profile: " + ex.Message);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -188,9 +181,11 @@ namespace Hospital_Management_System
         {
             try
             {
-                if (!userService.IsEmailUnique(txtEmail.Text) && txtEmail.Text != currentUser.Email)
+                string email = txtEmail.Text.Trim();
+                var user = userService.GetUserById(UserID);
+                if (email.Contains("@") && email.IndexOf('.') > email.IndexOf('@') && email != user.Email)
                 {
-                    lbl_warning_email_uniqueness.Visible = true;
+                    lbl_warning_email_uniqueness.Visible = !userService.IsEmailUnique(email);
                 }
                 else
                 {
@@ -207,9 +202,11 @@ namespace Hospital_Management_System
         {
             try
             {
-                if (!userService.IsPhoneUnique(txtPhoneNum.Text) && txtPhoneNum.Text != currentUser.PhoneNumber)
+                string phone = txtPhoneNum.Text.Trim();
+                var user = userService.GetUserById(UserID);
+                if (phone.Length == 11)
                 {
-                    lbl_warning_phoneNum_uniqueness.Visible = true;
+                    lbl_warning_phoneNum_uniqueness.Visible = !userService.IsPhoneUnique(phone) && phone != user.PhoneNumber;
                 }
                 else
                 {
@@ -218,148 +215,39 @@ namespace Hospital_Management_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error validating phone number uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error validating phone uniqueness: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtGender_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFullName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserRoleName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void datetimeDOB_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtVisitFee_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(txtVisitFee.Text))
+                {
+                    return;
+                }
+                if (decimal.TryParse(txtVisitFee.Text, out decimal visitFee))
+                {
+                    if (visitFee < 0)
+                    {
+                        MessageBox.Show("Visit fee must be a positive value.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtVisitFee.Clear();
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid decimal number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtVisitFee.Clear();
 
-        }
-
-        private void txtSpecialization_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlDoctorFields_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picPhoto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_warning_email_uniqueness_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_warning_phoneNum_uniqueness_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtVisitFee.Clear();
+            }
         }
     }
 }
