@@ -59,7 +59,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblServedPatient = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CustomGradientPanel1.SuspendLayout();
@@ -443,9 +443,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(84, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 43);
+            this.label7.Size = new System.Drawing.Size(45, 43);
             this.label7.TabIndex = 2;
-            this.label7.Text = "168";
+            this.label7.Text = "--";
             // 
             // label8
             // 
@@ -489,9 +489,9 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label9.Location = new System.Drawing.Point(23, 102);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 43);
+            this.label9.Size = new System.Drawing.Size(45, 43);
             this.label9.TabIndex = 2;
-            this.label9.Text = "69";
+            this.label9.Text = "--";
             // 
             // label10
             // 
@@ -535,9 +535,9 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(64, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 43);
+            this.label5.Size = new System.Drawing.Size(45, 43);
             this.label5.TabIndex = 2;
-            this.label5.Text = "5487";
+            this.label5.Text = "--";
             // 
             // label6
             // 
@@ -562,7 +562,7 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.label4);
+            this.guna2ShadowPanel1.Controls.Add(this.lblServedPatient);
             this.guna2ShadowPanel1.Controls.Add(this.label3);
             this.guna2ShadowPanel1.Controls.Add(this.guna2Panel2);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -574,16 +574,16 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(472, 202);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
-            // label4
+            // lblServedPatient
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(43, 122);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 43);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "50";
+            this.lblServedPatient.AutoSize = true;
+            this.lblServedPatient.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServedPatient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblServedPatient.Location = new System.Drawing.Point(43, 122);
+            this.lblServedPatient.Name = "lblServedPatient";
+            this.lblServedPatient.Size = new System.Drawing.Size(45, 43);
+            this.lblServedPatient.TabIndex = 2;
+            this.lblServedPatient.Text = "--";
             // 
             // label3
             // 
@@ -670,7 +670,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblServedPatient;
         private System.Windows.Forms.Label label11;
     }
 }

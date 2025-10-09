@@ -314,9 +314,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(84, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 43);
+            this.label7.Size = new System.Drawing.Size(45, 43);
             this.label7.TabIndex = 2;
-            this.label7.Text = "168";
+            this.label7.Text = "--";
             // 
             // label8
             // 
@@ -360,9 +360,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(64, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 43);
+            this.label1.Size = new System.Drawing.Size(45, 43);
             this.label1.TabIndex = 2;
-            this.label1.Text = "5487";
+            this.label1.Text = "--";
             // 
             // label6
             // 
@@ -406,9 +406,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(43, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 43);
+            this.label2.Size = new System.Drawing.Size(45, 43);
             this.label2.TabIndex = 2;
-            this.label2.Text = "50";
+            this.label2.Text = "--";
             // 
             // label3
             // 

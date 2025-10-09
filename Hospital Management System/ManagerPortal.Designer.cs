@@ -37,10 +37,10 @@
             this.btn_manage_patient = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_profile_button = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.lbl_profile_user_name = new System.Windows.Forms.Label();
             this.picbox_admin_portal = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -82,7 +82,7 @@
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.DarkCyan;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(1, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(294, 768);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(294, 769);
             this.guna2CustomGradientPanel1.TabIndex = 3;
             // 
             // guna2PictureBox1
@@ -93,7 +93,7 @@
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(107, 623);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(89, 86);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(89, 87);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 8;
             this.guna2PictureBox1.TabStop = false;
@@ -123,7 +123,7 @@
             this.btn_manage_billing.Location = new System.Drawing.Point(55, 465);
             this.btn_manage_billing.Name = "btn_manage_billing";
             this.btn_manage_billing.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_manage_billing.Size = new System.Drawing.Size(198, 52);
+            this.btn_manage_billing.Size = new System.Drawing.Size(198, 53);
             this.btn_manage_billing.TabIndex = 4;
             this.btn_manage_billing.Text = "Billing";
             this.btn_manage_billing.UseTransparentBackground = true;
@@ -152,7 +152,7 @@
             this.btn_manage_appointment.Location = new System.Drawing.Point(55, 394);
             this.btn_manage_appointment.Name = "btn_manage_appointment";
             this.btn_manage_appointment.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_manage_appointment.Size = new System.Drawing.Size(198, 52);
+            this.btn_manage_appointment.Size = new System.Drawing.Size(198, 53);
             this.btn_manage_appointment.TabIndex = 3;
             this.btn_manage_appointment.Text = "Appointment";
             this.btn_manage_appointment.UseTransparentBackground = true;
@@ -181,7 +181,7 @@
             this.btn_manage_employee.Location = new System.Drawing.Point(55, 324);
             this.btn_manage_employee.Name = "btn_manage_employee";
             this.btn_manage_employee.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_manage_employee.Size = new System.Drawing.Size(198, 52);
+            this.btn_manage_employee.Size = new System.Drawing.Size(198, 53);
             this.btn_manage_employee.TabIndex = 2;
             this.btn_manage_employee.Text = "Mange Employee";
             this.btn_manage_employee.UseTransparentBackground = true;
@@ -210,7 +210,7 @@
             this.btn_manage_patient.Location = new System.Drawing.Point(55, 254);
             this.btn_manage_patient.Name = "btn_manage_patient";
             this.btn_manage_patient.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_manage_patient.Size = new System.Drawing.Size(198, 52);
+            this.btn_manage_patient.Size = new System.Drawing.Size(198, 53);
             this.btn_manage_patient.TabIndex = 1;
             this.btn_manage_patient.Text = "Mange Patient";
             this.btn_manage_patient.UseTransparentBackground = true;
@@ -239,7 +239,7 @@
             this.btn_profile_button.Location = new System.Drawing.Point(55, 93);
             this.btn_profile_button.Name = "btn_profile_button";
             this.btn_profile_button.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_profile_button.Size = new System.Drawing.Size(198, 52);
+            this.btn_profile_button.Size = new System.Drawing.Size(198, 53);
             this.btn_profile_button.TabIndex = 0;
             this.btn_profile_button.Text = "Profile";
             this.btn_profile_button.UseTransparentBackground = true;
@@ -254,8 +254,32 @@
             this.guna2GradientPanel2.Controls.Add(this.label5);
             this.guna2GradientPanel2.Location = new System.Drawing.Point(292, 0);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(1188, 145);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(1188, 146);
             this.guna2GradientPanel2.TabIndex = 4;
+            // 
+            // lbl_profile_user_name
+            // 
+            this.lbl_profile_user_name.AutoSize = true;
+            this.lbl_profile_user_name.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_profile_user_name.Location = new System.Drawing.Point(150, 104);
+            this.lbl_profile_user_name.Name = "lbl_profile_user_name";
+            this.lbl_profile_user_name.Size = new System.Drawing.Size(77, 30);
+            this.lbl_profile_user_name.TabIndex = 2;
+            this.lbl_profile_user_name.Text = "name";
+            // 
+            // picbox_admin_portal
+            // 
+            this.picbox_admin_portal.BackColor = System.Drawing.Color.Transparent;
+            this.picbox_admin_portal.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
+            this.picbox_admin_portal.ImageRotate = 0F;
+            this.picbox_admin_portal.Location = new System.Drawing.Point(1022, 20);
+            this.picbox_admin_portal.Name = "picbox_admin_portal";
+            this.picbox_admin_portal.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picbox_admin_portal.Size = new System.Drawing.Size(111, 105);
+            this.picbox_admin_portal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbox_admin_portal.TabIndex = 3;
+            this.picbox_admin_portal.TabStop = false;
+            this.picbox_admin_portal.UseTransparentBackground = true;
             // 
             // label4
             // 
@@ -278,30 +302,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Welcome to Manager Portal";
             // 
-            // lbl_profile_user_name
-            // 
-            this.lbl_profile_user_name.AutoSize = true;
-            this.lbl_profile_user_name.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_profile_user_name.Location = new System.Drawing.Point(150, 104);
-            this.lbl_profile_user_name.Name = "lbl_profile_user_name";
-            this.lbl_profile_user_name.Size = new System.Drawing.Size(77, 30);
-            this.lbl_profile_user_name.TabIndex = 2;
-            this.lbl_profile_user_name.Text = "name";
-            // 
-            // picbox_admin_portal
-            // 
-            this.picbox_admin_portal.BackColor = System.Drawing.Color.Transparent;
-            this.picbox_admin_portal.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
-            this.picbox_admin_portal.ImageRotate = 0F;
-            this.picbox_admin_portal.Location = new System.Drawing.Point(1022, 20);
-            this.picbox_admin_portal.Name = "picbox_admin_portal";
-            this.picbox_admin_portal.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picbox_admin_portal.Size = new System.Drawing.Size(111, 104);
-            this.picbox_admin_portal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbox_admin_portal.TabIndex = 3;
-            this.picbox_admin_portal.TabStop = false;
-            this.picbox_admin_portal.UseTransparentBackground = true;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
@@ -315,7 +315,7 @@
             this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.Location = new System.Drawing.Point(295, 145);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1185, 634);
+            this.guna2Panel1.Size = new System.Drawing.Size(1185, 635);
             this.guna2Panel1.TabIndex = 5;
             // 
             // label11
@@ -341,7 +341,7 @@
             this.guna2ShadowPanel3.Radius = 10;
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.guna2ShadowPanel3.ShadowDepth = 150;
-            this.guna2ShadowPanel3.Size = new System.Drawing.Size(472, 202);
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(472, 203);
             this.guna2ShadowPanel3.TabIndex = 4;
             // 
             // label7
@@ -351,9 +351,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(84, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 43);
+            this.label7.Size = new System.Drawing.Size(45, 43);
             this.label7.TabIndex = 2;
-            this.label7.Text = "168";
+            this.label7.Text = "--";
             // 
             // label8
             // 
@@ -372,7 +372,7 @@
             this.guna2Panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel4.Location = new System.Drawing.Point(356, 102);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(83, 75);
+            this.guna2Panel4.Size = new System.Drawing.Size(83, 76);
             this.guna2Panel4.TabIndex = 0;
             // 
             // guna2ShadowPanel4
@@ -387,7 +387,7 @@
             this.guna2ShadowPanel4.Radius = 10;
             this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.MidnightBlue;
             this.guna2ShadowPanel4.ShadowDepth = 150;
-            this.guna2ShadowPanel4.Size = new System.Drawing.Size(472, 202);
+            this.guna2ShadowPanel4.Size = new System.Drawing.Size(472, 203);
             this.guna2ShadowPanel4.TabIndex = 3;
             // 
             // label9
@@ -397,9 +397,9 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label9.Location = new System.Drawing.Point(23, 102);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 43);
+            this.label9.Size = new System.Drawing.Size(45, 43);
             this.label9.TabIndex = 2;
-            this.label9.Text = "69";
+            this.label9.Text = "--";
             // 
             // label10
             // 
@@ -418,7 +418,7 @@
             this.guna2Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel5.Location = new System.Drawing.Point(356, 102);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(83, 75);
+            this.guna2Panel5.Size = new System.Drawing.Size(83, 76);
             this.guna2Panel5.TabIndex = 0;
             // 
             // guna2ShadowPanel2
@@ -433,7 +433,7 @@
             this.guna2ShadowPanel2.Radius = 10;
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.DarkGreen;
             this.guna2ShadowPanel2.ShadowDepth = 150;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(472, 202);
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(472, 203);
             this.guna2ShadowPanel2.TabIndex = 1;
             // 
             // label1
@@ -443,9 +443,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(64, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 43);
+            this.label1.Size = new System.Drawing.Size(45, 43);
             this.label1.TabIndex = 2;
-            this.label1.Text = "5487";
+            this.label1.Text = "--";
             // 
             // label6
             // 
@@ -464,7 +464,7 @@
             this.guna2Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel3.Location = new System.Drawing.Point(358, 102);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(83, 75);
+            this.guna2Panel3.Size = new System.Drawing.Size(83, 76);
             this.guna2Panel3.TabIndex = 0;
             // 
             // guna2ShadowPanel1
@@ -479,7 +479,7 @@
             this.guna2ShadowPanel1.Radius = 10;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.guna2ShadowPanel1.ShadowDepth = 150;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(472, 202);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(472, 203);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // label2
@@ -489,9 +489,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(43, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 43);
+            this.label2.Size = new System.Drawing.Size(45, 43);
             this.label2.TabIndex = 2;
-            this.label2.Text = "50";
+            this.label2.Text = "--";
             // 
             // label3
             // 
@@ -510,7 +510,7 @@
             this.guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Panel2.Location = new System.Drawing.Point(358, 102);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(83, 75);
+            this.guna2Panel2.Size = new System.Drawing.Size(83, 76);
             this.guna2Panel2.TabIndex = 0;
             // 
             // ManagerPortal
