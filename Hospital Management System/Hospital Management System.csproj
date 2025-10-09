@@ -118,6 +118,7 @@
     <Compile Include="Billing_form.Designer.cs">
       <DependentUpon>Billing_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashboardService.cs" />
     <Compile Include="DoctorPortal.cs">
       <SubType>Form</SubType>
     </Compile>

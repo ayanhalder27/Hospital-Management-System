@@ -44,29 +44,37 @@
             this.lbl_profile_user_name = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblConfirmedAppointments = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblActiveEmployee = new System.Windows.Forms.Label();
+            this.lblTotalManager = new System.Windows.Forms.Label();
+            this.lblTotalDoctor = new System.Windows.Forms.Label();
+            this.lblTotalPharmacist = new System.Windows.Forms.Label();
+            this.lblTotalReceptionist = new System.Windows.Forms.Label();
+            this.lblTotalAdmin = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblActiveEmployees = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPendingAppointments = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.lblServedPatient = new System.Windows.Forms.Label();
+            this.lblActivePatients = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_admin_portal)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2ShadowPanel4.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
@@ -394,58 +402,42 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to Admin Portal";
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.White;
-            this.guna2Panel1.BackgroundImage = global::Hospital_Management_System.Properties.Resources.BG;
-            this.guna2Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Panel1.Controls.Add(this.label11);
-            this.guna2Panel1.Controls.Add(this.guna2ShadowPanel3);
-            this.guna2Panel1.Controls.Add(this.guna2ShadowPanel4);
-            this.guna2Panel1.Controls.Add(this.guna2ShadowPanel2);
-            this.guna2Panel1.Controls.Add(this.guna2ShadowPanel1);
-            this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Location = new System.Drawing.Point(290, 147);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1161, 623);
-            this.guna2Panel1.TabIndex = 2;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(477, 22);
+            this.label11.Location = new System.Drawing.Point(777, 150);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(237, 50);
-            this.label11.TabIndex = 5;
+            this.label11.TabIndex = 10;
             this.label11.Text = "Dashboard";
             // 
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel3.Controls.Add(this.label7);
+            this.guna2ShadowPanel3.Controls.Add(this.lblConfirmedAppointments);
             this.guna2ShadowPanel3.Controls.Add(this.label8);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Panel4);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2ShadowPanel3.Location = new System.Drawing.Point(632, 387);
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(932, 515);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             this.guna2ShadowPanel3.Radius = 10;
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.guna2ShadowPanel3.ShadowDepth = 150;
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(472, 202);
-            this.guna2ShadowPanel3.TabIndex = 4;
+            this.guna2ShadowPanel3.TabIndex = 9;
             // 
-            // label7
+            // lblConfirmedAppointments
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(84, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 43);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "--";
+            this.lblConfirmedAppointments.AutoSize = true;
+            this.lblConfirmedAppointments.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmedAppointments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblConfirmedAppointments.Location = new System.Drawing.Point(84, 115);
+            this.lblConfirmedAppointments.Name = "lblConfirmedAppointments";
+            this.lblConfirmedAppointments.Size = new System.Drawing.Size(45, 43);
+            this.lblConfirmedAppointments.TabIndex = 2;
+            this.lblConfirmedAppointments.Text = "--";
             // 
             // label8
             // 
@@ -470,28 +462,148 @@
             // guna2ShadowPanel4
             // 
             this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel4.Controls.Add(this.lblActiveEmployee);
+            this.guna2ShadowPanel4.Controls.Add(this.lblTotalManager);
+            this.guna2ShadowPanel4.Controls.Add(this.lblTotalDoctor);
+            this.guna2ShadowPanel4.Controls.Add(this.lblTotalPharmacist);
+            this.guna2ShadowPanel4.Controls.Add(this.lblTotalReceptionist);
+            this.guna2ShadowPanel4.Controls.Add(this.lblTotalAdmin);
             this.guna2ShadowPanel4.Controls.Add(this.label9);
+            this.guna2ShadowPanel4.Controls.Add(this.label7);
+            this.guna2ShadowPanel4.Controls.Add(this.label5);
+            this.guna2ShadowPanel4.Controls.Add(this.label4);
+            this.guna2ShadowPanel4.Controls.Add(this.lblActiveEmployees);
             this.guna2ShadowPanel4.Controls.Add(this.label10);
             this.guna2ShadowPanel4.Controls.Add(this.guna2Panel5);
             this.guna2ShadowPanel4.FillColor = System.Drawing.Color.MidnightBlue;
-            this.guna2ShadowPanel4.Location = new System.Drawing.Point(632, 110);
+            this.guna2ShadowPanel4.Location = new System.Drawing.Point(947, 203);
             this.guna2ShadowPanel4.Name = "guna2ShadowPanel4";
             this.guna2ShadowPanel4.Radius = 10;
             this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.MidnightBlue;
             this.guna2ShadowPanel4.ShadowDepth = 150;
-            this.guna2ShadowPanel4.Size = new System.Drawing.Size(472, 202);
-            this.guna2ShadowPanel4.TabIndex = 3;
+            this.guna2ShadowPanel4.Size = new System.Drawing.Size(472, 277);
+            this.guna2ShadowPanel4.TabIndex = 8;
+            // 
+            // lblActiveEmployee
+            // 
+            this.lblActiveEmployee.AutoSize = true;
+            this.lblActiveEmployee.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveEmployee.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblActiveEmployee.Location = new System.Drawing.Point(335, 23);
+            this.lblActiveEmployee.Name = "lblActiveEmployee";
+            this.lblActiveEmployee.Size = new System.Drawing.Size(45, 43);
+            this.lblActiveEmployee.TabIndex = 12;
+            this.lblActiveEmployee.Text = "--";
+            // 
+            // lblTotalManager
+            // 
+            this.lblTotalManager.AutoSize = true;
+            this.lblTotalManager.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalManager.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalManager.Location = new System.Drawing.Point(164, 122);
+            this.lblTotalManager.Name = "lblTotalManager";
+            this.lblTotalManager.Size = new System.Drawing.Size(24, 21);
+            this.lblTotalManager.TabIndex = 11;
+            this.lblTotalManager.Text = "--";
+            // 
+            // lblTotalDoctor
+            // 
+            this.lblTotalDoctor.AutoSize = true;
+            this.lblTotalDoctor.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalDoctor.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalDoctor.Location = new System.Drawing.Point(164, 190);
+            this.lblTotalDoctor.Name = "lblTotalDoctor";
+            this.lblTotalDoctor.Size = new System.Drawing.Size(24, 21);
+            this.lblTotalDoctor.TabIndex = 10;
+            this.lblTotalDoctor.Text = "--";
+            // 
+            // lblTotalPharmacist
+            // 
+            this.lblTotalPharmacist.AutoSize = true;
+            this.lblTotalPharmacist.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPharmacist.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalPharmacist.Location = new System.Drawing.Point(164, 225);
+            this.lblTotalPharmacist.Name = "lblTotalPharmacist";
+            this.lblTotalPharmacist.Size = new System.Drawing.Size(24, 21);
+            this.lblTotalPharmacist.TabIndex = 9;
+            this.lblTotalPharmacist.Text = "--";
+            // 
+            // lblTotalReceptionist
+            // 
+            this.lblTotalReceptionist.AutoSize = true;
+            this.lblTotalReceptionist.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalReceptionist.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalReceptionist.Location = new System.Drawing.Point(164, 156);
+            this.lblTotalReceptionist.Name = "lblTotalReceptionist";
+            this.lblTotalReceptionist.Size = new System.Drawing.Size(24, 21);
+            this.lblTotalReceptionist.TabIndex = 8;
+            this.lblTotalReceptionist.Text = "--";
+            // 
+            // lblTotalAdmin
+            // 
+            this.lblTotalAdmin.AutoSize = true;
+            this.lblTotalAdmin.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalAdmin.Location = new System.Drawing.Point(164, 82);
+            this.lblTotalAdmin.Name = "lblTotalAdmin";
+            this.lblTotalAdmin.Size = new System.Drawing.Size(24, 21);
+            this.lblTotalAdmin.TabIndex = 7;
+            this.lblTotalAdmin.Text = "--";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(23, 102);
+            this.label9.Location = new System.Drawing.Point(27, 225);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 43);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "--";
+            this.label9.Size = new System.Drawing.Size(112, 21);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Pharmacist :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(27, 190);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 21);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Doctor : ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(27, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 21);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Receptionist : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(27, 122);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 21);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Manager : ";
+            // 
+            // lblActiveEmployees
+            // 
+            this.lblActiveEmployees.AutoSize = true;
+            this.lblActiveEmployees.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActiveEmployees.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblActiveEmployees.Location = new System.Drawing.Point(27, 82);
+            this.lblActiveEmployees.Name = "lblActiveEmployees";
+            this.lblActiveEmployees.Size = new System.Drawing.Size(82, 21);
+            this.lblActiveEmployees.TabIndex = 2;
+            this.lblActiveEmployees.Text = "Admin : ";
             // 
             // label10
             // 
@@ -500,15 +612,15 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label10.Location = new System.Drawing.Point(25, 29);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(270, 35);
+            this.label10.Size = new System.Drawing.Size(289, 35);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Total Employees";
+            this.label10.Text = "Total Employees :";
             // 
             // guna2Panel5
             // 
             this.guna2Panel5.BackgroundImage = global::Hospital_Management_System.Properties.Resources.emp;
             this.guna2Panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Panel5.Location = new System.Drawing.Point(356, 102);
+            this.guna2Panel5.Location = new System.Drawing.Point(361, 162);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(83, 75);
             this.guna2Panel5.TabIndex = 0;
@@ -516,28 +628,28 @@
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.Controls.Add(this.label5);
+            this.guna2ShadowPanel2.Controls.Add(this.lblPendingAppointments);
             this.guna2ShadowPanel2.Controls.Add(this.label6);
             this.guna2ShadowPanel2.Controls.Add(this.guna2Panel3);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.DarkGreen;
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(78, 387);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(378, 515);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.Radius = 10;
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.DarkGreen;
             this.guna2ShadowPanel2.ShadowDepth = 150;
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(472, 202);
-            this.guna2ShadowPanel2.TabIndex = 1;
+            this.guna2ShadowPanel2.TabIndex = 7;
             // 
-            // label5
+            // lblPendingAppointments
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(64, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 43);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "--";
+            this.lblPendingAppointments.AutoSize = true;
+            this.lblPendingAppointments.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPendingAppointments.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblPendingAppointments.Location = new System.Drawing.Point(64, 115);
+            this.lblPendingAppointments.Name = "lblPendingAppointments";
+            this.lblPendingAppointments.Size = new System.Drawing.Size(45, 43);
+            this.lblPendingAppointments.TabIndex = 2;
+            this.lblPendingAppointments.Text = "--";
             // 
             // label6
             // 
@@ -562,28 +674,28 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.lblServedPatient);
+            this.guna2ShadowPanel1.Controls.Add(this.lblActivePatients);
             this.guna2ShadowPanel1.Controls.Add(this.label3);
             this.guna2ShadowPanel1.Controls.Add(this.guna2Panel2);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(78, 110);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(378, 238);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 10;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.guna2ShadowPanel1.ShadowDepth = 150;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(472, 202);
-            this.guna2ShadowPanel1.TabIndex = 0;
+            this.guna2ShadowPanel1.TabIndex = 6;
             // 
-            // lblServedPatient
+            // lblActivePatients
             // 
-            this.lblServedPatient.AutoSize = true;
-            this.lblServedPatient.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServedPatient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblServedPatient.Location = new System.Drawing.Point(43, 122);
-            this.lblServedPatient.Name = "lblServedPatient";
-            this.lblServedPatient.Size = new System.Drawing.Size(45, 43);
-            this.lblServedPatient.TabIndex = 2;
-            this.lblServedPatient.Text = "--";
+            this.lblActivePatients.AutoSize = true;
+            this.lblActivePatients.Font = new System.Drawing.Font("Mongolian Baiti", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivePatients.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblActivePatients.Location = new System.Drawing.Point(43, 122);
+            this.lblActivePatients.Name = "lblActivePatients";
+            this.lblActivePatients.Size = new System.Drawing.Size(45, 43);
+            this.lblActivePatients.TabIndex = 2;
+            this.lblActivePatients.Text = "--";
             // 
             // label3
             // 
@@ -610,21 +722,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1450, 770);
-            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.guna2ShadowPanel3);
+            this.Controls.Add(this.guna2ShadowPanel4);
+            this.Controls.Add(this.guna2ShadowPanel2);
+            this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AdminPortal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPortal";
+            this.Load += new System.EventHandler(this.AdminPortal_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_admin_portal)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             this.guna2ShadowPanel3.ResumeLayout(false);
             this.guna2ShadowPanel3.PerformLayout();
             this.guna2ShadowPanel4.ResumeLayout(false);
@@ -634,6 +750,7 @@
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -653,24 +770,33 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_profile_user_name;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picbox_admin_portal;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2GradientButton btn_profile_button;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblConfirmedAppointments;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
+        private System.Windows.Forms.Label lblActiveEmployee;
+        private System.Windows.Forms.Label lblTotalManager;
+        private System.Windows.Forms.Label lblTotalDoctor;
+        private System.Windows.Forms.Label lblTotalPharmacist;
+        private System.Windows.Forms.Label lblTotalReceptionist;
+        private System.Windows.Forms.Label lblTotalAdmin;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblActiveEmployees;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPendingAppointments;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label lblServedPatient;
-        private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private System.Windows.Forms.Label lblActivePatients;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }

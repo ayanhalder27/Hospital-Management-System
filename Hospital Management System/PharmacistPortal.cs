@@ -12,9 +12,12 @@ namespace Hospital_Management_System
 {
     public partial class PharmacistPortal : Form
     {
-        public PharmacistPortal()
+        private int userID;
+
+        public PharmacistPortal(int userID)
         {
             InitializeComponent();
+            this.userID = userID;
         }
 
         private void btnViewMedicine_Click(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace Hospital_Management_System
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            UserProfileForm userProfileForm = new UserProfileForm(Login_form.userID);
+            UserProfileForm userProfileForm = new UserProfileForm(userID);
             userProfileForm.Show(this);
             this.Hide();
         }

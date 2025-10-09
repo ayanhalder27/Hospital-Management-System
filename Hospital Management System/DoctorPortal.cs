@@ -12,9 +12,12 @@ namespace Hospital_Management_System
 {
     public partial class DoctorPortal : Form
     {
-        public DoctorPortal()
+        private int userID;
+
+        public DoctorPortal(int userID)
         {
             InitializeComponent();
+            this.userID = userID;
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)

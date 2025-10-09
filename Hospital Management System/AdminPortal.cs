@@ -16,12 +16,39 @@ namespace Hospital_Management_System
         private int UserID;
         private HospitalContext context;
         private User correntUser;
+        private readonly DashboardService dashboardService;
+        private Timer timer = new Timer();
         public AdminPortal(int userid)
         {
             InitializeComponent();
             this.UserID = userid;
             context = new HospitalContext();
             correntUser = context.Users.FirstOrDefault(u => u.UserID == UserID);
+            dashboardService = new DashboardService(context);
+            this.Load += AdminPortal_Load;
+
+        }
+        private void RefreshDashboard()
+        {
+            try
+            {
+                var c = dashboardService.GetDashboardCounts();
+
+                lblActivePatients.Text = c.ActivePatients.ToString();
+                lblActiveEmployee.Text = c.ActiveEmployees.ToString();
+                lblPendingAppointments.Text = c.PendingAppointments.ToString();
+                lblConfirmedAppointments.Text = c.ConfirmedAppointments.ToString();
+                lblTotalAdmin.Text = c.TotalAdmins.ToString();
+                lblTotalDoctor.Text = c.TotalDoctors.ToString();
+                lblTotalReceptionist.Text = c.TotalReceptionists.ToString();
+                lblTotalManager.Text = c.TotalManagers.ToString();
+                lblTotalPharmacist.Text = c.TotalPharmacists.ToString();
+            }
+            catch (Exception ex)
+            {
+                timer.Stop();
+                MessageBox.Show("Error refreshing dashboard: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)
@@ -98,5 +125,15 @@ namespace Hospital_Management_System
             userProfileForm.Show(this);
             this.Hide();
         }
+
+        private void AdminPortal_Load(object sender, EventArgs e)
+        {
+            timer.Interval = 5000; 
+            timer.Tick += (s, ev) => RefreshDashboard();
+            timer.Start();
+            RefreshDashboard(); 
+        }
     }
+
+   
 }
