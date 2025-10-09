@@ -534,7 +534,6 @@
             this.txtMedicine.SelectedText = "";
             this.txtMedicine.Size = new System.Drawing.Size(585, 36);
             this.txtMedicine.TabIndex = 0;
-            this.txtMedicine.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
             // 
             // panelTests
             // 

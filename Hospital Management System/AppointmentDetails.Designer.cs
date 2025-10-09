@@ -37,6 +37,7 @@
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlTop = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ControlBoxMaximize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBoxMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -51,27 +52,26 @@
             this.pnlContact = new Guna.UI2.WinForms.Guna2Panel();
             this.lblContactValue = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnlGender = new Guna.UI2.WinForms.Guna2Panel();
             this.lblGenderValue = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlAge = new Guna.UI2.WinForms.Guna2Panel();
             this.lblAgeValue = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblPatientID = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbPatientAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrescriptions)).BeginInit();
             this.pnlPatientCard.SuspendLayout();
             this.pnlContact.SuspendLayout();
-            this.pnlGender.SuspendLayout();
-            this.pnlAge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.pnlGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlAge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPatientAvatar)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +105,30 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(1280, 54);
             this.pnlTop.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Animated = true;
+            this.btnBack.BorderRadius = 4;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.Transparent;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.btnBack.Image = global::Hospital_Management_System.Properties.Resources.back;
+            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBack.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(123, 47);
+            this.btnBack.TabIndex = 4;
+            this.btnBack.Text = "Back";
+            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBack.TextOffset = new System.Drawing.Point(5, 0);
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // guna2ControlBoxMaximize
             // 
@@ -317,9 +341,9 @@
             this.lblContactValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblContactValue.Location = new System.Drawing.Point(46, 31);
             this.lblContactValue.Name = "lblContactValue";
-            this.lblContactValue.Size = new System.Drawing.Size(99, 20);
+            this.lblContactValue.Size = new System.Drawing.Size(33, 20);
             this.lblContactValue.TabIndex = 2;
-            this.lblContactValue.Text = "0170000000";
+            this.lblContactValue.Text = "----";
             // 
             // label10
             // 
@@ -331,6 +355,16 @@
             this.label10.Size = new System.Drawing.Size(61, 20);
             this.label10.TabIndex = 1;
             this.label10.Text = "Contact";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Hospital_Management_System.Properties.Resources.telephone;
+            this.pictureBox4.Location = new System.Drawing.Point(11, 17);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // pnlGender
             // 
@@ -352,9 +386,9 @@
             this.lblGenderValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblGenderValue.Location = new System.Drawing.Point(46, 31);
             this.lblGenderValue.Name = "lblGenderValue";
-            this.lblGenderValue.Size = new System.Drawing.Size(43, 20);
+            this.lblGenderValue.Size = new System.Drawing.Size(33, 20);
             this.lblGenderValue.TabIndex = 2;
-            this.lblGenderValue.Text = "Male";
+            this.lblGenderValue.Text = "----";
             // 
             // label6
             // 
@@ -366,6 +400,16 @@
             this.label6.Size = new System.Drawing.Size(59, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Gender";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Hospital_Management_System.Properties.Resources.equality;
+            this.pictureBox2.Location = new System.Drawing.Point(11, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // pnlAge
             // 
@@ -387,9 +431,9 @@
             this.lblAgeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblAgeValue.Location = new System.Drawing.Point(46, 31);
             this.lblAgeValue.Name = "lblAgeValue";
-            this.lblAgeValue.Size = new System.Drawing.Size(27, 20);
+            this.lblAgeValue.Size = new System.Drawing.Size(21, 20);
             this.lblAgeValue.TabIndex = 2;
-            this.lblAgeValue.Text = "32";
+            this.lblAgeValue.Text = "--";
             // 
             // label3
             // 
@@ -401,6 +445,16 @@
             this.label3.Size = new System.Drawing.Size(36, 20);
             this.label3.TabIndex = 1;
             this.label3.Text = "Age";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Hospital_Management_System.Properties.Resources.birthday_cake;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lblPatientID
             // 
@@ -420,39 +474,9 @@
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblName.Location = new System.Drawing.Point(74, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(141, 38);
+            this.lblName.Size = new System.Drawing.Size(61, 38);
             this.lblName.TabIndex = 1;
-            this.lblName.Text = "John Doe";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Hospital_Management_System.Properties.Resources.telephone;
-            this.pictureBox4.Location = new System.Drawing.Point(11, 17);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Hospital_Management_System.Properties.Resources.equality;
-            this.pictureBox2.Location = new System.Drawing.Point(11, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Hospital_Management_System.Properties.Resources.birthday_cake;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lblName.Text = "----";
             // 
             // pbPatientAvatar
             // 
@@ -465,30 +489,6 @@
             this.pbPatientAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPatientAvatar.TabIndex = 0;
             this.pbPatientAvatar.TabStop = false;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Animated = true;
-            this.btnBack.BorderRadius = 4;
-            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBack.FillColor = System.Drawing.Color.Transparent;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.btnBack.Image = global::Hospital_Management_System.Properties.Resources.back;
-            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBack.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnBack.Location = new System.Drawing.Point(0, 0);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(123, 47);
-            this.btnBack.TabIndex = 4;
-            this.btnBack.Text = "Back";
-            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBack.TextOffset = new System.Drawing.Point(5, 0);
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // AppointmentDetails
             // 
@@ -512,12 +512,12 @@
             this.pnlPatientCard.PerformLayout();
             this.pnlContact.ResumeLayout(false);
             this.pnlContact.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.pnlGender.ResumeLayout(false);
             this.pnlGender.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlAge.ResumeLayout(false);
             this.pnlAge.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPatientAvatar)).EndInit();
             this.ResumeLayout(false);

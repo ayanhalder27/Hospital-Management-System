@@ -94,9 +94,9 @@
             this.lblWelcome.Location = new System.Drawing.Point(80, 27);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblWelcome.Size = new System.Drawing.Size(213, 25);
+            this.lblWelcome.Size = new System.Drawing.Size(105, 25);
             this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Welcome, Ayan Halder";
+            this.lblWelcome.Text = "Welcome, ";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2CirclePictureBox1
@@ -236,6 +236,7 @@
             this.Name = "DoctorPortal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.DoctorPortal_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();

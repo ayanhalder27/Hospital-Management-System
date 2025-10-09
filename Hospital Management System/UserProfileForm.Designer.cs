@@ -73,7 +73,7 @@
             this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(440, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 46);
+            this.label1.Size = new System.Drawing.Size(241, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "User Profile";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -144,11 +144,11 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(32, 349);
+            this.label7.Location = new System.Drawing.Point(80, 349);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(172, 30);
+            this.label7.Size = new System.Drawing.Size(124, 30);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Phone Num :";
+            this.label7.Text = "Contact :";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8

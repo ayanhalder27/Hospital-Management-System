@@ -36,5 +36,12 @@ namespace Hospital_Management_System
             profile.Show(this);
             this.Hide();
         }
+
+        private async void DoctorPortal_Load(object sender, EventArgs e)
+        {
+            await Task.Delay(100);
+            HospitalContext db = new HospitalContext();
+            lblWelcome.Text += db.Users.Where(u => u.UserID == Login_form.userID).Select(u => u.FullName).FirstOrDefault();
+        }
     }
 }

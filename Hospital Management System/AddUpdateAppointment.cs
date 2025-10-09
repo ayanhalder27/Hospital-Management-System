@@ -282,7 +282,7 @@ namespace Hospital_Management_System
                 if (result.Success)
                 {
                     MessageBox.Show("A new Appointment is added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    btnBack.PerformClick();
                 }
                 else
                 {

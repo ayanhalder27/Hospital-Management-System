@@ -42,7 +42,7 @@
             this.lblFee = new System.Windows.Forms.Label();
             this.lblBillDate = new System.Windows.Forms.Label();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnBack = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtChangeAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPaidAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -203,30 +203,30 @@
             this.guna2GradientButton1.UseTransparentBackground = true;
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
-            // guna2GradientButton2
+            // btnBack
             // 
-            this.guna2GradientButton2.Animated = true;
-            this.guna2GradientButton2.AutoRoundedCorners = true;
-            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.BorderThickness = 1;
-            this.guna2GradientButton2.DefaultAutoSize = true;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Maroon;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.IndicateFocus = true;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(2, 0);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(74, 39);
-            this.guna2GradientButton2.TabIndex = 19;
-            this.guna2GradientButton2.Text = "Back";
-            this.guna2GradientButton2.UseTransparentBackground = true;
-            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            this.btnBack.Animated = true;
+            this.btnBack.AutoRoundedCorners = true;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderThickness = 1;
+            this.btnBack.DefaultAutoSize = true;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnBack.FillColor2 = System.Drawing.Color.Maroon;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.IndicateFocus = true;
+            this.btnBack.Location = new System.Drawing.Point(2, 0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(74, 39);
+            this.btnBack.TabIndex = 19;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseTransparentBackground = true;
+            this.btnBack.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
             // txtChangeAmount
             // 
@@ -306,7 +306,7 @@
             this.Controls.Add(this.txtChangeAmount);
             this.Controls.Add(this.txtPaidAmount);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.guna2GradientButton2);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.lblBillDate);
@@ -348,7 +348,7 @@
         private System.Windows.Forms.Label lblFee;
         private System.Windows.Forms.Label lblBillDate;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2GradientButton btnBack;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox txtPaidAmount;

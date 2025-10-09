@@ -31,10 +31,14 @@ namespace Hospital_Management_System
             this.Hide();
         }
 
-        private void PharmacistPortal_Load(object sender, EventArgs e)
+        private async void PharmacistPortal_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
+
             HospitalContext db = new HospitalContext();
             lblWelcome.Text += db.Users.Where(u=>u.UserID == Login_form.userID).Select(u=>u.FullName).FirstOrDefault();
+            lblMedicinesCount.Text = db.Medicines.Count().ToString();
+            lblSales.Text = db.Pharmacy_Billing.Count().ToString();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

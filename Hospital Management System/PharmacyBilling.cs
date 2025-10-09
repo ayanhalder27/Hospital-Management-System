@@ -23,8 +23,9 @@ namespace Hospital_Management_System
             InitializeComponent();
         }
 
-        private void PharmacyBilling_Load(object sender, EventArgs e)
+        private async void PharmacyBilling_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
             lblDate.Text = DateTime.Now.ToString("dd, MMMM yyyy");
 
             medicines = db.Medicines.Select(m => new
@@ -251,15 +252,6 @@ namespace Hospital_Management_System
             pb.Total= float.Parse(lblTotal.Text);
             db.Pharmacy_Billing.Add(pb);
             db.SaveChanges();
-            for(int i=0; i<dgvBill.Rows.Count; i++)
-            {
-                Medicine_Billing mb = new Medicine_Billing();
-                mb.Pharmacy_Billing_ID = pb.Pharmacy_Billing_ID;
-                mb.MedicineID = medicines.FirstOrDefault(x=> x.Value == dgvBill.Rows[i].Cells[1].Value + "~" + dgvBill.Rows[i].Cells[2].Value).Key;
-                mb.Quantity = int.Parse(dgvBill.Rows[i].Cells[3].Value.ToString());
-                db.Medicine_Billing.Add(mb);
-            }
-            db.SaveChanges();
             MessageBox.Show("Billing Successfull");
 
             InvoiceData invoiceData = new InvoiceData();
@@ -270,20 +262,29 @@ namespace Hospital_Management_System
             invoiceData.Discount = pb.Discount;
             invoiceData.Total = pb.Total;
 
-            for (int i=0; i<dgvBill.Rows.Count; i++)
+            for (int i = 0; i < dgvBill.Rows.Count; i++)
             {
                 InvoiceItem item = new InvoiceItem();
                 item.DrugName = dgvBill.Rows[i].Cells[1].Value.ToString();
                 item.PricePerUnit = double.Parse(dgvBill.Rows[i].Cells[2].Value.ToString());
                 item.Quantity = int.Parse(dgvBill.Rows[i].Cells[3].Value.ToString());
                 invoiceData.Items.Add(item);
+
+                Medicine_Billing mb = new Medicine_Billing();
+                mb.Pharmacy_Billing_ID = pb.Pharmacy_Billing_ID;
+                mb.MedicineID = medicines.FirstOrDefault(x => x.Value == dgvBill.Rows[i].Cells[1].Value + "~" + dgvBill.Rows[i].Cells[2].Value).Key;
+                mb.Quantity = int.Parse(dgvBill.Rows[i].Cells[3].Value.ToString());
+                db.Medicine_Billing.Add(mb);
             }
 
 
-            string fileName = "#" + pb.Pharmacy_Billing_ID +  ".Date-" + DateTime.Now.ToString("dd-mm-yyyy") + ".pdf";
+            string fileName = "#" + pb.Pharmacy_Billing_ID + "PharmacyInvoice.Date-" + DateTime.Now.ToString("dd-mm-yyyy") + ".pdf";
             string filePath = Path.Combine(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName, "Documents", fileName);
 
             InvoiceGenerator.GenerateInvoice(invoiceData, filePath);
+            pb.Invoice = fileName;
+            db.SaveChanges();
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)

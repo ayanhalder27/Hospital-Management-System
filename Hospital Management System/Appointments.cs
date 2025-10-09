@@ -46,8 +46,9 @@ namespace Hospital_Management_System
             return panel;
         }
 
-        private void Appointments2_Load(object sender, EventArgs e)
+        private async void Appointments2_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
             loadAppointments(cbStatus.Text);
         }
 
