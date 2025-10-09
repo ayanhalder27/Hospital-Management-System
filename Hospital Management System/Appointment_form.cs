@@ -61,7 +61,6 @@ namespace Hospital_Management_System
             }
         }
 
-
         private List<AppointmentDto> GetAppointments(string search = null)
         {
             var query = from a in context.Appointments
@@ -137,7 +136,7 @@ namespace Hospital_Management_System
                 if (e.RowIndex >= 0)
                 {
                     var selectedAppointment = (AppointmentDto)dgvAppointments.Rows[e.RowIndex].DataBoundItem;
-                    var updateAppointmentForm = new AddUpdateAppointment(selectedAppointment.AppointmentID);
+                    var updateAppointmentForm = new AddUpdateAppointment(selectedAppointment.AppointmentID,selectedAppointment.AppointmentDate);
                     updateAppointmentForm.ShowDialog();
                 }
             }

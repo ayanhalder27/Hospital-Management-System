@@ -89,9 +89,12 @@ namespace Hospital_Management_System
                 if (appointment == null)
                     return (false, "Appointment not found.");
 
-                // Only allow update if not cancelled
                 if (appointment.Appoinment_Status == "Cancelled")
                     return (false, "Cannot update a cancelled appointment.");
+                if(appointment.Appoinment_Status == "Completed")
+                    return (false, "Cannot update a completed appointment.");
+                if(appointment.Appoinment_Status == "Confirmed")
+                    return (false, "Cannot update an Confirmed appointment.");
 
                 var today = DateTime.Now.Date;
                 var tomorrow = today.AddDays(1);
@@ -194,7 +197,7 @@ namespace Hospital_Management_System
                 lblDoctorVisitFee.Text = doctor.Visit_Fee.ToString();
 
                 // Appointment date
-                dtpAppointment.Value = appointment.AppointmentDate;
+                dtpAppointment.Value = appointmentDate ?? DateTime.Now;
             }
             catch (Exception ex)
             {
@@ -205,7 +208,7 @@ namespace Hospital_Management_System
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            this.Owner.Show();
+            //this.Owner.Show();
             this.Close();
         }
 
@@ -215,23 +218,24 @@ namespace Hospital_Management_System
             {
                 LoadPatients();
                 LoadDoctors();
-
-                if (appointmentId.HasValue)
+                var appointment = context.Appointments.Find(appointmentId);
+                LoadAppointmentForUpdate(appointmentId.Value);
+                if (appointmentId.HasValue && appointment.Appoinment_Status == "Pending")
                 {
-                    // Update mode
-                    LoadAppointmentForUpdate(appointmentId.Value);
+                    // Update mode      
                     txtPatientSearch.Enabled = false;
                     txtDoctorSearch.Enabled = false;
                     btnSave.Visible = false;
                     btnUpdate.Visible = true;
                     btnCancell.Visible = true;
+                    dtpAppointment.Value = appointmentDate ?? DateTime.Now;
                 }
                 else
                 {
-                    btnSave.Visible = true;
+                    btnSave.Visible = false;
                     btnUpdate.Visible = false;
                     btnCancell.Visible = false;
-                    dtpAppointment.Value = DateTime.Now;
+                    dtpAppointment.Value = appointmentDate ?? DateTime.Now;
                 }
             }
             catch (Exception ex)

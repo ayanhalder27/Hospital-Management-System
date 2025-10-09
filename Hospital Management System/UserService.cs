@@ -114,8 +114,8 @@ namespace Hospital_Management_System
 
                 string fileName = Path.GetFileName(sourceFilePath);
 
-                // Set destination folder inside your project Resources/Users
-                string photoFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "Users Profile Pic");
+                // Set destination folder inside your project Documents
+                string photoFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Documents");
 
                 // Make sure the folder exists
                 if (!Directory.Exists(photoFolder))
