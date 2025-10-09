@@ -35,7 +35,7 @@ namespace Hospital_Management_System
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            UserProfileForm profile = new UserProfileForm(Login_form.userID);
+            UserProfileForm profile = new UserProfileForm(userID);
             profile.Show(this);
             this.Hide();
         }
@@ -44,9 +44,9 @@ namespace Hospital_Management_System
         {
             await Task.Delay(100);
             HospitalContext db = new HospitalContext();
-            lblWelcome.Text += db.Users.Where(u => u.UserID == Login_form.userID).Select(u => u.FullName).FirstOrDefault();
+            lblWelcome.Text += db.Users.Where(u => u.UserID == userID).Select(u => u.FullName).FirstOrDefault();
 
-            var data = db.Appointments.Where(a => a.Doctor_User_ID == Login_form.userID && (a.Appoinment_Status == "Confirmed" || a.Appoinment_Status == "Completed"))
+            var data = db.Appointments.Where(a => a.Doctor_User_ID == userID && (a.Appoinment_Status == "Confirmed" || a.Appoinment_Status == "Completed"))
                                    .GroupBy(a => a.Appoinment_Status)
                                    .Select(a => new
                                    {
