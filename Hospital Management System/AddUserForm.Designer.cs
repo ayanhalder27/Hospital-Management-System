@@ -36,7 +36,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtSpecialization = new Guna.UI2.WinForms.Guna2TextBox();
             this.picPhoto = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lbl_warning_eamil_uniqueness = new System.Windows.Forms.Label();
+            this.lbl_warning_email_uniqueness = new System.Windows.Forms.Label();
             this.btnChangePic = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_add_new_user = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dtpDOB = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -129,6 +129,7 @@
             this.txtVisitFee.SelectedText = "";
             this.txtVisitFee.Size = new System.Drawing.Size(389, 35);
             this.txtVisitFee.TabIndex = 27;
+            this.txtVisitFee.TextChanged += new System.EventHandler(this.txtVisitFee_TextChanged);
             // 
             // label11
             // 
@@ -177,18 +178,18 @@
             this.picPhoto.TabStop = false;
             this.picPhoto.UseTransparentBackground = true;
             // 
-            // lbl_warning_eamil_uniqueness
+            // lbl_warning_email_uniqueness
             // 
-            this.lbl_warning_eamil_uniqueness.AutoSize = true;
-            this.lbl_warning_eamil_uniqueness.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_warning_eamil_uniqueness.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_warning_eamil_uniqueness.ForeColor = System.Drawing.Color.Red;
-            this.lbl_warning_eamil_uniqueness.Location = new System.Drawing.Point(224, 226);
-            this.lbl_warning_eamil_uniqueness.Name = "lbl_warning_eamil_uniqueness";
-            this.lbl_warning_eamil_uniqueness.Size = new System.Drawing.Size(334, 16);
-            this.lbl_warning_eamil_uniqueness.TabIndex = 86;
-            this.lbl_warning_eamil_uniqueness.Text = "*Email is already in use. Please use a different one.";
-            this.lbl_warning_eamil_uniqueness.Visible = false;
+            this.lbl_warning_email_uniqueness.AutoSize = true;
+            this.lbl_warning_email_uniqueness.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_warning_email_uniqueness.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_warning_email_uniqueness.ForeColor = System.Drawing.Color.Red;
+            this.lbl_warning_email_uniqueness.Location = new System.Drawing.Point(224, 226);
+            this.lbl_warning_email_uniqueness.Name = "lbl_warning_email_uniqueness";
+            this.lbl_warning_email_uniqueness.Size = new System.Drawing.Size(334, 16);
+            this.lbl_warning_email_uniqueness.TabIndex = 86;
+            this.lbl_warning_email_uniqueness.Text = "*Email is already in use. Please use a different one.";
+            this.lbl_warning_email_uniqueness.Visible = false;
             // 
             // btnChangePic
             // 
@@ -570,7 +571,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pnlDoctorFields);
             this.Controls.Add(this.picPhoto);
-            this.Controls.Add(this.lbl_warning_eamil_uniqueness);
+            this.Controls.Add(this.lbl_warning_email_uniqueness);
             this.Controls.Add(this.btnChangePic);
             this.Controls.Add(this.btn_add_new_user);
             this.Controls.Add(this.dtpDOB);
@@ -609,7 +610,7 @@
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2TextBox txtSpecialization;
         private Guna.UI2.WinForms.Guna2PictureBox picPhoto;
-        private System.Windows.Forms.Label lbl_warning_eamil_uniqueness;
+        private System.Windows.Forms.Label lbl_warning_email_uniqueness;
         private Guna.UI2.WinForms.Guna2GradientButton btnChangePic;
         private Guna.UI2.WinForms.Guna2GradientButton btn_add_new_user;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpDOB;

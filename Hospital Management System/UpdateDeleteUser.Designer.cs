@@ -90,7 +90,7 @@
             this.txtFullName.SelectedText = "";
             this.txtFullName.Size = new System.Drawing.Size(391, 35);
             this.txtFullName.TabIndex = 75;
-            this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
+//            this.txtFullName.TextChanged += new System.EventHandler(this.txtFullName_TextChanged);
             // 
             // txtRole
             // 
@@ -116,7 +116,7 @@
             this.txtRole.SelectedText = "";
             this.txtRole.Size = new System.Drawing.Size(391, 35);
             this.txtRole.TabIndex = 76;
-            this.txtRole.TextChanged += new System.EventHandler(this.txtRole_TextChanged);
+          //  this.txtRole.TextChanged += new System.EventHandler(this.txtRole_TextChanged);
             // 
             // txtAddress
             // 
@@ -141,7 +141,7 @@
             this.txtAddress.SelectedText = "";
             this.txtAddress.Size = new System.Drawing.Size(391, 35);
             this.txtAddress.TabIndex = 73;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
+      //      this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtUserId
             // 
@@ -167,7 +167,7 @@
             this.txtUserId.SelectedText = "";
             this.txtUserId.Size = new System.Drawing.Size(391, 35);
             this.txtUserId.TabIndex = 77;
-            this.txtUserId.TextChanged += new System.EventHandler(this.txtUserId_TextChanged);
+        //    this.txtUserId.TextChanged += new System.EventHandler(this.txtUserId_TextChanged);
             // 
             // txtPhone
             // 
@@ -215,7 +215,7 @@
             this.dtpDOB.TabIndex = 78;
             this.dtpDOB.UseTransparentBackground = true;
             this.dtpDOB.Value = new System.DateTime(2025, 9, 28, 18, 17, 8, 22);
-            this.dtpDOB.ValueChanged += new System.EventHandler(this.dtpDOB_ValueChanged);
+        //    this.dtpDOB.ValueChanged += new System.EventHandler(this.dtpDOB_ValueChanged);
             // 
             // txtEmail
             // 
@@ -289,7 +289,7 @@
             this.txtUserName.SelectedText = "";
             this.txtUserName.Size = new System.Drawing.Size(391, 35);
             this.txtUserName.TabIndex = 70;
-            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
+       //     this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // btn_delete_user
             // 
@@ -324,7 +324,7 @@
             this.label10.Size = new System.Drawing.Size(92, 30);
             this.label10.TabIndex = 69;
             this.label10.Text = "DOB :";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+         //   this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // btnChangePic
             // 
@@ -359,7 +359,7 @@
             this.label9.Size = new System.Drawing.Size(117, 30);
             this.label9.TabIndex = 68;
             this.label9.Text = "Gender :";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+         //   this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // lbl_warning_phoneNum_uniqueness
             // 
@@ -373,7 +373,7 @@
             this.lbl_warning_phoneNum_uniqueness.TabIndex = 87;
             this.lbl_warning_phoneNum_uniqueness.Text = "*Phone num is already in use. Please use a different one.";
             this.lbl_warning_phoneNum_uniqueness.Visible = false;
-            this.lbl_warning_phoneNum_uniqueness.Click += new System.EventHandler(this.lbl_warning_phoneNum_uniqueness_Click);
+         //   this.lbl_warning_phoneNum_uniqueness.Click += new System.EventHandler(this.lbl_warning_phoneNum_uniqueness_Click);
             // 
             // label8
             // 
@@ -385,7 +385,7 @@
             this.label8.Size = new System.Drawing.Size(128, 30);
             this.label8.TabIndex = 67;
             this.label8.Text = "Address :";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+//this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // picPhoto
             // 
@@ -400,7 +400,7 @@
             this.picPhoto.TabIndex = 81;
             this.picPhoto.TabStop = false;
             this.picPhoto.UseTransparentBackground = true;
-            this.picPhoto.Click += new System.EventHandler(this.picPhoto_Click);
+          //  this.picPhoto.Click += new System.EventHandler(this.picPhoto_Click);
             // 
             // label7
             // 
@@ -412,7 +412,7 @@
             this.label7.Size = new System.Drawing.Size(172, 30);
             this.label7.TabIndex = 66;
             this.label7.Text = "Phone Num :";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+         //   this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pnlDoctorFields
             // 
@@ -425,7 +425,7 @@
             this.pnlDoctorFields.Name = "pnlDoctorFields";
             this.pnlDoctorFields.Size = new System.Drawing.Size(626, 119);
             this.pnlDoctorFields.TabIndex = 83;
-            this.pnlDoctorFields.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDoctorFields_Paint_1);
+        //    this.pnlDoctorFields.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlDoctorFields_Paint_1);
             // 
             // txtSpecialization
             // 
@@ -450,7 +450,7 @@
             this.txtSpecialization.SelectedText = "";
             this.txtSpecialization.Size = new System.Drawing.Size(388, 39);
             this.txtSpecialization.TabIndex = 26;
-            this.txtSpecialization.TextChanged += new System.EventHandler(this.txtSpecialization_TextChanged);
+        //    this.txtSpecialization.TextChanged += new System.EventHandler(this.txtSpecialization_TextChanged);
             // 
             // label11
             // 
@@ -462,7 +462,7 @@
             this.label11.Size = new System.Drawing.Size(116, 24);
             this.label11.TabIndex = 25;
             this.label11.Text = "Visit Fee :";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+        //    this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // txtVisitFee
             // 
@@ -499,7 +499,7 @@
             this.label12.Size = new System.Drawing.Size(167, 24);
             this.label12.TabIndex = 24;
             this.label12.Text = "Specialization :";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+         //   this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label6
             // 
@@ -511,7 +511,7 @@
             this.label6.Size = new System.Drawing.Size(102, 30);
             this.label6.TabIndex = 65;
             this.label6.Text = "Email :";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+         //   this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label13
             // 
@@ -523,7 +523,7 @@
             this.label13.Size = new System.Drawing.Size(150, 24);
             this.label13.TabIndex = 84;
             this.label13.Text = "Pofile Picture";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+         //   this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label5
             // 
@@ -535,7 +535,7 @@
             this.label5.Size = new System.Drawing.Size(158, 30);
             this.label5.TabIndex = 64;
             this.label5.Text = "User name :";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+         //   this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // btn_close
             // 
@@ -570,7 +570,7 @@
             this.label4.Size = new System.Drawing.Size(158, 30);
             this.label4.TabIndex = 63;
             this.label4.Text = "Full Name :";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+        //    this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // lbl_warning_email_uniqueness
             // 
@@ -584,7 +584,7 @@
             this.lbl_warning_email_uniqueness.TabIndex = 86;
             this.lbl_warning_email_uniqueness.Text = "*Email is already in use. Please use a different one.";
             this.lbl_warning_email_uniqueness.Visible = false;
-            this.lbl_warning_email_uniqueness.Click += new System.EventHandler(this.lbl_warning_email_uniqueness_Click);
+        //    this.lbl_warning_email_uniqueness.Click += new System.EventHandler(this.lbl_warning_email_uniqueness_Click);
             // 
             // label3
             // 
@@ -596,7 +596,7 @@
             this.label3.Size = new System.Drawing.Size(87, 30);
             this.label3.TabIndex = 62;
             this.label3.Text = "Role :";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+          //  this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cmbGender
             // 
@@ -618,7 +618,7 @@
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(179, 36);
             this.cmbGender.TabIndex = 90;
-            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
+         //   this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -630,7 +630,7 @@
             this.label2.Size = new System.Drawing.Size(61, 30);
             this.label2.TabIndex = 61;
             this.label2.Text = "ID :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+         //   this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btn_cancel_profilePic
             // 
@@ -665,7 +665,7 @@
             this.label1.Size = new System.Drawing.Size(355, 43);
             this.label1.TabIndex = 60;
             this.label1.Text = "Update/Delete User";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+         //   this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2Panel1
             // 
@@ -704,7 +704,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1173, 743);
             this.guna2Panel1.TabIndex = 93;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+         //   this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // UpdateDeleteUser
             // 

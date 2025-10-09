@@ -23,9 +23,9 @@ namespace Hospital_Management_System
     internal class DashboardService
     {
         private readonly HospitalContext context;
-        public DashboardService(HospitalContext context)
+        public DashboardService()
         {
-            this.context = context;
+            this.context = new HospitalContext();
         }
 
         public DashboardCounts GetDashboardCounts()
