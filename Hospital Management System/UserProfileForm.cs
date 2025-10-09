@@ -25,8 +25,9 @@ namespace Hospital_Management_System
             currentUser = context.Users.FirstOrDefault(u => u.UserID == UserID);
         }
 
-        private void UserProfileForm_Load(object sender, EventArgs e)
+        private async void UserProfileForm_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
             LoadUserProfile();
             SetReadOnlyMode(true);
         }
@@ -178,8 +179,9 @@ namespace Hospital_Management_System
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new AdminPortal(UserID).Show();
+            this.Owner.Show();
+            this.Owner.Refresh();
+            this.Close();
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)

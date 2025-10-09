@@ -216,7 +216,7 @@ namespace Hospital_Management_System
                 }
 
                 DialogResult = DialogResult.OK;
-                Close();
+                btnBack.PerformClick();
             }
             catch (Exception ex)
             {

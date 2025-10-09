@@ -96,13 +96,14 @@ namespace Hospital_Management_System
                 if (isPatientView)
                 {
                     var addPatientForm = new AddUserForm(true);
-                    addPatientForm.ShowDialog();
+                    addPatientForm.Show(this);
                 }
                 else
                 {
                     var addEmployeeForm = new AddUserForm(false);
-                    addEmployeeForm.ShowDialog();
+                    addEmployeeForm.Show(this);
                 }
+                this.Hide();
             }
             catch (Exception ex)
             {
@@ -121,16 +122,8 @@ namespace Hospital_Management_System
 
         private void pic_back_button_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Close();
-                var adminPortal = new AdminPortal(currentUser.UserID);
-                adminPortal.Show();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error returning to admin portal: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            this.Owner.Show();
+            this.Close();
         }
 
         private void dgvUsers_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -142,7 +135,8 @@ namespace Hospital_Management_System
                     int userId = (int)dgvUsers.Rows[e.RowIndex].Cells["UserID"].Value;
 
                     var form = new UpdateDeleteUser(userId);
-                    form.ShowDialog();
+                    form.Show(this);
+                    this.Hide();
 
                     LoadUsers(); // Refresh DataGridView after update/delete
                 }

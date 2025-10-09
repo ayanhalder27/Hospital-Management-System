@@ -35,13 +35,10 @@ namespace Hospital_Management_System
 
         }
 
-        private void guna2TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private async void Prescribe_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
 
-        }
-
-        private void Prescribe_Load(object sender, EventArgs e)
-        {
             lblDate.Text += DateTime.Now.ToString("dd MMMM yyyy");
 
             AutoCompleteStringCollection medicines = new AutoCompleteStringCollection();
@@ -93,9 +90,7 @@ namespace Hospital_Management_System
             }
             savePrescription();
             prescribe();
-            this.Owner.Show();
-            ((Appointments)this.Owner).loadAppointments("Confirmed");
-            this.Close();
+            btnBack.PerformClick();
         }
 
         private void savePrescription()
@@ -203,6 +198,7 @@ namespace Hospital_Management_System
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Owner.Show();
+            this.Owner.Refresh();
             this.Close();
         }
     }

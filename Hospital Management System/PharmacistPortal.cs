@@ -21,6 +21,37 @@ namespace Hospital_Management_System
         {
             ManageMedicines manageMedicinesForm = new ManageMedicines();
             manageMedicinesForm.Show(this);
+            this.Hide();
+        }
+
+        private void btnSellMedicine_Click(object sender, EventArgs e)
+        {
+            PharmacyBilling pharmacyBillingForm = new PharmacyBilling();
+            pharmacyBillingForm.Show(this);
+            this.Hide();
+        }
+
+        private async void PharmacistPortal_Load(object sender, EventArgs e)
+        {
+            await Task.Delay(100);
+
+            HospitalContext db = new HospitalContext();
+            lblWelcome.Text += db.Users.Where(u=>u.UserID == Login_form.userID).Select(u=>u.FullName).FirstOrDefault();
+            lblMedicinesCount.Text = db.Medicines.Count().ToString();
+            lblSales.Text = db.Pharmacy_Billing.Count().ToString();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Owner.Show();
+            this.Close();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            UserProfileForm userProfileForm = new UserProfileForm(Login_form.userID);
+            userProfileForm.Show(this);
+            this.Hide();
         }
     }
 }

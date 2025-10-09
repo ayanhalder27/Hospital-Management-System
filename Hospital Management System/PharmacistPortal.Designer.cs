@@ -43,11 +43,11 @@ namespace Hospital_Management_System
             this.label1 = new System.Windows.Forms.Label();
             this.dashboardPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.panelWidget2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblSales = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelWidget1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblMedicinesCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblDashboard = new System.Windows.Forms.Label();
@@ -118,6 +118,7 @@ namespace Hospital_Management_System
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.TextOffset = new System.Drawing.Point(30, 0);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnProfile
             // 
@@ -137,13 +138,14 @@ namespace Hospital_Management_System
             this.btnProfile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProfile.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnProfile.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnProfile.Location = new System.Drawing.Point(22, 409);
+            this.btnProfile.Location = new System.Drawing.Point(22, 422);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(268, 45);
             this.btnProfile.TabIndex = 7;
             this.btnProfile.Text = "Profile";
             this.btnProfile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProfile.TextOffset = new System.Drawing.Point(30, 0);
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnSellMedicine
             // 
@@ -163,13 +165,14 @@ namespace Hospital_Management_System
             this.btnSellMedicine.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSellMedicine.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSellMedicine.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSellMedicine.Location = new System.Drawing.Point(22, 353);
+            this.btnSellMedicine.Location = new System.Drawing.Point(22, 366);
             this.btnSellMedicine.Name = "btnSellMedicine";
             this.btnSellMedicine.Size = new System.Drawing.Size(268, 45);
             this.btnSellMedicine.TabIndex = 6;
             this.btnSellMedicine.Text = "Sell Medicine";
             this.btnSellMedicine.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSellMedicine.TextOffset = new System.Drawing.Point(30, 0);
+            this.btnSellMedicine.Click += new System.EventHandler(this.btnSellMedicine_Click);
             // 
             // btnViewMedicine
             // 
@@ -189,7 +192,7 @@ namespace Hospital_Management_System
             this.btnViewMedicine.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnViewMedicine.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnViewMedicine.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnViewMedicine.Location = new System.Drawing.Point(22, 297);
+            this.btnViewMedicine.Location = new System.Drawing.Point(22, 310);
             this.btnViewMedicine.Name = "btnViewMedicine";
             this.btnViewMedicine.Size = new System.Drawing.Size(268, 45);
             this.btnViewMedicine.TabIndex = 5;
@@ -217,7 +220,7 @@ namespace Hospital_Management_System
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnDashboard.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDashboard.Location = new System.Drawing.Point(22, 241);
+            this.btnDashboard.Location = new System.Drawing.Point(22, 254);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(268, 45);
             this.btnDashboard.TabIndex = 3;
@@ -229,18 +232,18 @@ namespace Hospital_Management_System
             // 
             this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(3, 164);
+            this.lblWelcome.Location = new System.Drawing.Point(3, 177);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(244, 28);
             this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Welcome, Ayan Halder";
+            this.lblWelcome.Text = "Welcome, ";
             this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbProfilePic
             // 
             this.pbProfilePic.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
             this.pbProfilePic.ImageRotate = 0F;
-            this.pbProfilePic.Location = new System.Drawing.Point(75, 66);
+            this.pbProfilePic.Location = new System.Drawing.Point(75, 79);
             this.pbProfilePic.Name = "pbProfilePic";
             this.pbProfilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.pbProfilePic.Size = new System.Drawing.Size(100, 100);
@@ -277,7 +280,7 @@ namespace Hospital_Management_System
             // 
             this.panelWidget2.BackColor = System.Drawing.Color.Transparent;
             this.panelWidget2.BorderRadius = 15;
-            this.panelWidget2.Controls.Add(this.label4);
+            this.panelWidget2.Controls.Add(this.lblSales);
             this.panelWidget2.Controls.Add(this.label5);
             this.panelWidget2.Controls.Add(this.guna2PictureBox2);
             this.panelWidget2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -290,16 +293,16 @@ namespace Hospital_Management_System
             this.panelWidget2.Size = new System.Drawing.Size(225, 125);
             this.panelWidget2.TabIndex = 5;
             // 
-            // label4
+            // lblSales
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 37);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "3421";
+            this.lblSales.AutoSize = true;
+            this.lblSales.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSales.ForeColor = System.Drawing.Color.White;
+            this.lblSales.Location = new System.Drawing.Point(18, 59);
+            this.lblSales.Name = "lblSales";
+            this.lblSales.Size = new System.Drawing.Size(50, 37);
+            this.lblSales.TabIndex = 2;
+            this.lblSales.Text = "---";
             // 
             // label5
             // 
@@ -327,7 +330,7 @@ namespace Hospital_Management_System
             // 
             this.panelWidget1.BackColor = System.Drawing.Color.Transparent;
             this.panelWidget1.BorderRadius = 15;
-            this.panelWidget1.Controls.Add(this.label3);
+            this.panelWidget1.Controls.Add(this.lblMedicinesCount);
             this.panelWidget1.Controls.Add(this.label2);
             this.panelWidget1.Controls.Add(this.guna2PictureBox1);
             this.panelWidget1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
@@ -340,16 +343,16 @@ namespace Hospital_Management_System
             this.panelWidget1.Size = new System.Drawing.Size(225, 125);
             this.panelWidget1.TabIndex = 4;
             // 
-            // label3
+            // lblMedicinesCount
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 59);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 37);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "5623";
+            this.lblMedicinesCount.AutoSize = true;
+            this.lblMedicinesCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblMedicinesCount.ForeColor = System.Drawing.Color.White;
+            this.lblMedicinesCount.Location = new System.Drawing.Point(18, 59);
+            this.lblMedicinesCount.Name = "lblMedicinesCount";
+            this.lblMedicinesCount.Size = new System.Drawing.Size(50, 37);
+            this.lblMedicinesCount.TabIndex = 2;
+            this.lblMedicinesCount.Text = "---";
             // 
             // label2
             // 
@@ -430,6 +433,7 @@ namespace Hospital_Management_System
             this.Name = "PharmacistPortal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PharmacistPortal";
+            this.Load += new System.EventHandler(this.PharmacistPortal_Load);
             this.leftPanel.ResumeLayout(false);
             this.leftPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
@@ -464,11 +468,11 @@ namespace Hospital_Management_System
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private System.Windows.Forms.Label lblDashboard;
         private Guna.UI2.WinForms.Guna2Panel panelWidget1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblMedicinesCount;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel panelWidget2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSales;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }

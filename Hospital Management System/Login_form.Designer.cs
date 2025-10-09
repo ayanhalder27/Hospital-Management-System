@@ -151,6 +151,7 @@
             this.txt_user_password.Size = new System.Drawing.Size(390, 36);
             this.txt_user_password.TabIndex = 14;
             this.txt_user_password.UseSystemPasswordChar = true;
+            this.txt_user_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_user_password_KeyDown);
             // 
             // txt_user_ID
             // 

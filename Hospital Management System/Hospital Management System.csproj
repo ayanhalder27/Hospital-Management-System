@@ -152,6 +152,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HospitalContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceGenerator.cs" />
     <Compile Include="InvoiceService.cs" />
     <Compile Include="Login_form.cs">
       <SubType>Form</SubType>
@@ -183,7 +184,7 @@
     <Compile Include="Medicine.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="MEDICINE_BILLING.cs">
+    <Compile Include="Medicine_Billing.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
     <Compile Include="PatientPortal.cs">
@@ -204,7 +205,7 @@
     <Compile Include="PharmacyBilling.Designer.cs">
       <DependentUpon>PharmacyBilling.cs</DependentUpon>
     </Compile>
-    <Compile Include="PHARMACY_BILLING.cs">
+    <Compile Include="Pharmacy_Billing.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Prescribe.cs">

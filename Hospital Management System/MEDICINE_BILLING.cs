@@ -12,14 +12,14 @@ namespace Hospital_Management_System
     using System;
     using System.Collections.Generic;
     
-    public partial class MEDICINE_BILLING
+    public partial class Medicine_Billing
     {
-        public int MEDICINE_BILLING_ID { get; set; }
-        public int PHARMACY_BILLING_ID { get; set; }
+        public int Medicine_Billing_ID { get; set; }
+        public int Pharmacy_Billing_ID { get; set; }
         public int MedicineID { get; set; }
         public int Quantity { get; set; }
     
-        public virtual PHARMACY_BILLING PHARMACY_BILLING { get; set; }
+        public virtual Pharmacy_Billing Pharmacy_Billing { get; set; }
         public virtual Medicine Medicine { get; set; }
     }
 }

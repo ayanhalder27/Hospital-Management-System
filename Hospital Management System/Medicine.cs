@@ -18,7 +18,7 @@ namespace Hospital_Management_System
         public Medicine()
         {
             this.Prescribed_Medicines = new HashSet<Prescribed_Medicines>();
-            this.MEDICINE_BILLING = new HashSet<MEDICINE_BILLING>();
+            this.Medicine_Billing = new HashSet<Medicine_Billing>();
         }
     
         public int MedicineID { get; set; }
@@ -31,6 +31,6 @@ namespace Hospital_Management_System
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Prescribed_Medicines> Prescribed_Medicines { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MEDICINE_BILLING> MEDICINE_BILLING { get; set; }
+        public virtual ICollection<Medicine_Billing> Medicine_Billing { get; set; }
     }
 }

@@ -24,13 +24,13 @@
         <AssociationConnector Association="ayanhalder2705_Model.FK_Prescribed_Medicines_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="ayanhalder2705_Model.FK_Prescribed_Tests_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="ayanhalder2705_Model.FK__Users__RoleID__0B91BA14" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="ayanhalder2705_Model.MEDICINE_BILLING" Width="1.5" PointX="9.75" PointY="11.75" />
-        <EntityTypeShape EntityType="ayanhalder2705_Model.PHARMACY_BILLING" Width="1.5" PointX="5.25" PointY="8.25" />
-        <AssociationConnector Association="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable" />
-        <AssociationConnector Association="ayanhalder2705_Model.FK_MEDICINE_BILLING_ToTable_1" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Medicine_Billing" Width="1.5" PointX="9.75" PointY="11.625" />
+        <EntityTypeShape EntityType="ayanhalder2705_Model.Pharmacy_Billing" Width="1.5" PointX="5.25" PointY="7.875" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Medicine_Billing_ToTable" />
+        <AssociationConnector Association="ayanhalder2705_Model.FK_Medicine_Billing_ToTable_1" />
         <AssociationConnector Association="ayanhalder2705_Model.FK_Table_ToTable" />
         <AssociationConnector Association="ayanhalder2705_Model.FK_Table_ToTable_1" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

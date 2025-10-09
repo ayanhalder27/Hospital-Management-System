@@ -81,7 +81,7 @@ namespace Hospital_Management_System
                 }
 
                 MessageBox.Show("A new user added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                btn_close.PerformClick();
             }
             catch (Exception ex)
             {
@@ -172,6 +172,7 @@ namespace Hospital_Management_System
 
         private void btn_close_Click(object sender, EventArgs e)
         {
+            this.Owner.Show();
             this.Close();
         }
 

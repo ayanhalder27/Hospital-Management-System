@@ -21,10 +21,10 @@ namespace Hospital_Management_System
             InitializeComponent();
         }
 
-        private void ManageMedicines_Load(object sender, EventArgs e)
+        private async void ManageMedicines_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
             reloadData();
-            this.Owner.Hide();
         }
 
         private void reloadData()

@@ -36,8 +36,9 @@ namespace Hospital_Management_System
             this.patientID = patient.Patient_User_ID;
         }
 
-        private void AppointmentDetails_Load(object sender, EventArgs e)
+        private async void AppointmentDetails_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
             var result = db.Prescriptions.Join(db.Appointments, p=>p.AppointmentID, a=>a.AppointmentID, (p,a)=> new { p, a })
                                          .Join(db.Users, pa=>pa.a.Doctor_User_ID, u=>u.UserID, (pa,u)=> new {pa.p,pa.a,u})
                                          .Where(x => x.a.Patient_User_ID == patientID)
