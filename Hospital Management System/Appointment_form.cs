@@ -68,7 +68,6 @@ namespace Hospital_Management_System
             }
         }
 
-
         private List<AppointmentDto> GetAppointments(string search = null)
         {
             var query = from a in context.Appointments
