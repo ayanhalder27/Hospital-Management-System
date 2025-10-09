@@ -137,7 +137,15 @@ namespace Hospital_Management_System
             this.Hide();
         }
 
-        
+        private void btn_manage_labtest_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The feature is under development", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btn_manage_prescription_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The feature is under development", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 
    

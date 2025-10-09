@@ -48,8 +48,9 @@ namespace Hospital_Management_System
             }
         }
 
-        private void Appointment_form_Load(object sender, EventArgs e)
+        private async void Appointment_form_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
             try
             {
                 AutoCancelExpiredAppointments();

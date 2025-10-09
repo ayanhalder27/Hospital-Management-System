@@ -199,6 +199,7 @@
             this.btn_manage_labtest.TabIndex = 7;
             this.btn_manage_labtest.Text = "Lab test";
             this.btn_manage_labtest.UseTransparentBackground = true;
+            this.btn_manage_labtest.Click += new System.EventHandler(this.btn_manage_labtest_Click);
             // 
             // btn_manage_medicine
             // 
@@ -256,6 +257,7 @@
             this.btn_manage_prescription.TabIndex = 5;
             this.btn_manage_prescription.Text = "Prescription";
             this.btn_manage_prescription.UseTransparentBackground = true;
+            this.btn_manage_prescription.Click += new System.EventHandler(this.btn_manage_prescription_Click);
             // 
             // btn_manage_billing
             // 
@@ -377,9 +379,9 @@
             this.lbl_profile_user_name.Font = new System.Drawing.Font("Mongolian Baiti", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_profile_user_name.Location = new System.Drawing.Point(121, 104);
             this.lbl_profile_user_name.Name = "lbl_profile_user_name";
-            this.lbl_profile_user_name.Size = new System.Drawing.Size(77, 30);
+            this.lbl_profile_user_name.Size = new System.Drawing.Size(53, 30);
             this.lbl_profile_user_name.TabIndex = 2;
-            this.lbl_profile_user_name.Text = "name";
+            this.lbl_profile_user_name.Text = "----";
             // 
             // label2
             // 

@@ -25,8 +25,9 @@ namespace Hospital_Management_System
             currentUser = context.Users.FirstOrDefault(u => u.UserID == userid);
         }
 
-        private void ManageUsers_Load(object sender, EventArgs e)
+        private async void ManageUsers_Load(object sender, EventArgs e)
         {
+            await Task.Delay(100);
             try
             {
                 LoadRoles();
