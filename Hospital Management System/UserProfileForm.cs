@@ -61,12 +61,12 @@ namespace Hospital_Management_System
                     txtPhoneNum.Text = currentUser.PhoneNumber;
                     txtAddress.Text = currentUser.Address;
                     txtGender.Text = currentUser.Gender;
-                    datetimeDOB.Text = currentUser.DOB.ToString("dd-MM-yyyy");
+                    datetimeDOB.Value = currentUser.DOB;
 
                     if (currentUser.RoleID == 4) // Doctor
                     {
                         txtSpecialization.Text = currentUser.Specialization;
-                        txtVisitFee.Text = currentUser.Visit_Fee?.ToString();
+                        txtVisitFee.Text = currentUser.Visit_Fee.ToString();
                         pnlDoctorFields.Visible = true;
                     }
                     else
@@ -152,9 +152,6 @@ namespace Hospital_Management_System
                 }
 
                 MessageBox.Show("User updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Owner.Show();
-                this.Owner.Refresh();
-                this.Close();
             }
             catch (FormatException)
             {

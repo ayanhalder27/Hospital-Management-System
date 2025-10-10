@@ -62,13 +62,13 @@ namespace Hospital_Management_System
                             new ReceptionistPortal(user.UserID).Show(this); 
                             break;
                         case 4:
-                            new DoctorPortal(user.UserID).Show(this);
+                            new DoctorPortal().Show(this);
                             break;
                         case 5:
                             new PatientPortal(user.UserID).Show(this);
                             break;
                         case 7:
-                            new PharmacistPortal(user.UserID).Show(this);
+                            new PharmacistPortal().Show(this);
                             break;
                         default:
                             MessageBox.Show("Role not recognized!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
