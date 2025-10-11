@@ -205,6 +205,12 @@
     <Compile Include="PharmacyBilling.Designer.cs">
       <DependentUpon>PharmacyBilling.cs</DependentUpon>
     </Compile>
+    <Compile Include="PharmacyStatement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PharmacyStatement.Designer.cs">
+      <DependentUpon>PharmacyStatement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pharmacy_Billing.cs">
       <DependentUpon>HospitalContext.tt</DependentUpon>
     </Compile>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PharmacyBilling.resx">
       <DependentUpon>PharmacyBilling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PharmacyStatement.resx">
+      <DependentUpon>PharmacyStatement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prescribe.resx">
       <DependentUpon>Prescribe.cs</DependentUpon>
@@ -432,6 +441,7 @@
     <None Include="Resources\change.png" />
     <None Include="Resources\dollars.png" />
     <None Include="Resources\change1.png" />
+    <None Include="Resources\health-report1.png" />
     <Content Include="Resources\hide.png" />
     <None Include="Resources\Niloy profile.jpg" />
     <None Include="Resources\visible.png" />

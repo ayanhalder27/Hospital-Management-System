@@ -16,29 +16,34 @@ namespace Hospital_Management_System
     {
         HospitalContext db = new HospitalContext();
         int patientID;
-        public AppointmentDetails(int appointmentID)
+        public AppointmentDetails(int id)
         {
             InitializeComponent();
-            var patient = db.Appointments.Where(a => a.AppointmentID == appointmentID)
-                                         .Join(db.Users, a=> a.Patient_User_ID, u=> u.UserID, (a,u)=> new
-                                         {
-                                             a.Patient_User_ID,
-                                             u.FullName,
-                                             u.DOB,
-                                             u.Gender,
-                                             u.PhoneNumber
-                                         }).FirstOrDefault();
+            this.patientID = id;
+        }
+
+        private void loadPatientData()
+        {
+            var patient = db.Users.Where(u => u.UserID == patientID)
+                             .Select(u=> new
+                             {
+                                 u.FullName,
+                                 u.DOB,
+                                 u.Gender,
+                                 u.PhoneNumber
+                             }).FirstOrDefault();
+
             lblName.Text = patient.FullName;
-            lblPatientID.Text += patient.Patient_User_ID.ToString();
+            lblPatientID.Text += patientID;
             lblAgeValue.Text = (DateTime.Now.Year - patient.DOB.Year).ToString();
             lblGenderValue.Text = patient.Gender;
             lblContactValue.Text = patient.PhoneNumber;
-            this.patientID = patient.Patient_User_ID;
         }
 
         private async void AppointmentDetails_Load(object sender, EventArgs e)
         {
             await Task.Delay(100);
+            loadPatientData();
             var result = db.Prescriptions.Join(db.Appointments, p=>p.AppointmentID, a=>a.AppointmentID, (p,a)=> new { p, a })
                                          .Join(db.Users, pa=>pa.a.Doctor_User_ID, u=>u.UserID, (pa,u)=> new {pa.p,pa.a,u})
                                          .Where(x => x.a.Patient_User_ID == patientID)

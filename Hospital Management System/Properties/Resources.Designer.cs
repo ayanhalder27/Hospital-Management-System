@@ -263,6 +263,16 @@ namespace Hospital_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap health_report {
+            get {
+                object obj = ResourceManager.GetObject("health-report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IMG_20241011_184004 {
             get {
                 object obj = ResourceManager.GetObject("IMG_20241011_184004", resourceCulture);

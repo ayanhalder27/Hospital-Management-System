@@ -53,5 +53,17 @@ namespace Hospital_Management_System
             userProfileForm.Show(this);
             this.Hide();
         }
+
+        private void btnStatement_Click(object sender, EventArgs e)
+        {
+            PharmacyStatement ps = new PharmacyStatement();
+            ps.Show(this);
+            this.Hide();
+        }
+
+        private void panelWidget2_Click(object sender, EventArgs e)
+        {
+            btnStatement.PerformClick();
+        }
     }
 }

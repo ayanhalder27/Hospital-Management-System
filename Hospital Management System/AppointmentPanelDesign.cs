@@ -34,7 +34,11 @@ namespace Hospital_Management_System
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            AppointmentDetails details = new AppointmentDetails(int.Parse(lblID.Text.Replace("#", "")));
+            int appointmentID = int.Parse(lblID.Text.Replace("#", ""));
+            HospitalContext db = new HospitalContext();
+            int id = db.Appointments.Where(a=> a.AppointmentID == appointmentID).Select(a => a.Patient_User_ID).FirstOrDefault();
+            
+            AppointmentDetails details = new AppointmentDetails(id);
             details.Show(Appointments.thisPage);
         }
     }
