@@ -139,7 +139,7 @@ namespace Hospital_Management_System
                 if (e.RowIndex >= 0)
                 {
                     var selectedAppointment = (AppointmentDto)dgvAppointments.Rows[e.RowIndex].DataBoundItem;
-                    var updateAppointmentForm = new AddUpdateAppointment(selectedAppointment.AppointmentID,selectedAppointment.AppointmentDate);
+                    var updateAppointmentForm = new AddUpdateAppointment(selectedAppointment.AppointmentID,selectedAppointment.AppointmentDate, null);
                     updateAppointmentForm.ShowDialog();
                 }
             }
