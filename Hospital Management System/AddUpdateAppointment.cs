@@ -208,8 +208,8 @@ namespace Hospital_Management_System
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            this.Owner.Show();
-            this.Owner.Refresh();
+            //this.Owner.Show();
+            //this.Owner.Refresh();
             this.Close();
         }
 
@@ -220,7 +220,7 @@ namespace Hospital_Management_System
                 LoadPatients();
                 LoadDoctors();
                 var appointment = context.Appointments.Find(appointmentId);
-                LoadAppointmentForUpdate(appointmentId.Value);
+                //LoadAppointmentForUpdate(appointmentId.Value);
                 if (appointmentId.HasValue && appointment.Appoinment_Status == "Pending")
                 {
                     // Update mode      
@@ -230,15 +230,30 @@ namespace Hospital_Management_System
                     btnUpdate.Visible = true;
                     btnCancel.Visible = true;
                     dtpAppointment.Value = appointmentDate ?? DateTime.Now;
+                    LoadAppointmentForUpdate(appointmentId.Value);
                 }
-                else
+                else if (appointmentId.HasValue && (appointment.Appoinment_Status == "Confirmed" || appointment.Appoinment_Status == "Completed"))
                 {
+                    // View mode      
+                    txtPatientSearch.Enabled = false;
+                    txtDoctorSearch.Enabled = false;
                     btnSave.Visible = false;
                     btnUpdate.Visible = false;
                     btnCancel.Visible = false;
                     dtpAppointment.Value = appointmentDate ?? DateTime.Now;
+                    LoadAppointmentForUpdate(appointmentId.Value);
                 }
-            }
+                else
+                {
+                    // Add mode
+                    txtPatientSearch.Enabled = true;
+                    txtDoctorSearch.Enabled = true;
+                    btnSave.Visible = true;
+                    btnUpdate.Visible = false;
+                    btnCancel.Visible = false;
+                    dtpAppointment.Value = DateTime.Now;
+                }
+                }
             catch (Exception ex)
             {
                 MessageBox.Show("Error initializing form: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

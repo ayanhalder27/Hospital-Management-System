@@ -146,6 +146,11 @@ namespace Hospital_Management_System
         {
             MessageBox.Show("The feature is under development", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshDashboard();
+        }
     }
 
    

@@ -47,9 +47,6 @@ namespace Hospital_Management_System
                     context.SaveChanges();
                 }
 
-                // Generate invoice PDF — here we call a helper that uses iTextSharp (below)
-                // invoicePath = InvoiceService.GenerateInvoicePdf(...);
-                // For now we'll leave invoice generation to a helper method you can call from UI
                 return (true, null);
             }
             catch (Exception ex)
@@ -130,6 +127,7 @@ namespace Hospital_Management_System
 
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
+            this.Owner.Show();
             this.Owner.Refresh();
             this.Close();
         }
@@ -159,16 +157,14 @@ namespace Hospital_Management_System
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid decimal number.",
-                                    "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please enter a valid decimal number.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtPaidAmount.Clear();
                     txtChangeAmount.Text = "";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Unexpected error: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Unexpected error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPaidAmount.Clear();
                 txtChangeAmount.Text = "";
             }

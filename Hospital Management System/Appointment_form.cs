@@ -16,15 +16,17 @@ namespace Hospital_Management_System
     {
         private HospitalContext context = new HospitalContext();
         private User currentUser;
+        private int userID;
         public Appointment_form(int userid)
         {
             InitializeComponent();
             currentUser = context.Users.FirstOrDefault(u => u.UserID == userid);
+            this.userID = userid;
         }
 
         private void LoadAppointments()
         {
-            var list = GetAppointments( txtSearch.Text);
+            var list = GetAppointments(txtSearch.Text);
             dgvAppointments.DataSource = list;
         }
 
@@ -39,8 +41,8 @@ namespace Hospital_Management_System
             try
             {
                 var addAppointmentForm = new AddUpdateAppointment();
-                addAppointmentForm.Show(this);
-                this.Hide();
+                addAppointmentForm.Show();
+                //this.Hide();
             }
             catch (Exception ex)
             {

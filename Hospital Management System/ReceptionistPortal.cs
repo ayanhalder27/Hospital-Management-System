@@ -102,6 +102,11 @@ namespace Hospital_Management_System
             await Task.Delay(100);
             RefreshDashboard();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            RefreshDashboard();
+        }
     }
     
 }
