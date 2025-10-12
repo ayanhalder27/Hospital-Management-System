@@ -25,12 +25,14 @@ namespace Hospital_Management_System
         // If updating an appointment
         private int? appointmentId;
         private DateTime? appointmentDate;
+        private int? userId;
 
-        public AddUpdateAppointment(int? appointmentId = null, DateTime? dateTime = null)
+        public AddUpdateAppointment(int? appointmentId = null, DateTime? dateTime = null, int? userId = null)
         {
             InitializeComponent();
             this.appointmentId = appointmentId;
             this.appointmentDate = dateTime;
+            this.userId = userId;
             if (dateTime.HasValue)
             {
                 dtpAppointment.Value = dateTime.Value;
@@ -205,7 +207,6 @@ namespace Hospital_Management_System
             }
         }
 
-
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             //this.Owner.Show();
@@ -220,8 +221,7 @@ namespace Hospital_Management_System
                 LoadPatients();
                 LoadDoctors();
                 var appointment = context.Appointments.Find(appointmentId);
-                //LoadAppointmentForUpdate(appointmentId.Value);
-                if (appointmentId.HasValue && appointment.Appoinment_Status == "Pending")
+                if (appointmentId.HasValue && appointment.Appoinment_Status == "Pending" && userId == null)
                 {
                     // Update mode      
                     txtPatientSearch.Enabled = false;
@@ -232,7 +232,7 @@ namespace Hospital_Management_System
                     dtpAppointment.Value = appointmentDate ?? DateTime.Now;
                     LoadAppointmentForUpdate(appointmentId.Value);
                 }
-                else if (appointmentId.HasValue && (appointment.Appoinment_Status == "Confirmed" || appointment.Appoinment_Status == "Completed"))
+                else if (appointmentId.HasValue && (appointment.Appoinment_Status == "Confirmed" || appointment.Appoinment_Status == "Completed") && userId == null)
                 {
                     // View mode      
                     txtPatientSearch.Enabled = false;
@@ -242,6 +242,26 @@ namespace Hospital_Management_System
                     btnCancel.Visible = false;
                     dtpAppointment.Value = appointmentDate ?? DateTime.Now;
                     LoadAppointmentForUpdate(appointmentId.Value);
+                }
+                else if (userId.HasValue)
+                {
+                    // Add mode with preselected patient
+                    txtPatientSearch.Enabled = false;
+                    txtDoctorSearch.Enabled = true;
+                    btnSave.Visible = true;
+                    btnUpdate.Visible = false;
+                    btnCancel.Visible = false;
+                    dtpAppointment.Value = DateTime.Now;
+                    dgvPatients.Visible = false;
+                    var patient = context.Users.Find(userId.Value);
+                    if (patient != null)
+                    {
+                        selectedPatientId = patient.UserID;
+                        lblPatientID.Text = patient.UserID.ToString();
+                        lblPatientName.Text = patient.FullName;
+                        lblPatientPhone.Text = patient.PhoneNumber;
+                        lblPatientDOB.Text = patient.DOB.ToShortDateString();
+                    }
                 }
                 else
                 {

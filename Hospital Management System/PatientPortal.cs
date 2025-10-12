@@ -58,9 +58,9 @@ namespace Hospital_Management_System
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
-            AddUpdateAppointment a = new AddUpdateAppointment();
-            a.Show(this);
-            this.Hide();
+            var addAppointmentForm = new AddUpdateAppointment(null, null, Login_form.userID);
+            addAppointmentForm.Show();
+
         }
     }
 }

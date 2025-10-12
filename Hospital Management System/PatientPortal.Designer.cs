@@ -32,34 +32,34 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.pnlSideMenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblAppName = new System.Windows.Forms.Label();
-            this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
-            this.cardRecords = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblRecordCount = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cardAppointments = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblAppointmentCount = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblDashboard = new System.Windows.Forms.Label();
-            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.btnMyPrescriptions = new Guna.UI2.WinForms.Guna2Button();
             this.btnAppointment = new Guna.UI2.WinForms.Guna2Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.pbProfilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lblAppName = new System.Windows.Forms.Label();
+            this.pnlMain = new Guna.UI2.WinForms.Guna2Panel();
+            this.cardRecords = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblRecordCount = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.cardAppointments = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblAppointmentCount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblDashboard = new System.Windows.Forms.Label();
+            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.pnlSideMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.cardRecords.SuspendLayout();
-            this.cardAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            this.cardAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -90,190 +90,6 @@
             this.pnlSideMenu.Name = "pnlSideMenu";
             this.pnlSideMenu.Size = new System.Drawing.Size(290, 700);
             this.pnlSideMenu.TabIndex = 0;
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.Color.White;
-            this.lblWelcome.Location = new System.Drawing.Point(3, 177);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(284, 28);
-            this.lblWelcome.TabIndex = 2;
-            this.lblWelcome.Text = "Welcome, Ayan";
-            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAppName
-            // 
-            this.lblAppName.AutoSize = true;
-            this.lblAppName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblAppName.ForeColor = System.Drawing.Color.White;
-            this.lblAppName.Location = new System.Drawing.Point(62, 23);
-            this.lblAppName.Name = "lblAppName";
-            this.lblAppName.Size = new System.Drawing.Size(170, 32);
-            this.lblAppName.TabIndex = 0;
-            this.lblAppName.Text = "Patient Portal";
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Controls.Add(this.cardRecords);
-            this.pnlMain.Controls.Add(this.cardAppointments);
-            this.pnlMain.Controls.Add(this.lblDashboard);
-            this.pnlMain.Controls.Add(this.guna2ControlBox3);
-            this.pnlMain.Controls.Add(this.guna2ControlBox2);
-            this.pnlMain.Controls.Add(this.guna2ControlBox1);
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(290, 0);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(810, 700);
-            this.pnlMain.TabIndex = 1;
-            // 
-            // cardRecords
-            // 
-            this.cardRecords.BackColor = System.Drawing.Color.Transparent;
-            this.cardRecords.BorderRadius = 15;
-            this.cardRecords.Controls.Add(this.lblRecordCount);
-            this.cardRecords.Controls.Add(this.label6);
-            this.cardRecords.Controls.Add(this.guna2PictureBox3);
-            this.cardRecords.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
-            this.cardRecords.Location = new System.Drawing.Point(296, 126);
-            this.cardRecords.Name = "cardRecords";
-            this.cardRecords.ShadowDecoration.BorderRadius = 20;
-            this.cardRecords.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
-            this.cardRecords.ShadowDecoration.Enabled = true;
-            this.cardRecords.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
-            this.cardRecords.Size = new System.Drawing.Size(225, 125);
-            this.cardRecords.TabIndex = 6;
-            this.cardRecords.Click += new System.EventHandler(this.cardRecords_Click);
-            // 
-            // lblRecordCount
-            // 
-            this.lblRecordCount.AutoSize = true;
-            this.lblRecordCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblRecordCount.ForeColor = System.Drawing.Color.White;
-            this.lblRecordCount.Location = new System.Drawing.Point(18, 59);
-            this.lblRecordCount.Name = "lblRecordCount";
-            this.lblRecordCount.Size = new System.Drawing.Size(39, 37);
-            this.lblRecordCount.TabIndex = 2;
-            this.lblRecordCount.Text = "--";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(21, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 23);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Medical Records";
-            // 
-            // cardAppointments
-            // 
-            this.cardAppointments.BackColor = System.Drawing.Color.Transparent;
-            this.cardAppointments.BorderRadius = 15;
-            this.cardAppointments.Controls.Add(this.lblAppointmentCount);
-            this.cardAppointments.Controls.Add(this.label2);
-            this.cardAppointments.Controls.Add(this.guna2PictureBox1);
-            this.cardAppointments.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.cardAppointments.Location = new System.Drawing.Point(34, 126);
-            this.cardAppointments.Name = "cardAppointments";
-            this.cardAppointments.ShadowDecoration.BorderRadius = 20;
-            this.cardAppointments.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
-            this.cardAppointments.ShadowDecoration.Enabled = true;
-            this.cardAppointments.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
-            this.cardAppointments.Size = new System.Drawing.Size(225, 125);
-            this.cardAppointments.TabIndex = 4;
-            // 
-            // lblAppointmentCount
-            // 
-            this.lblAppointmentCount.AutoSize = true;
-            this.lblAppointmentCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblAppointmentCount.ForeColor = System.Drawing.Color.White;
-            this.lblAppointmentCount.Location = new System.Drawing.Point(18, 59);
-            this.lblAppointmentCount.Name = "lblAppointmentCount";
-            this.lblAppointmentCount.Size = new System.Drawing.Size(39, 37);
-            this.lblAppointmentCount.TabIndex = 2;
-            this.lblAppointmentCount.Text = "--";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Pending Appointments";
-            // 
-            // lblDashboard
-            // 
-            this.lblDashboard.AutoSize = true;
-            this.lblDashboard.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
-            this.lblDashboard.Location = new System.Drawing.Point(26, 47);
-            this.lblDashboard.Name = "lblDashboard";
-            this.lblDashboard.Size = new System.Drawing.Size(193, 46);
-            this.lblDashboard.TabIndex = 3;
-            this.lblDashboard.Text = "Dashboard";
-            // 
-            // guna2ControlBox3
-            // 
-            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox3.IconColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(661, 12);
-            this.guna2ControlBox3.Name = "guna2ControlBox3";
-            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox3.TabIndex = 2;
-            // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(706, 12);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox2.TabIndex = 1;
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
-            this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(751, 12);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 0;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = global::Hospital_Management_System.Properties.Resources.health_report;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(145, 47);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(64, 64);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox3.TabIndex = 0;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Hospital_Management_System.Properties.Resources.Pending;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(145, 47);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // btnLogout
             // 
@@ -403,6 +219,17 @@
             this.btnAppointment.TextOffset = new System.Drawing.Point(30, 0);
             this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(3, 177);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(284, 28);
+            this.lblWelcome.TabIndex = 2;
+            this.lblWelcome.Text = "Welcome, ";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pbProfilePic
             // 
             this.pbProfilePic.Image = global::Hospital_Management_System.Properties.Resources.blank_profile_picture_973460_1920;
@@ -414,6 +241,179 @@
             this.pbProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbProfilePic.TabIndex = 1;
             this.pbProfilePic.TabStop = false;
+            // 
+            // lblAppName
+            // 
+            this.lblAppName.AutoSize = true;
+            this.lblAppName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblAppName.ForeColor = System.Drawing.Color.White;
+            this.lblAppName.Location = new System.Drawing.Point(62, 23);
+            this.lblAppName.Name = "lblAppName";
+            this.lblAppName.Size = new System.Drawing.Size(170, 32);
+            this.lblAppName.TabIndex = 0;
+            this.lblAppName.Text = "Patient Portal";
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Controls.Add(this.cardRecords);
+            this.pnlMain.Controls.Add(this.cardAppointments);
+            this.pnlMain.Controls.Add(this.lblDashboard);
+            this.pnlMain.Controls.Add(this.guna2ControlBox3);
+            this.pnlMain.Controls.Add(this.guna2ControlBox2);
+            this.pnlMain.Controls.Add(this.guna2ControlBox1);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(290, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(810, 700);
+            this.pnlMain.TabIndex = 1;
+            // 
+            // cardRecords
+            // 
+            this.cardRecords.BackColor = System.Drawing.Color.Transparent;
+            this.cardRecords.BorderRadius = 15;
+            this.cardRecords.Controls.Add(this.lblRecordCount);
+            this.cardRecords.Controls.Add(this.label6);
+            this.cardRecords.Controls.Add(this.guna2PictureBox3);
+            this.cardRecords.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
+            this.cardRecords.Location = new System.Drawing.Point(296, 126);
+            this.cardRecords.Name = "cardRecords";
+            this.cardRecords.ShadowDecoration.BorderRadius = 20;
+            this.cardRecords.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(209)))), ((int)(((byte)(55)))));
+            this.cardRecords.ShadowDecoration.Enabled = true;
+            this.cardRecords.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
+            this.cardRecords.Size = new System.Drawing.Size(225, 125);
+            this.cardRecords.TabIndex = 6;
+            this.cardRecords.Click += new System.EventHandler(this.cardRecords_Click);
+            // 
+            // lblRecordCount
+            // 
+            this.lblRecordCount.AutoSize = true;
+            this.lblRecordCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblRecordCount.ForeColor = System.Drawing.Color.White;
+            this.lblRecordCount.Location = new System.Drawing.Point(18, 59);
+            this.lblRecordCount.Name = "lblRecordCount";
+            this.lblRecordCount.Size = new System.Drawing.Size(39, 37);
+            this.lblRecordCount.TabIndex = 2;
+            this.lblRecordCount.Text = "--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(21, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(141, 23);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Medical Records";
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = global::Hospital_Management_System.Properties.Resources.health_report;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(145, 47);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(64, 64);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox3.TabIndex = 0;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // cardAppointments
+            // 
+            this.cardAppointments.BackColor = System.Drawing.Color.Transparent;
+            this.cardAppointments.BorderRadius = 15;
+            this.cardAppointments.Controls.Add(this.lblAppointmentCount);
+            this.cardAppointments.Controls.Add(this.label2);
+            this.cardAppointments.Controls.Add(this.guna2PictureBox1);
+            this.cardAppointments.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.cardAppointments.Location = new System.Drawing.Point(34, 126);
+            this.cardAppointments.Name = "cardAppointments";
+            this.cardAppointments.ShadowDecoration.BorderRadius = 20;
+            this.cardAppointments.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(225)))));
+            this.cardAppointments.ShadowDecoration.Enabled = true;
+            this.cardAppointments.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(5, 5, 8, 8);
+            this.cardAppointments.Size = new System.Drawing.Size(225, 125);
+            this.cardAppointments.TabIndex = 4;
+            // 
+            // lblAppointmentCount
+            // 
+            this.lblAppointmentCount.AutoSize = true;
+            this.lblAppointmentCount.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblAppointmentCount.ForeColor = System.Drawing.Color.White;
+            this.lblAppointmentCount.Location = new System.Drawing.Point(18, 59);
+            this.lblAppointmentCount.Name = "lblAppointmentCount";
+            this.lblAppointmentCount.Size = new System.Drawing.Size(39, 37);
+            this.lblAppointmentCount.TabIndex = 2;
+            this.lblAppointmentCount.Text = "--";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(21, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(195, 23);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Pending Appointments";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Hospital_Management_System.Properties.Resources.Pending;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(145, 47);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // lblDashboard
+            // 
+            this.lblDashboard.AutoSize = true;
+            this.lblDashboard.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            this.lblDashboard.Location = new System.Drawing.Point(26, 47);
+            this.lblDashboard.Name = "lblDashboard";
+            this.lblDashboard.Size = new System.Drawing.Size(193, 46);
+            this.lblDashboard.TabIndex = 3;
+            this.lblDashboard.Text = "Dashboard";
+            // 
+            // guna2ControlBox3
+            // 
+            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox3.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox3.Location = new System.Drawing.Point(661, 12);
+            this.guna2ControlBox3.Name = "guna2ControlBox3";
+            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox3.TabIndex = 2;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(706, 12);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox2.TabIndex = 1;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(62)))), ((int)(((byte)(62)))));
+            this.guna2ControlBox1.HoverState.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(751, 12);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 0;
             // 
             // PatientPortal
             // 
@@ -429,15 +429,15 @@
             this.Load += new System.EventHandler(this.PatientPortal_Load);
             this.pnlSideMenu.ResumeLayout(false);
             this.pnlSideMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.cardRecords.ResumeLayout(false);
             this.cardRecords.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.cardAppointments.ResumeLayout(false);
             this.cardAppointments.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }

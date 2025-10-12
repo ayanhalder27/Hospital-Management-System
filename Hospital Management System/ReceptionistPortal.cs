@@ -72,28 +72,28 @@ namespace Hospital_Management_System
         private void btn_manage_patient_Click(object sender, EventArgs e)
         {
             var managePatientsForm = new ManageUsers(true, UserID);
-            managePatientsForm.ShowDialog();
+            managePatientsForm.Show(this);
             this.Hide();
         }
 
         private void btn_profile_button_Click(object sender, EventArgs e)
         {
             UserProfileForm userProfileForm = new UserProfileForm(UserID);
-            userProfileForm.Show();
+            userProfileForm.Show(this);
             this.Hide();
         }
 
         private void btn_manage_appointment_Click(object sender, EventArgs e)
         {
             var manageAppointment = new Appointment_form(UserID);
-            manageAppointment.ShowDialog();
+            manageAppointment.Show(this);
             this.Hide();
         }
 
         private void btn_manage_billing_Click(object sender, EventArgs e)
         {
             var manageBilling = new Billing_form(UserID);
-            manageBilling.ShowDialog();
+            manageBilling.Show(this);
             this.Hide();
         }
 
@@ -106,6 +106,26 @@ namespace Hospital_Management_System
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             RefreshDashboard();
+        }
+
+        private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+                lbl_profile_user_name.Text = correntUser.FullName;
+
+                if (!string.IsNullOrWhiteSpace(correntUser.Photo) && File.Exists(correntUser.Photo))
+                {
+                    using (var stream = new FileStream(correntUser.Photo, FileMode.Open, FileAccess.Read))
+                    {
+                        picbox_admin_portal.Image = Image.FromStream(stream);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading user profile: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
     

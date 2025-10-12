@@ -12,6 +12,7 @@ namespace Hospital_Management_System
 {
     public partial class DoctorPortal : Form
     {
+        
 
         public DoctorPortal()
         {

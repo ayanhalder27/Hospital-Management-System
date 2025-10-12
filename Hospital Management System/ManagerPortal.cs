@@ -53,7 +53,7 @@ namespace Hospital_Management_System
         {
             UserProfileForm userProfileForm = new UserProfileForm(UserID);
             userProfileForm.Show(this);
-            this.Hide();
+            this.Hide(); ;
         }
 
         private void btn_manage_patient_Click(object sender, EventArgs e)
@@ -119,6 +119,26 @@ namespace Hospital_Management_System
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             RefreshDashboard();
+        }
+
+        private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+                lbl_profile_user_name.Text = correntUser.FullName;
+
+                if (!string.IsNullOrWhiteSpace(correntUser.Photo) && File.Exists(correntUser.Photo))
+                {
+                    using (var stream = new FileStream(correntUser.Photo, FileMode.Open, FileAccess.Read))
+                    {
+                        picbox_admin_portal.Image = Image.FromStream(stream);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading user profile: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

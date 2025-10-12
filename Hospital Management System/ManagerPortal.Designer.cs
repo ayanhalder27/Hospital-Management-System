@@ -265,6 +265,7 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(1188, 146);
             this.guna2GradientPanel2.TabIndex = 4;
+            this.guna2GradientPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel2_Paint);
             // 
             // lbl_profile_user_name
             // 
