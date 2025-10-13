@@ -131,7 +131,7 @@ namespace Hospital_Management_System
         {
             try
             {
-                if (e.RowIndex >= 0) // make sure it’s not a header row
+                if (e.RowIndex >= 0) 
                 {
                     int userId = (int)dgvUsers.Rows[e.RowIndex].Cells["UserID"].Value;
 
@@ -139,7 +139,7 @@ namespace Hospital_Management_System
                     form.Show(this);
                     this.Hide();
 
-                    LoadUsers(); // Refresh DataGridView after update/delete
+                    LoadUsers(); 
                 }
             }
             catch (Exception ex)

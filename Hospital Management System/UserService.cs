@@ -166,13 +166,11 @@ namespace Hospital_Management_System
             return (username, password);
         }
 
-        // ✅ Check if Email is unique
         public bool IsEmailUnique(string email)
         {
             return !context.Users.Any(u => u.Email == email);
         }
 
-        // ✅ Check if Phone is unique
         public bool IsPhoneUnique(string phone)
         {
             return !context.Users.Any(u => u.PhoneNumber == phone);
