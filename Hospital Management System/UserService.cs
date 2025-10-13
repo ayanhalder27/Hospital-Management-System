@@ -27,6 +27,7 @@ namespace Hospital_Management_System
                 Directory.CreateDirectory(photoFolder);
             }
         }
+
         public void UpdateUser(User updatedUser)
         {
             try
@@ -155,11 +156,9 @@ namespace Hospital_Management_System
 
         public (string username, string password) GenerateCredentials(string fullName, string email, string phone)
         {
-            // Username: fullname (lowercase, no spaces) + nextUserId
             int nextId = (context.Users.Any() ? context.Users.Max(u => u.UserID) : 1000) + 1;
             string username = fullName.ToLower().Replace(" ", "") + nextId;
 
-            // Password: email prefix + last 5 digits of phone
             string emailPrefix = email.Split('@')[0];
             string phoneSuffix = phone.Length >= 5 ? phone.Substring(phone.Length - 5) : phone;
             string password = emailPrefix + phoneSuffix;
@@ -209,7 +208,6 @@ namespace Hospital_Management_System
 
         public (bool Success, string ErrorMessage) CreateUser(string fullName, string email, string phone, string address,string gender, DateTime dob, int roleId, string specialization = null, double? visitFee = null, string photoPath = null)
         {
-            // Validate input
             string validationError = ValidateUserInput(fullName, email, phone, address, gender, dob);
             if (validationError != null)
             {
@@ -224,11 +222,8 @@ namespace Hospital_Management_System
                 return (false, "Phone number already exists.");
             }
 
-            // Generate credentials
             var (username, password) = GenerateCredentials(fullName, email, phone);
 
-
-            // Create user object
             var user = new User
             {
                 FullName = fullName,
@@ -256,20 +251,19 @@ namespace Hospital_Management_System
             if (user == null)
                 return (false, "User not found.");
 
-            // Validate
             string validationError = ValidateUserInput(fullName, email, phone, address, gender, dob);
             if (validationError != null)
                 return (false, validationError);
 
-            // Check email uniqueness (ignore current user)
+
             if (context.Users.Any(u => u.Email == email && u.UserID != userId))
                 return (false, "Email already exists.");
 
-            // Check phone uniqueness (ignore current user)
+
             if (context.Users.Any(u => u.PhoneNumber == phone && u.UserID != userId))
                 return (false, "Phone number already exists.");
 
-            // Update fields
+
             user.FullName = fullName;
             user.Email = email;
             user.PhoneNumber = phone;
@@ -279,7 +273,7 @@ namespace Hospital_Management_System
             user.Specialization = specialization;
             user.Visit_Fee = visitFee;
 
-            // Update photo (optional)
+
             if (!string.IsNullOrEmpty(photoPath))
             {
                 user.Photo = photoPath;
@@ -295,7 +289,7 @@ namespace Hospital_Management_System
             if (user == null)
                 return (false, "User not found or already deleted.");
 
-            user.Status = false;  // Soft delete
+            user.Status = false;  
             context.SaveChanges();
 
             return (true, null);

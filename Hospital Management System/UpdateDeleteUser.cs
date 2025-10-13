@@ -30,9 +30,9 @@ namespace Hospital_Management_System
                 var user = userService.GetUserById(userId);
                 if (user == null) return;
 
-                txtUserId.Text = user.UserID.ToString();       // Read-only
-                txtUserName.Text = user.Username;              // Read-only
-                txtRole.Text = user.Role.RoleName;             // Read-only
+                txtUserId.Text = user.UserID.ToString();      
+                txtUserName.Text = user.Username;            
+                txtRole.Text = user.Role.RoleName;             
 
                 txtFullName.Text = user.FullName;
                 txtEmail.Text = user.Email;
@@ -41,7 +41,7 @@ namespace Hospital_Management_System
                 cmbGender.Text = user.Gender;
                 dtpDOB.Value = user.DOB;
 
-                // Doctor-only fields
+                
                 if (user.RoleID == 4)
                 {
                     pnlDoctorFields.Visible = true;
@@ -53,7 +53,7 @@ namespace Hospital_Management_System
                     pnlDoctorFields.Visible = false;
                 }
 
-                // Profile picture
+                
                 if (!string.IsNullOrEmpty(user.Photo) && File.Exists(user.Photo))
                 {
                     picPhoto.Image = Image.FromFile(user.Photo);
