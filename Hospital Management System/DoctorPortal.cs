@@ -52,8 +52,8 @@ namespace Hospital_Management_System
                                        Status = a.Key,
                                        Count = a.Count()
                                    }).ToList();
-            lblPending.Text = data.FirstOrDefault(x=> x.Status == "Confirmed").Count.ToString();
-            lblTreated.Text = data.FirstOrDefault(x => x.Status == "Completed").Count.ToString();
+            //lblPending.Text = data.FirstOrDefault(x=> x.Status == "Confirmed").Count.ToString();
+            //lblTreated.Text = data.FirstOrDefault(x => x.Status == "Completed").Count.ToString();
         }
     }
 }

@@ -125,5 +125,10 @@ namespace Hospital_Management_System
                 btn_login.PerformClick();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Jeba Tasnim");
+        }
     }
 }
